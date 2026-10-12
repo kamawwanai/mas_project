@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "snapshot_dev_001",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "id": "dev_01",
+  "origin_city": "Москва",
+  "destination_city": "Нижний Новгород",
+  "start_date": "2026-10-24",
+  "end_date": "2026-10-25",
+  "adults": 2,
+  "nights": 1,
+  "budget_kopecks": null,
+  "currency": "RUB",
+  "preferences": {
+    "pace": "relaxed",
+    "interests": [
+      "walks",
+      "museums",
+      "local_food"
+    ]
+  },
+  "constraints": {
+    "required_place_ids": [],
+    "max_walking_minutes_per_day": null,
+    "min_departure_buffer_minutes": 30
+  },
+  "notes": "Учебные условия: 24–25 октября 2026 года, два взрослых, одна ночь. Выберите свои даты и бюджет; обновите даты во всех связанных файлах. Предпочтения и запас 30 минут перед обратным поездом — предлагаемые условия сценария."
+}
+

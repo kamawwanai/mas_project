@@ -1,0 +1,108 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "snapshot_dev_001",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "items": [
+    {
+      "id": "food_01",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "meal_types": null,
+      "recommended_duration_minutes": null,
+      "opening_hours": [
+        {
+          "date": "2026-10-24",
+          "status": "unknown",
+          "intervals": null
+        },
+        {
+          "date": "2026-10-25",
+          "status": "unknown",
+          "intervals": null
+        }
+      ],
+      "reservation_required": null,
+      "price_basis": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_meal",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "food_02",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "meal_types": null,
+      "recommended_duration_minutes": null,
+      "opening_hours": [
+        {
+          "date": "2026-10-24",
+          "status": "unknown",
+          "intervals": null
+        },
+        {
+          "date": "2026-10-25",
+          "status": "unknown",
+          "intervals": null
+        }
+      ],
+      "reservation_required": null,
+      "price_basis": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_meal",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "food_03",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "meal_types": null,
+      "recommended_duration_minutes": null,
+      "opening_hours": [
+        {
+          "date": "2026-10-24",
+          "status": "unknown",
+          "intervals": null
+        },
+        {
+          "date": "2026-10-25",
+          "status": "unknown",
+          "intervals": null
+        }
+      ],
+      "reservation_required": null,
+      "price_basis": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_meal",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    }
+  ]
+}
+

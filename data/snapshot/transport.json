@@ -1,0 +1,145 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "snapshot_dev_001",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "items": [
+    {
+      "id": "train_out_01",
+      "name": null,
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-24",
+      "from_station": {
+        "id": "station_moscow_01",
+        "name": null,
+        "city": "Москва",
+        "address": null
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": null,
+        "city": "Нижний Новгород",
+        "address": null
+      },
+      "departure_at": null,
+      "arrival_at": null,
+      "seat_class": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "train_out_02",
+      "name": null,
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-24",
+      "from_station": {
+        "id": "station_moscow_01",
+        "name": null,
+        "city": "Москва",
+        "address": null
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": null,
+        "city": "Нижний Новгород",
+        "address": null
+      },
+      "departure_at": null,
+      "arrival_at": null,
+      "seat_class": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "train_back_01",
+      "name": null,
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-25",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": null,
+        "city": "Нижний Новгород",
+        "address": null
+      },
+      "to_station": {
+        "id": "station_moscow_01",
+        "name": null,
+        "city": "Москва",
+        "address": null
+      },
+      "departure_at": null,
+      "arrival_at": null,
+      "seat_class": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "train_back_02",
+      "name": null,
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-25",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": null,
+        "city": "Нижний Новгород",
+        "address": null
+      },
+      "to_station": {
+        "id": "station_moscow_01",
+        "name": null,
+        "city": "Москва",
+        "address": null
+      },
+      "departure_at": null,
+      "arrival_at": null,
+      "seat_class": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    }
+  ]
+}
+

@@ -1,0 +1,261 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "snapshot_dev_001",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "items": [
+    {
+      "id": "transfer_01",
+      "from_id": "station_nn_01",
+      "to_id": "food_01",
+      "applicable_date": "2026-10-24",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_02",
+      "from_id": "food_01",
+      "to_id": "stay_01",
+      "applicable_date": "2026-10-24",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_03",
+      "from_id": "stay_01",
+      "to_id": "place_01",
+      "applicable_date": "2026-10-24",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_04",
+      "from_id": "place_01",
+      "to_id": "food_02",
+      "applicable_date": "2026-10-24",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_05",
+      "from_id": "food_02",
+      "to_id": "stay_01",
+      "applicable_date": "2026-10-24",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_06",
+      "from_id": "stay_01",
+      "to_id": "food_03",
+      "applicable_date": "2026-10-25",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_07",
+      "from_id": "food_03",
+      "to_id": "stay_01",
+      "applicable_date": "2026-10-25",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_08",
+      "from_id": "stay_01",
+      "to_id": "place_02",
+      "applicable_date": "2026-10-25",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_09",
+      "from_id": "place_02",
+      "to_id": "food_01",
+      "applicable_date": "2026-10-25",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_10",
+      "from_id": "food_01",
+      "to_id": "place_03",
+      "applicable_date": "2026-10-25",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_11",
+      "from_id": "place_03",
+      "to_id": "food_02",
+      "applicable_date": "2026-10-25",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "transfer_12",
+      "from_id": "food_02",
+      "to_id": "station_nn_01",
+      "applicable_date": "2026-10-25",
+      "mode": null,
+      "duration_minutes": null,
+      "distance_meters": null,
+      "duration_kind": "unknown",
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "person_trip",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    }
+  ]
+}
+

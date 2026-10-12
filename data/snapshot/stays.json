@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "snapshot_dev_001",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "items": [
+    {
+      "id": "stay_01",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "check_in_date": "2026-10-24",
+      "check_out_date": "2026-10-25",
+      "check_in_from": null,
+      "check_out_until": null,
+      "room_type": null,
+      "room_capacity_adults": null,
+      "requested_adults": 2,
+      "requested_rooms": 1,
+      "breakfast_included": null,
+      "luggage_storage_available": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "room_night",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "stay_02",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "check_in_date": "2026-10-24",
+      "check_out_date": "2026-10-25",
+      "check_in_from": null,
+      "check_out_until": null,
+      "room_type": null,
+      "room_capacity_adults": null,
+      "requested_adults": 2,
+      "requested_rooms": 1,
+      "breakfast_included": null,
+      "luggage_storage_available": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "room_night",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "stay_03",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "check_in_date": "2026-10-24",
+      "check_out_date": "2026-10-25",
+      "check_in_from": null,
+      "check_out_until": null,
+      "room_type": null,
+      "room_capacity_adults": null,
+      "requested_adults": 2,
+      "requested_rooms": 1,
+      "breakfast_included": null,
+      "luggage_storage_available": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "room_night",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    }
+  ]
+}
+

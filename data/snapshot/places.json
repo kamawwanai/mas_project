@@ -1,0 +1,213 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "snapshot_dev_001",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "items": [
+    {
+      "id": "place_01",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "category": null,
+      "recommended_duration_minutes": null,
+      "opening_hours": [
+        {
+          "date": "2026-10-24",
+          "status": "unknown",
+          "intervals": null
+        },
+        {
+          "date": "2026-10-25",
+          "status": "unknown",
+          "intervals": null
+        }
+      ],
+      "ticket_required": null,
+      "booking_required": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_visit",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "place_02",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "category": null,
+      "recommended_duration_minutes": null,
+      "opening_hours": [
+        {
+          "date": "2026-10-24",
+          "status": "unknown",
+          "intervals": null
+        },
+        {
+          "date": "2026-10-25",
+          "status": "unknown",
+          "intervals": null
+        }
+      ],
+      "ticket_required": null,
+      "booking_required": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_visit",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "place_03",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "category": null,
+      "recommended_duration_minutes": null,
+      "opening_hours": [
+        {
+          "date": "2026-10-24",
+          "status": "unknown",
+          "intervals": null
+        },
+        {
+          "date": "2026-10-25",
+          "status": "unknown",
+          "intervals": null
+        }
+      ],
+      "ticket_required": null,
+      "booking_required": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_visit",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "place_04",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "category": null,
+      "recommended_duration_minutes": null,
+      "opening_hours": [
+        {
+          "date": "2026-10-24",
+          "status": "unknown",
+          "intervals": null
+        },
+        {
+          "date": "2026-10-25",
+          "status": "unknown",
+          "intervals": null
+        }
+      ],
+      "ticket_required": null,
+      "booking_required": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_visit",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "place_05",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "category": null,
+      "recommended_duration_minutes": null,
+      "opening_hours": [
+        {
+          "date": "2026-10-24",
+          "status": "unknown",
+          "intervals": null
+        },
+        {
+          "date": "2026-10-25",
+          "status": "unknown",
+          "intervals": null
+        }
+      ],
+      "ticket_required": null,
+      "booking_required": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_visit",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    },
+    {
+      "id": "place_06",
+      "name": null,
+      "city": "Нижний Новгород",
+      "address": null,
+      "category": null,
+      "recommended_duration_minutes": null,
+      "opening_hours": [
+        {
+          "date": "2026-10-24",
+          "status": "unknown",
+          "intervals": null
+        },
+        {
+          "date": "2026-10-25",
+          "status": "unknown",
+          "intervals": null
+        }
+      ],
+      "ticket_required": null,
+      "booking_required": null,
+      "price": {
+        "amount_kopecks": null,
+        "currency": "RUB",
+        "price_unit": "adult_visit",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": null
+      },
+      "availability_status": "unknown",
+      "source_url": null,
+      "checked_at": null,
+      "notes": null,
+      "additional_sources": []
+    }
+  ]
+}
+

@@ -1,0 +1,286 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "snapshot_dev_001",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "id": "reference_dev_01",
+  "scenario_id": "dev_01",
+  "selected_stay": {
+    "reference_id": "stay_01",
+    "rooms": 1,
+    "nights": 1
+  },
+  "items": [
+    {
+      "id": "event_01",
+      "day": 1,
+      "type": "transport",
+      "reference_id": "train_out_01",
+      "label": "Поезд туда",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_02",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_01",
+      "label": "От вокзала к месту обеда",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_03",
+      "day": 1,
+      "type": "meal",
+      "reference_id": "food_01",
+      "label": "Обед в первый день",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2,
+      "meal_type": "lunch"
+    },
+    {
+      "id": "event_04",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_02",
+      "label": "От обеда к проживанию",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_05",
+      "day": 1,
+      "type": "check_in",
+      "reference_id": "stay_01",
+      "label": "Заселение",
+      "start_at": null,
+      "end_at": null
+    },
+    {
+      "id": "event_06",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_03",
+      "label": "К первому месту посещения",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_07",
+      "day": 1,
+      "type": "visit",
+      "reference_id": "place_01",
+      "label": "Посещение в первый день",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_08",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_04",
+      "label": "К месту ужина",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_09",
+      "day": 1,
+      "type": "meal",
+      "reference_id": "food_02",
+      "label": "Ужин в первый день",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2,
+      "meal_type": "dinner"
+    },
+    {
+      "id": "event_10",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_05",
+      "label": "Возвращение к проживанию",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_11",
+      "day": 1,
+      "type": "rest",
+      "reference_id": "stay_01",
+      "label": "Ночной отдых; окончание на следующий день",
+      "start_at": null,
+      "end_at": null
+    },
+    {
+      "id": "event_12",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_06",
+      "label": "К месту завтрака",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_13",
+      "day": 2,
+      "type": "meal",
+      "reference_id": "food_03",
+      "label": "Завтрак во второй день",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2,
+      "meal_type": "breakfast"
+    },
+    {
+      "id": "event_14",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_07",
+      "label": "Возвращение для выселения",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_15",
+      "day": 2,
+      "type": "check_out",
+      "reference_id": "stay_01",
+      "label": "Выселение",
+      "start_at": null,
+      "end_at": null
+    },
+    {
+      "id": "event_16",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_08",
+      "label": "К первому месту второго дня",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_17",
+      "day": 2,
+      "type": "visit",
+      "reference_id": "place_02",
+      "label": "Первое посещение во второй день",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_18",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_09",
+      "label": "К месту обеда",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_19",
+      "day": 2,
+      "type": "meal",
+      "reference_id": "food_01",
+      "label": "Обед во второй день",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2,
+      "meal_type": "lunch"
+    },
+    {
+      "id": "event_20",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_10",
+      "label": "К следующему месту посещения",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_21",
+      "day": 2,
+      "type": "visit",
+      "reference_id": "place_03",
+      "label": "Второе посещение во второй день",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_22",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_11",
+      "label": "К месту ужина",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_23",
+      "day": 2,
+      "type": "meal",
+      "reference_id": "food_02",
+      "label": "Ужин перед обратной дорогой",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2,
+      "meal_type": "dinner"
+    },
+    {
+      "id": "event_24",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_12",
+      "label": "К вокзалу",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    },
+    {
+      "id": "event_25",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "station_nn_01",
+      "label": "Запас времени перед обратным поездом",
+      "start_at": null,
+      "end_at": null
+    },
+    {
+      "id": "event_26",
+      "day": 2,
+      "type": "transport",
+      "reference_id": "train_back_01",
+      "label": "Поезд обратно",
+      "start_at": null,
+      "end_at": null,
+      "quantity": 2
+    }
+  ],
+  "total_cost_kopecks": null,
+  "validation_status": "not_checked",
+  "unresolved_items": [
+    "Заполнить предложения, цены, источники, время событий и длительности перемещений.",
+    "Проверить применимость предложений и часов работы к датам сценария.",
+    "Проверить заселение, выселение и обращение с багажом до заселения и после выселения; при необходимости добавить хранение, получение багажа, расходы и перемещения.",
+    "Перестроить порядок посещений и питания под фактическое время поездов. Завтрак первого дня добавить, если он попадает в границы поездки; учесть включённое питание без повторного начисления.",
+    "Пересчитать полную стоимость и выполнить независимую проверку. Пока это шаблон, а не готовый допустимый маршрут."
+  ]
+}
+
