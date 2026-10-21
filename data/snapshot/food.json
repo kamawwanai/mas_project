@@ -6,103 +6,163 @@
   "items": [
     {
       "id": "food_01",
-      "name": null,
+      "name": "Та самая шаурма на Средном",
       "city": "Нижний Новгород",
-      "address": null,
-      "meal_types": null,
-      "recommended_duration_minutes": null,
+      "address": "пл. Минина и Пожарского, 6, павильон 15",
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "recommended_duration_minutes": 30,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T08:00:00+03:00",
+              "end_at": "2026-10-17T23:30:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T08:00:00+03:00",
+              "end_at": "2026-10-18T23:30:00+03:00"
+            }
+          ]
         }
       ],
-      "reservation_required": null,
-      "price_basis": null,
+      "reservation_required": false,
+      "price_basis": "Оценка стоимости одного приёма пищи: стандартная шаурма с курицей за 330 рублей по меню официального сайта, без напитка.",
       "price": {
-        "amount_kopecks": null,
         "currency": "RUB",
         "price_unit": "adult_meal",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "estimated",
+        "includes_mandatory_fees": true,
+        "amount": 330
       },
-      "source_url": null,
+      "source_url": "https://tasamayashaurma.ru/shaurma-s-kuritsej",
       "checked_at": null,
-      "notes": null,
+      "notes": "Выбран филиал на площади Минина и Пожарского, 6, павильон 15. График 08:00–23:30 указан на официальном сайте, отдельные изменения на 17–18 октября не проверены. Продолжительность питания 30 минут — собственная оценка. Стоимость 330 рублей на человека рассчитана по одному выбранному блюду без напитков и дополнительных услуг. Цены на дату поездки могут измениться. Предварительное бронирование для обычного заказа не требуется.",
       "additional_sources": []
     },
     {
       "id": "food_02",
-      "name": null,
+      "name": "Pasters",
       "city": "Нижний Новгород",
-      "address": null,
-      "meal_types": null,
-      "recommended_duration_minutes": null,
+      "address": "ул. Большая Покровская, 21/5",
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "recommended_duration_minutes": 60,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T10:00:00+03:00",
+              "end_at": "2026-10-18T00:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T10:00:00+03:00",
+              "end_at": "2026-10-18T23:00:00+03:00"
+            }
+          ]
         }
       ],
-      "reservation_required": null,
-      "price_basis": null,
+      "reservation_required": false,
+      "price_basis": "Ориентировочная стоимость одного приёма пищи на человека — 1500 рублей. Основание: средний чек 1200–1500 рублей по данным Яндекс Карт.",
       "price": {
-        "amount_kopecks": null,
         "currency": "RUB",
         "price_unit": "adult_meal",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "estimated",
+        "includes_mandatory_fees": null,
+        "amount": 1500
       },
-      "source_url": null,
+      "source_url": "https://berezkagroup.ru/",
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "Итальянское бистро на Большой Покровской улице. В меню паста, ризотто, десерты и завтраки. Продолжительность посещения 60 минут — собственная оценка. Предварительное бронирование обычного столика не установлено как обязательное, но рекомендуется в часы высокой загрузки. График указан по опубликованному расписанию, отдельное подтверждение на 17–18 октября отсутствует. Средний чек является оценкой, фактические расходы зависят от заказа.",
+      "additional_sources": [
+        {
+          "source_url": "https://yandex.com/maps/org/pasters/67050845431/",
+          "checked_at": null,
+          "supports": [
+            "price"
+          ]
+        }
+      ]
     },
     {
       "id": "food_03",
-      "name": null,
+      "name": "Додо Пицца",
       "city": "Нижний Новгород",
-      "address": null,
-      "meal_types": null,
-      "recommended_duration_minutes": null,
+      "address": "Большая Покровская ул., 42",
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "recommended_duration_minutes": 45,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T08:00:00+03:00",
+              "end_at": "2026-10-17T23:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T08:00:00+03:00",
+              "end_at": "2026-10-18T23:00:00+03:00"
+            }
+          ]
         }
       ],
-      "reservation_required": null,
-      "price_basis": null,
+      "reservation_required": false,
+      "price_basis": "Ориентировочный чек на одного взрослого — 500 рублей по данным Restaurant Guru. Фактическая стоимость зависит от выбранных блюд и напитков.",
       "price": {
-        "amount_kopecks": null,
         "currency": "RUB",
         "price_unit": "adult_meal",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "estimated",
+        "includes_mandatory_fees": null,
+        "amount": 500
       },
-      "source_url": null,
+      "source_url": "https://restaurantguru.ru/Dodo-Pizza-Nizhny-Novgorod-6",
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "Пиццерия на Большой Покровской, 42. Режим работы ежедневно 08:00–23:00 указан по опубликованному расписанию; отдельное подтверждение на 17–18 октября отсутствует. Предварительное бронирование столика не требуется. Продолжительность питания 45 минут — собственная оценка. Стоимость 500 рублей на человека — ориентировочный чек, а не фиксированная цена заказа.",
+      "additional_sources": [
+        {
+          "source_url": "https://yandex.com/maps/org/dodo_pizza/19136874807/",
+          "checked_at": null,
+          "supports": [
+            "address",
+            "opening_hours"
+          ]
+        }
+      ]
     }
   ]
 }
-

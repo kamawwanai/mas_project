@@ -1,0 +1,7 @@
+# Real calls stay disabled until the user supplies a key and authorizes execution.
+api_enabled = false
+model = ""
+timeout_seconds = 60
+
+[generation]
+# Set only parameters supported by the chosen exact model, identically for A/B/C.

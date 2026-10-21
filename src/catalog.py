@@ -159,3 +159,13 @@ def load_dataset(data_dir: str | Path, scenario_name: str) -> LoadedDataset:
         loaded.input_errors.append(exc.problem)
 
     return loaded
+
+
+def load_catalogs(snapshot_dir: str | Path) -> dict[str, CatalogDocument]:
+    """Load facts only: no reference plans or private profiles."""
+    root = Path(snapshot_dir)
+    return {kind: load_catalog(root / f"{kind}.json", kind) for kind in CATALOG_KINDS}
+
+
+def load_public_scenario(path: str | Path) -> Scenario:
+    return load_scenario(path)

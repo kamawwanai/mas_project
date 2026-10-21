@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.2.0",
+  "snapshot_id": "benchmark_2026_10_17",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "id": "test_03",
+  "origin_city": "Москва",
+  "destination_city": "Нижний Новгород",
+  "start_date": "2026-10-17",
+  "end_date": "2026-10-18",
+  "adults": 2,
+  "nights": 1,
+  "budget_kopecks": null,
+  "currency": "RUB",
+  "preferences": {
+    "pace": "relaxed",
+    "interests": [
+      "walks",
+      "museums",
+      "local_food"
+    ]
+  },
+  "constraints": {
+    "required_place_ids": [],
+    "max_walking_minutes_per_day": null,
+    "min_departure_buffer_minutes": 30,
+    "min_rest_minutes_per_night": 420,
+    "min_visit_minutes_per_day": 60,
+    "required_meals": [
+      "lunch"
+    ],
+    "luggage_required": true
+  },
+  "notes": "Historical benchmark request; budget pending verified reference cost +20%, rounded up to 100 RUB. Offers and itinerary require human verification. Case: Walking limit"
+}

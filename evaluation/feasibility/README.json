@@ -1,0 +1,4 @@
+{
+  "status": "pending",
+  "instructions": "For infeasible scenarios provide a budget_lower_bound or required_place_closed certificate. No certificates are asserted without verified facts. Feasible witnesses belong in evaluation/reference_plans."
+}

@@ -5,10 +5,11 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from datetime import date, datetime
 import re
+import math
 from typing import Any, Callable, Literal, TypeVar
 
 
-SUPPORTED_SCHEMA_VERSIONS = {"0.1.0"}
+SUPPORTED_SCHEMA_VERSIONS = {"0.1.0", "0.2.0"}
 CATALOG_KINDS = ("transport", "stays", "places", "food", "transfers")
 
 
@@ -146,7 +147,7 @@ class Price:
     includes_mandatory_fees: bool | None
 
 
-PRICE_UNITS = {"adult_ticket", "room_night", "adult_visit", "adult_meal", "person_trip", "vehicle_trip"}
+PRICE_UNITS = {"adult_ticket", "room_night", "adult_visit", "adult_meal", "person_trip", "vehicle_trip", "group_storage"}
 
 
 def parse_price(value: Any, path: str) -> Price:
@@ -173,7 +174,7 @@ def parse_price(value: Any, path: str) -> Price:
 @dataclass(frozen=True)
 class AdditionalSource:
     source_url: str
-    checked_at: datetime
+    checked_at: datetime | None
     supports: list[str]
 
 
@@ -183,9 +184,32 @@ def parse_additional_source(value: Any, path: str) -> AdditionalSource:
     _only_keys(data, keys, path)
     return AdditionalSource(
         source_url=_string(_required(data, "source_url", path), f"{path}.source_url"),
-        checked_at=_timestamp(_required(data, "checked_at", path), f"{path}.checked_at"),
+        checked_at=_timestamp(_required(data, "checked_at", path), f"{path}.checked_at", nullable=True),
         supports=_list(_required(data, "supports", path), f"{path}.supports", lambda v, p: _string(v, p)),
     )
+
+
+@dataclass(frozen=True)
+class Review:
+    source_url: str
+    checked_at: datetime | None
+    summary: str
+    rating: float | None
+    scale: float | None
+
+
+def parse_review(value: Any, path: str) -> Review:
+    data = _object(value, path)
+    _only_keys(data, {"source_url", "checked_at", "summary", "rating", "scale"}, path)
+    rating, scale = _required(data, "rating", path), _required(data, "scale", path)
+    if (rating is None) != (scale is None):
+        raise SchemaError(path, "rating and scale must both be known or null")
+    if rating is not None:
+        if any(type(v) not in {int, float} or not math.isfinite(v) for v in (rating, scale)) or scale <= 0 or not 0 <= rating <= scale:
+            raise SchemaError(path, "invalid review rating/scale")
+    return Review(_string(_required(data, "source_url", path), f"{path}.source_url"),
+                  _timestamp(_required(data, "checked_at", path), f"{path}.checked_at", nullable=True),
+                  _string(_required(data, "summary", path), f"{path}.summary"), rating, scale)
 
 
 @dataclass(frozen=True)
@@ -194,6 +218,9 @@ class SourceFields:
     checked_at: datetime | None
     notes: str | None
     additional_sources: list[AdditionalSource]
+    verified_fields: list[str] = field(default_factory=list)
+    features: dict[str, int] = field(default_factory=dict)
+    reviews: list[Review] = field(default_factory=list)
 
 
 def _parse_source(data: dict[str, Any], path: str) -> SourceFields:
@@ -206,7 +233,19 @@ def _parse_source(data: dict[str, Any], path: str) -> SourceFields:
             f"{path}.additional_sources",
             parse_additional_source,
         ),
+        verified_fields=_list(data.get("verified_fields", []), f"{path}.verified_fields", lambda v, p: _string(v, p)),
+        features=_parse_features(data.get("features", {}), f"{path}.features"),
+        reviews=_list(data.get("reviews", []), f"{path}.reviews", parse_review),
     )
+
+
+def _parse_features(value: Any, path: str) -> dict[str, int]:
+    data = _object(value, path)
+    _only_keys(data, {"culture", "food", "comfort"}, path)
+    result = {k: _integer(v, f"{path}.{k}", minimum=0) for k, v in data.items()}
+    if any(v > 100 for v in result.values()):
+        raise SchemaError(path, "feature values must be between 0 and 100")
+    return result
 
 
 @dataclass(frozen=True)
@@ -271,7 +310,7 @@ def parse_station(value: Any, path: str) -> Station:
     )
 
 
-SOURCE_KEYS = {"source_url", "checked_at", "notes", "additional_sources"}
+SOURCE_KEYS = {"source_url", "checked_at", "notes", "additional_sources", "verified_fields", "features", "reviews"}
 
 
 @dataclass(frozen=True)
@@ -338,6 +377,8 @@ class StayItem:
     price: Price
     availability_status: Literal["unknown", "available", "unavailable"]
     source: SourceFields
+    luggage_price: Price | None = None
+    breakfast_hours: list[OpeningHours] = field(default_factory=list)
 
 
 def parse_stay(value: Any, path: str) -> StayItem:
@@ -346,7 +387,7 @@ def parse_stay(value: Any, path: str) -> StayItem:
         "id", "name", "city", "address", "check_in_date", "check_out_date", "check_in_from",
         "check_out_until", "room_type", "room_capacity_adults", "requested_adults", "requested_rooms",
         "breakfast_included", "luggage_storage_available", "price", "availability_status",
-    } | SOURCE_KEYS
+    } | SOURCE_KEYS | {"luggage_price", "breakfast_hours"}
     _only_keys(data, keys, path)
     return StayItem(
         id=_string(_required(data, "id", path), f"{path}.id"),
@@ -378,6 +419,8 @@ def parse_stay(value: Any, path: str) -> StayItem:
             {"unknown", "available", "unavailable"},
         ),
         source=_parse_source(data, path),
+        luggage_price=parse_price(data["luggage_price"], f"{path}.luggage_price") if data.get("luggage_price") is not None else None,
+        breakfast_hours=_list(data.get("breakfast_hours", []), f"{path}.breakfast_hours", parse_opening_hours),
     )
 
 
@@ -494,6 +537,8 @@ class TransferItem:
     duration_kind: Literal["unknown", "estimated", "timetable", "measured"]
     price: Price
     source: SourceFields
+    walking_minutes: int | None = None
+    vehicle_capacity_adults: int | None = None
 
 
 def parse_transfer(value: Any, path: str) -> TransferItem:
@@ -501,7 +546,7 @@ def parse_transfer(value: Any, path: str) -> TransferItem:
     keys = {
         "id", "from_id", "to_id", "applicable_date", "mode", "duration_minutes", "distance_meters",
         "duration_kind", "price",
-    } | SOURCE_KEYS
+    } | SOURCE_KEYS | {"walking_minutes", "vehicle_capacity_adults"}
     _only_keys(data, keys, path)
     return TransferItem(
         id=_string(_required(data, "id", path), f"{path}.id"),
@@ -524,6 +569,8 @@ def parse_transfer(value: Any, path: str) -> TransferItem:
         ),
         price=parse_price(_required(data, "price", path), f"{path}.price"),
         source=_parse_source(data, path),
+        walking_minutes=_integer(data.get("walking_minutes"), f"{path}.walking_minutes", nullable=True, minimum=0),
+        vehicle_capacity_adults=_integer(data.get("vehicle_capacity_adults"), f"{path}.vehicle_capacity_adults", nullable=True, minimum=1),
     )
 
 
@@ -588,6 +635,10 @@ class Constraints:
     required_place_ids: list[str]
     max_walking_minutes_per_day: int | None
     min_departure_buffer_minutes: int
+    min_rest_minutes_per_night: int = 0
+    min_visit_minutes_per_day: int = 0
+    required_meals: list[str] = field(default_factory=list)
+    luggage_required: bool = False
 
 
 @dataclass(frozen=True)
@@ -621,9 +672,13 @@ def parse_preferences(value: Any, path: str) -> Preferences:
 
 def parse_constraints(value: Any, path: str) -> Constraints:
     data = _object(value, path)
-    keys = {"required_place_ids", "max_walking_minutes_per_day", "min_departure_buffer_minutes"}
+    keys = {"required_place_ids", "max_walking_minutes_per_day", "min_departure_buffer_minutes", "min_rest_minutes_per_night", "min_visit_minutes_per_day", "required_meals", "luggage_required"}
     _only_keys(data, keys, path)
     return Constraints(
+        min_rest_minutes_per_night=_integer(data.get("min_rest_minutes_per_night", 0), f"{path}.min_rest_minutes_per_night", minimum=0),
+        min_visit_minutes_per_day=_integer(data.get("min_visit_minutes_per_day", 0), f"{path}.min_visit_minutes_per_day", minimum=0),
+        required_meals=_list(data.get("required_meals", []), f"{path}.required_meals", lambda v, p: _enum(v, p, {"breakfast", "lunch", "dinner"})),
+        luggage_required=_boolean(data.get("luggage_required", False), f"{path}.luggage_required"),
         required_place_ids=_list(
             _required(data, "required_place_ids", path),
             f"{path}.required_place_ids",
@@ -678,7 +733,7 @@ def parse_scenario(value: Any, path: str = "$") -> Scenario:
     )
 
 
-EVENT_TYPES = {"transport", "transfer", "visit", "meal", "check_in", "check_out", "rest", "buffer"}
+EVENT_TYPES = {"transport", "transfer", "visit", "meal", "check_in", "check_out", "rest", "buffer", "included_breakfast", "luggage_drop", "luggage_pickup"}
 QUANTITY_EVENT_TYPES = {"transport", "transfer", "visit", "meal"}
 
 
@@ -832,7 +887,7 @@ class CheckResult:
 
 @dataclass
 class ValidationReport:
-    scope: Literal["day1"]
+    scope: Literal["day1", "full"]
     scenario_id: str | None
     snapshot_id: str | None
     is_template: dict[str, bool | None]
@@ -842,7 +897,8 @@ class ValidationReport:
     checks: list[CheckResult]
     input_errors: list[Problem]
     not_implemented: list[str]
-    full_trip_feasibility_evaluated: Literal[False] = False
+    full_trip_feasibility_evaluated: bool = False
+    cost: dict[str, Any] | None = None
 
     @property
     def exit_code(self) -> int:
@@ -877,4 +933,5 @@ class ValidationReport:
             "input_errors": [item.to_dict() for item in self.input_errors],
             "not_implemented": self.not_implemented,
             "full_trip_feasibility_evaluated": self.full_trip_feasibility_evaluated,
+            "cost": self.cost,
         }

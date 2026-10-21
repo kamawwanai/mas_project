@@ -1,0 +1,5 @@
+# Offline core: Python >=3.11 standard library only; no third-party requirements.
+# This file intentionally installs no API client and no plotting package.
+# Optional API/report dependencies are declared in pyproject.toml, not locked here.
+# After choosing the provider model and enabling optional extras, capture their
+# resolved versions in a separate environment lock before real experiments.

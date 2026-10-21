@@ -40,6 +40,9 @@ def build_parser() -> argparse.ArgumentParser:
         help="корень набора данных (по умолчанию ./data)",
     )
     parser.add_argument("--json", action="store_true", help="вывести только машиночитаемый JSON")
+    parser.add_argument("--scope", choices=["day1", "full"], default="day1")
+    parser.add_argument("--split", choices=["dev", "test"], default="dev")
+    parser.add_argument("--plan", type=Path, help="explicit plan file for full validation")
     return parser
 
 
@@ -55,7 +58,7 @@ def _problem_line(problem: dict[str, object]) -> str:
 
 def format_human(report: dict[str, object]) -> str:
     lines = [
-        "Проверки первого дня",
+        "Полная проверка поездки" if report["scope"] == "full" else "Проверки первого дня",
         f"Сценарий: {report['scenario_id'] or 'не определён'}",
         f"Снимок: {report['snapshot_id'] or 'не определён'}",
         f"Итог: {STATUS_RU[report['overall_status']]} (код {report['exit_code']})",
@@ -90,7 +93,7 @@ def format_human(report: dict[str, object]) -> str:
     lines.extend(
         [
             "",
-            "Полная выполнимость поездки не оценивалась.",
+            "Выполнимость оценена по сохранённым данным." if report["full_trip_feasibility_evaluated"] else "Полная выполнимость поездки не оценивалась.",
         ]
     )
     return "\n".join(lines)
@@ -98,7 +101,19 @@ def format_human(report: dict[str, object]) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    report = validate_scenario(str(args.data_dir), args.scenario)
+    if args.scope == "full":
+        from src.catalog import load_catalogs, load_public_scenario, load_plan, DataLoadError
+        from src.checks import validate_trip
+        try:
+            catalogs = load_catalogs(args.data_dir / "snapshot")
+            request = load_public_scenario(args.data_dir / "scenarios" / args.split / f"{args.scenario}.json")
+            plan = load_plan(args.plan or PROJECT_ROOT / "evaluation/reference_plans" / f"{args.scenario}.json")
+            report = validate_trip(catalogs, request, plan)
+        except (DataLoadError, ValueError) as exc:
+            print(json.dumps({"exit_code": 2, "error": str(exc)}, ensure_ascii=False))
+            return 2
+    else:
+        report = validate_scenario(str(args.data_dir), args.scenario)
     payload = report.to_dict()
     if args.json:
         print(json.dumps(payload, ensure_ascii=False, indent=2))

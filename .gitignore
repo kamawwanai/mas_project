@@ -2,4 +2,11 @@ __pycache__/
 *.py[cod]
 tests/.tmp/*
 !tests/.tmp/.gitkeep
+.env
+.venv/
+*.egg-info/
+build/
+dist/
+runs/
+reports/
 

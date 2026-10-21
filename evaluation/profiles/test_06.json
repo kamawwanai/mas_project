@@ -1,0 +1,17 @@
+{
+  "weights": {
+    "culture": 0.8,
+    "food": 0.05,
+    "comfort": 0.05,
+    "pace": 0.05,
+    "economy": 0.05
+  },
+  "answers": {
+    "interests": [
+      "museums"
+    ],
+    "pace": "relaxed",
+    "comfort": "normal",
+    "economy": "balanced"
+  }
+}

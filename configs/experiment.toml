@@ -1,0 +1,16 @@
+data_dir = "data/benchmark"
+runs_dir = "runs/main"
+llm_config = "configs/llm.toml"
+pricing = "configs/pricing.json"
+seed = 42
+# Set experiment_cost_usd only after an authorized pilot and budget decision.
+
+[limits]
+llm_attempts = 40
+input_tokens = 150000
+output_tokens = 30000
+tools = 100
+questions = 3
+seconds = 600
+max_output_tokens = 4000
+# Set cost_usd before any authorized real run.

@@ -380,7 +380,7 @@ def _event_reference_check(dataset: LoadedDataset, indexes: _Indexes) -> CheckRe
             kind = expected_kind[event.type]
             valid = indexes.has_unique(kind, event.reference_id)
             expected_label = kind
-        elif event.type in {"check_in", "check_out", "rest"}:
+        elif event.type in {"check_in", "check_out", "rest", "included_breakfast", "luggage_drop", "luggage_pickup"}:
             valid = event.reference_id == dataset.plan.selected_stay.reference_id and indexes.has_unique(
                 "stays", event.reference_id
             )

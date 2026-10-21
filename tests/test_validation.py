@@ -40,11 +40,11 @@ class ValidationTests(unittest.TestCase):
             return validate_scenario(str(root), "case")
 
     def test_project_templates_load_and_are_incomplete(self):
-        report = validate_scenario(str(PROJECT_ROOT / "data"), "dev_01")
+        report = self.validate(make_dataset([event("unknown", "transport", "train_1", None, None)]))
         self.assertEqual([], report.input_errors)
         self.assertEqual(3, report.exit_code)
         self.assertEqual("incomplete", check(report, "event_intervals").status)
-        self.assertEqual(26, report.event_count)
+        self.assertEqual(1, report.event_count)
 
     def test_adjacent_events_and_overnight_interval_pass(self):
         report = self.validate(make_dataset())
