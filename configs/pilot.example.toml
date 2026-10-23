@@ -1,0 +1,18 @@
+# Future proposal only. API remains disabled by configs/llm.toml.
+data_dir = "data/benchmark"
+evaluation_mode = "benchmark_assumptions"
+runs_dir = "runs/pilot-v2"
+llm_config = "configs/llm.toml"
+pricing = "configs/pricing.json"
+seed = 42
+experiment_cost_usd = 0.6
+
+[limits]
+llm_attempts = 48
+input_tokens = 300000
+output_tokens = 60000
+tools = 120
+questions = 3
+seconds = 900
+max_output_tokens = 8000
+cost_usd = 0.5

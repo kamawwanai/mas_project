@@ -1,216 +1,293 @@
 {
-  "status": "pending_verification",
+  "status": "synthetic_validated",
+  "mode": "benchmark_assumptions",
   "cases": [
     {
       "id": "dev_01",
       "split": "dev",
+      "title": "Original two-day baseline",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Baseline verified trip",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "1cdf93340a3b677538d7926d8742fa017f87c8699d2788b40be72878b5e01488",
+      "profile_hash": "5009ca358397fd456504413b01bc8cc60d8c601e88015a4843a04cdbf74f9c7e",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "dev_02",
       "split": "dev",
+      "title": "Walking versus transport cost",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Boundary budget, walking and timing",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "68f8ecfa28f442c0ea25ee7d3ac61c70090f35f627c04f31563d8baa96d0b1f2",
+      "profile_hash": "e7a16c34bf0d5deb667fe80d2d5d35e540840f66f5ddff8a826400125e5c6693",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "dev_03",
       "split": "dev",
-      "expected": "infeasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Certified hard-constraint conflict",
+      "title": "Mandatory timed reservation",
+      "status": "synthetic_validated",
+      "expected": "feasible",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "8fa60cd8e2b1e324bbca8e9fa46ea2526c1d143f597b023209c48aa01586934f",
+      "profile_hash": "8b43a662f12f58263630b2584a270fe9c087a80c105750946b439e9603048d89",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "dev_04",
       "split": "dev",
+      "title": "Budget change requires cheaper choices",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Public condition change after initial result",
-      "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate",
-        "Define and verify concrete public change"
-      ]
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "f691d655acb04d43e1d4162a2ed0b9ae9b3abd10c536ccbb292ad059e71f34c6",
+      "profile_hash": "9b479f175732588df4878148a23cecbdda022346890fe996ae632547e997cdb4",
+      "changes": [
+        {
+          "type": "budget",
+          "budget_kopecks": 2300000
+        }
+      ],
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_01",
       "split": "test",
+      "title": "Ordinary trip with location preference",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Baseline",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "e0e0ceea04548eb4d965a55f6c863fe7992463328d60b8a6eb355cfa8b62be80",
+      "profile_hash": "25b59f1ab4fbfd9c416549ecf71220bd73563c8d4fccc0bf752e1be1302997d3",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_02",
       "split": "test",
+      "title": "Tight budget versus comfort",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Tight feasible budget",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "adb96ef3f870fdb13da60a3979dec27d229fbade1b416b2dda617f362470949c",
+      "profile_hash": "0f9418fa93fe4ebcf37726627669e34fce7cd5397a5db43dc5c4b53862e0b9d7",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_03",
       "split": "test",
+      "title": "Strict walking limit",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Walking limit",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "0979741488f7b286525e63cea1544f78571a8b66c6d2b56fb30ed57e625481b4",
+      "profile_hash": "41d7158c97b6c8b1d124cba181311cdbcd02495c842431914d3727dc53e103ec",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_04",
       "split": "test",
+      "title": "Required photography museum",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Opening hours and required visit",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "3e9ad8f82d30a02e1269e2e90d00802d73932f2e9776501e00d86b4f5cf705d2",
+      "profile_hash": "be13a6352195dc477d1c2d22837f40b13bbebcaa2c510c2dab923b26c5ebbb47",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_05",
       "split": "test",
+      "title": "Quiet hotel, location and luggage",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Stay and luggage",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "23f956680eb5a1ce62f3ac50f6bc9820904bc63a7f385e68913541bef46121a8",
+      "profile_hash": "acc75ae3afa7f74de5c92f976e7523edb45f3346d687976d83e8cdfb1d2b8a85",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_06",
       "split": "test",
+      "title": "Dense cultural program",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Hidden culture preference",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "02b177386a517ed377a4598dc18abb8afb1d5baf066e981b703cd10aab54a86a",
+      "profile_hash": "af59d6ca0991474121395c763138bd2b766199643d6e6bd74de3af9e0cb66728",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_07",
       "split": "test",
+      "title": "Dining preference and late return",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Hidden food preference",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "5cff1b40c4ecbff77297e78942ae575a91d5d2443684c8e54d2f95f0db5f9f32",
+      "profile_hash": "ce4a9ef135611d90c9236e02747c7e0056b6373ace05c8cf35d9a9e698c1bf13",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_08",
       "split": "test",
+      "title": "Relaxed pace and quiet sleep",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Hidden relaxed pace",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "cbdc879340c156e66e94978f835be4e56aad4811f0de31598e9ba938a552b21e",
+      "profile_hash": "add6da789ff589559e9ba02481ba4f58d3e0f0d900ffd7999580f1e66c9ac690",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_09",
       "split": "test",
+      "title": "Proven budget conflict",
+      "status": "synthetic_validated",
       "expected": "infeasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Certified insufficient budget",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "8a3c3a63bd9babac6a9bd38aa8ed49fe95e3909b58c78256d02a9cc9e457f9e9",
+      "profile_hash": "94b63976775c7c16f3eec9a2d1282f552ce6afc4bf5ae3f6ed0584accb5c1cd3",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_10",
       "split": "test",
+      "title": "Required visit conflicts with trip dates",
+      "status": "synthetic_validated",
       "expected": "infeasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Certified closed required place",
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "d8b2b9b564809cebdb119f1d2f17b3f11969b10dad44e96e404a8da49989b88b",
+      "profile_hash": "51935fe8ba6e6c7751ff0d980b4df6fa72e981251deb148dcc7f38a3edb9ea27",
       "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate"
-      ]
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_11",
       "split": "test",
+      "title": "Replan after budget reduction",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Budget reduction",
-      "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate",
-        "Define and verify concrete public change"
-      ]
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "cfe339d597c6e9c75e8f4d5664b590632074b5926e1bbb76c1405184cc81a3c2",
+      "profile_hash": "6b4f96e828811ecdb7469cf3b025a6863b75e78d25697217f0b7c9dc73653aa9",
+      "changes": [
+        {
+          "type": "budget",
+          "budget_kopecks": 1800000
+        }
+      ],
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     },
     {
       "id": "test_12",
       "split": "test",
+      "title": "Selected hotel becomes unavailable",
+      "status": "synthetic_validated",
       "expected": "feasible",
-      "status": "pending_verification",
-      "public_hash": null,
-      "title": "Offer becomes unavailable",
-      "changes": [],
-      "pending": [
-        "Verified snapshot",
-        "Complete feasible witness or checked conflict certificate",
-        "Define and verify concrete public change"
-      ]
+      "evaluation_mode": "benchmark_assumptions",
+      "public_hash": "a5a1b89fd24cec22972001e80c9dff1f1bb1a1255b69dd13ac9ffb79e7590ae1",
+      "profile_hash": "9a1436528fae656f9012eb02897e854f431d50f65f23e5edf2b134efbe36b6bd",
+      "changes": [
+        {
+          "type": "unavailable",
+          "reference_id": "stay_01"
+        }
+      ],
+      "pending": [],
+      "success_criteria": {
+        "hard_constraints": "full validation in benchmark_assumptions",
+        "utility_threshold": 0.7,
+        "infeasibility": "validated certificate within this finite closed synthetic catalog"
+      }
     }
   ]
 }

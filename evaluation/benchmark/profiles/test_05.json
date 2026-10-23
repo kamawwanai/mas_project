@@ -1,0 +1,13 @@
+{
+  "weights": {
+    "quiet": 0.7,
+    "comfort": 0.3
+  },
+  "answers": {
+    "quiet": "high",
+    "comfort": "high",
+    "pace": "relaxed"
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_test_05",
+  "status": "synthetic_assumption"
+}

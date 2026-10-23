@@ -16,7 +16,8 @@ def instruction(role):
     return base + "\n" + (root / f"{role}.txt").read_text(encoding="utf-8")
 
 
-def session(client, registry, role, task, *, schema=RESULT_SCHEMA, allowed=None, history=None, extra_tools=None, dispatch=None):
+def session(client, registry, role, task, *, schema=RESULT_SCHEMA, allowed=None, history=None,
+            extra_tools=None, dispatch=None, stop_at_question_limit=False):
     messages = history if history is not None else []
     if not messages:
         messages.append({"role": "system", "content": instruction(role)})
@@ -53,15 +54,21 @@ def session(client, registry, role, task, *, schema=RESULT_SCHEMA, allowed=None,
             except (ValueError, TypeError) as exc:
                 result = {"error": str(exc)}
             messages.append({"type": "function_call_output", "call_id": call["call_id"], "output": json.dumps(result, ensure_ascii=False)})
+        if stop_at_question_limit and registry.runtime.counts["questions"] >= registry.runtime.limits.questions:
+            return {"summary": "Clarification limit reached; continue with revealed preferences and treat unknown answers as final."}
 
 
 def public_task(registry):
     return {"request": jsonable(registry.request), "revealed_preferences": registry.revealed,
+            "evaluation_mode": "benchmark_assumptions" if registry.context else "strict",
+            "condition_change": getattr(registry, "latest_change", None),
+            "environment_notice": "Synthetic assumptions are experimental conditions, not historical evidence." if registry.context else "Real source evidence required.",
             "previous_result": getattr(registry, "previous_result", None), "plan_contract": {
         "schema_version": "0.2.0", "snapshot_id": registry.request.snapshot_id, "is_template": False,
         "timezone": registry.request.timezone, "id": "unique plan id", "scenario_id": registry.request.id,
         "selected_stay": {"reference_id": "catalog stay ID", "rooms": 1, "nights": registry.request.nights},
         "items": [{"id": "unique event id", "day": 1, "type": "transport|transfer|visit|meal|check_in|check_out|rest|buffer|included_breakfast|luggage_drop|luggage_pickup",
                    "reference_id": "catalog ID", "label": "description", "start_at": "ISO8601 with offset", "end_at": "ISO8601 with offset",
+                   "booking_id": "optional ONLY for visit/meal; saved catalog confirmation ID, never invent",
                    "quantity": "required ONLY for transport/transfer/visit/meal", "meal_type": "required ONLY for meal"}],
         "total_cost_kopecks": None, "validation_status": "not_checked", "unresolved_items": []}}

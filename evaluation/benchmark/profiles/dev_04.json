@@ -1,0 +1,14 @@
+{
+  "weights": {
+    "quiet": 0.4,
+    "culture": 0.6
+  },
+  "answers": {
+    "quiet": "high",
+    "interests": [
+      "museums"
+    ]
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_dev_04",
+  "status": "synthetic_assumption"
+}

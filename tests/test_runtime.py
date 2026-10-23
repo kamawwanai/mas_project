@@ -37,6 +37,23 @@ class RuntimeTests(unittest.TestCase):
         result = tools.execute("search_transport", {"filters_json": '{"direction":"return"}', "offset": 0, "limit": 1})
         self.assertEqual(["train_back"], [i["id"] for i in result["items"]])
         self.assertIn("error", tools.execute("search_transport", {"filters_json": "{}", "offset": -1, "limit": 1}))
+
+    def test_search_contract_exposes_exact_dev_filters(self):
+        tools = self.registry()
+        definitions = {item["name"]: item for item in tools.definitions}
+        self.assertIn("direction ('outbound' or 'return')", definitions["search_transport"]["description"])
+        self.assertIn("request.destination_city", definitions["search_stays"]["description"])
+        self.assertIn("Food is in search_food", definitions["search_places"]["description"])
+        self.assertIn("Do not use category", definitions["search_food"]["description"])
+        city_filter = json.dumps({"city": tools.request.destination_city}, ensure_ascii=False)
+        for name in ("search_stays", "search_places", "search_food"):
+            result = tools.execute(name, {"filters_json": city_filter, "offset": 0, "limit": 20})
+            self.assertGreater(result["total"], 0, name)
+        outbound = tools.execute("search_transport", {
+            "filters_json": '{"direction":"outbound"}', "offset": 0, "limit": 20})
+        self.assertGreater(outbound["total"], 0)
+        error = tools.execute("search_stays", {"filters_json": '{"available_from":"2026-10-17"}', "offset": 0, "limit": 5})
+        self.assertIn("allowed fields", error["message"])
         self.assertIn("error", tools.execute("get_item", {"id": "missing"}))
         self.assertIn("error", tools.execute("read_file", {"path": "evaluation/profiles"}))
 
@@ -50,7 +67,8 @@ class RuntimeTests(unittest.TestCase):
 
     def test_unknown_usage_not_zero_cost(self):
         runtime = Runtime("test")
-        runtime.record_usage(None)
+        with self.assertRaises(LimitExceeded):
+            runtime.record_usage(None)
         self.assertIsNone(runtime.summary()["cost_usd"])
 
     def test_validation_tool_has_no_repair_side_effects(self):

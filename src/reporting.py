@@ -15,9 +15,14 @@ def export_runs(runs, output, include_test=False):
         if value["mode"] != "real" and not include_test:
             continue
         rows.append({k: value[k] for k in ("run_id", "scenario_id", "architecture", "mode")} | {
+            "evaluation_mode": value.get("evaluation_mode", "strict"), "assumptions_hash": value.get("assumptions_hash")} | {
             k: v for k, v in value["metrics"].items() if not isinstance(v, (list, dict))} |
                     {"trace_file": str(path.parent / "events.jsonl")})
     root = Path(output)
+    if len({row["mode"] for row in rows}) > 1:
+        raise ValueError("Do not mix real and synthetic results in one report")
+    if len({(row["evaluation_mode"], row["assumptions_hash"]) for row in rows}) > 1:
+        raise ValueError("Do not mix evaluation environments in one report")
     write_json(root / "runs.json", rows)
     keys = sorted(set().union(*(r.keys() for r in rows))) if rows else ["run_id", "scenario_id", "architecture", "mode"]
     with (root / "runs.csv").open("w", newline="", encoding="utf-8-sig") as stream:
@@ -29,13 +34,21 @@ def export_runs(runs, output, include_test=False):
 
 def build_report(source, output):
     rows = read_json(Path(source) / "runs.json")
+    modes = {r["mode"] for r in rows}
+    environments = {(r.get("evaluation_mode", "strict"), r.get("assumptions_hash")) for r in rows}
+    if len(environments) > 1:
+        raise ValueError("Do not mix evaluation environments in one report")
+    if len(modes) > 1:
+        raise ValueError("Do not mix real and synthetic results in one report")
+    mode = next(iter(modes), "no_data")
+    evaluation_mode = next(iter(environments), ("strict", None))[0]
     groups = defaultdict(list)
     for row in rows:
         groups[row["architecture"]].append(row)
     metrics = ["success_at_1", "success_at_5", "feasible_at_1", "feasible_at_5", "valid_fraction", "best_utility", "questions", "llm_calls", "llm_attempts", "input_tokens", "output_tokens", "tools", "seconds", "cost_usd", "conflict_correct"]
     summary = []
     for architecture, values in sorted(groups.items()):
-        result = {"architecture": architecture, "runs": len(values)}
+        result = {"architecture": architecture, "runs": len(values), "mode": mode, "evaluation_mode": evaluation_mode}
         for key in metrics:
             numbers = [v[key] for v in values if isinstance(v.get(key), (int, float))]
             result[key] = mean(numbers) if numbers else None
@@ -45,17 +58,17 @@ def build_report(source, output):
         summary.append(result)
     root = Path(output)
     write_json(root / "comparison.json", summary)
-    columns = ["architecture", "runs", *metrics]
+    columns = ["architecture", "mode", "evaluation_mode", "runs", *metrics]
     with (root / "comparison.csv").open("w", newline="", encoding="utf-8-sig") as stream:
         writer = csv.DictWriter(stream, fieldnames=columns, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(summary)
-    lines = ["# Architecture comparison", "", "No real runs are available." if not rows else "Means are descriptive; inspect scenario-level results and ranges.", "",
+    lines = ["# Architecture comparison", "", "No real runs are available." if not rows else ("MOCK / SYNTHETIC. Not evidence of LLM performance." if mode != "real" else "Means are descriptive; inspect scenario-level results and ranges."), "", f"Evaluation environment: {evaluation_mode}. Synthetic assumptions never establish real travel feasibility.", "",
              "| " + " | ".join(columns) + " |", "|" + "---|"*len(columns)]
     for row in summary:
         lines.append("| " + " | ".join(str(round(row[c], 4)) if isinstance(row[c], float) else str(row[c]) for c in columns) + " |")
     (root / "comparison.md").write_text("\n".join(lines)+"\n", encoding="utf-8")
-    trace_lines = ["# Saved run traces", ""]
+    trace_lines = ["# Saved run traces", "", "REAL" if mode == "real" else "MOCK / SYNTHETIC — no real LLM performance is asserted.", ""]
     chosen = []
     for success in (True, False):
         for row in rows:
@@ -79,18 +92,9 @@ def build_report(source, output):
         trace_lines.append("")
     (root / "traces.md").write_text("\n".join(trace_lines)+"\n", encoding="utf-8")
     if rows:
-        import matplotlib
-        matplotlib.use("Agg")
-        import matplotlib.pyplot as plt
+        from .charts import bar_chart
         for name in ("success_at_1", "success_at_5", "valid_fraction", "best_utility", "cost_usd", "seconds"):
             values = [(r["architecture"], r[name]) for r in summary if r[name] is not None]
-            if not values:
-                continue
-            figure, ax = plt.subplots(figsize=(6, 4))
-            ax.bar([v[0] for v in values], [v[1] for v in values])
-            ax.set_ylabel(name)
-            figure.tight_layout()
-            for extension in ("png", "svg"):
-                figure.savefig(root / f"{name}.{extension}")
-            plt.close(figure)
+            if values:
+                (root / f"{name}.svg").write_text(bar_chart(values, name, mode, evaluation_mode), encoding="utf-8")
     return summary

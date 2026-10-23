@@ -1,0 +1,12 @@
+# Hash-bound JSON must retain identical bytes across Windows/Linux checkouts.
+data/snapshot/*.json text eol=lf
+data/benchmark/snapshot/*.json text eol=lf
+data/benchmark/*.json text eol=lf
+data/benchmark/scenarios/**/*.json text eol=lf
+evaluation/benchmark/**/*.json text eol=lf
+data/scenarios/**/*.json text eol=lf
+data/scenarios/dev/dev_01.json -text !eol
+src/synthetic_benchmark.py text eol=lf
+data/reference_plans/*.json text eol=lf
+# Preserve archived pre-change bytes, including their original line endings.
+data/history/** -text

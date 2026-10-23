@@ -11,7 +11,9 @@ class Workflow:
             ("clarification", ["ask_user"]),
         ):
             registry.runtime.event("workflow", "stage", stage=stage)
-            context[stage] = session(client, registry, "workflow", {"stage": stage, **context}, schema=SUMMARY_SCHEMA, allowed=allowed)
+            context[stage] = session(client, registry, "workflow", {"stage": stage, **context},
+                                     schema=SUMMARY_SCHEMA, allowed=allowed,
+                                     stop_at_question_limit=stage == "clarification")
         registry.runtime.event("workflow", "stage", stage="generation")
         submission = session(client, registry, "workflow", {"stage": "generation", **context}, allowed=[])
         plans = []

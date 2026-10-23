@@ -10,6 +10,9 @@ from src.experiments import validate_case
 
 
 def check(root):
+    if read_json(root / "manifest.json").get("evaluation_mode") == "benchmark_assumptions":
+        from src.synthetic_benchmark import check_benchmark
+        return check_benchmark(root)
     result = readiness(root)
     suite = read_json(root / "suite.json")
     expected_ids = {f"dev_{i:02d}" for i in range(1,5)} | {f"test_{i:02d}" for i in range(1,13)}

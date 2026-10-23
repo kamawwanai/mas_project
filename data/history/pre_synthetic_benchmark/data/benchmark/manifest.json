@@ -1,0 +1,70 @@
+{
+  "snapshot_id": "benchmark_2026_10_17",
+  "timezone": "Europe/Moscow",
+  "status": "pending_verification",
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "catalog_hash": "3039cf6ec060716677f5a1d71383869607fbbdfe6084f75f2cd4182d2f078a93",
+  "sources": [
+    {
+      "kind": "transport",
+      "path": "data/snapshot/transport.json",
+      "sha256": "345db8c4d9b06de8b0906d5ba7b8e861809446af3fd5f9d8702ef2ebc8eeabc8",
+      "text_replacements": [],
+      "omit_fields": [],
+      "quarantine_ids": [
+        "train_return_10"
+      ],
+      "quarantine_reason": "Missing destination station ID; retained in source, excluded instead of inventing an ID"
+    },
+    {
+      "kind": "stays",
+      "path": "data/snapshot/stays.json",
+      "sha256": "a5797d35bb7baa95724add73a4fb8134d0c87789d7eb7f442c9f63a9e05dc24c",
+      "text_replacements": [],
+      "omit_fields": []
+    },
+    {
+      "kind": "places",
+      "path": "data/snapshot/places.json",
+      "sha256": "2657c93d60464718b41972c54e34747fe7f207627baf4c71cb3d7210a7fdb7be",
+      "text_replacements": [],
+      "omit_fields": []
+    },
+    {
+      "kind": "food",
+      "path": "data/snapshot/food.json",
+      "sha256": "2de86c29c993f18de7aa0f6e8de978eb7d6abd03430680dbaeb10ae5d5c22cef",
+      "text_replacements": [],
+      "omit_fields": []
+    },
+    {
+      "kind": "transfers",
+      "path": "data/snapshot/transfers.json",
+      "sha256": "a6fe80df92dea6a721bc3730a835c8092a60cc091faa7ae59c2611b021e8955d",
+      "text_replacements": [],
+      "omit_fields": []
+    }
+  ],
+  "normalization_policy": [
+    "Explicit ruble amounts converted exactly to integer kopecks",
+    "Synthetic indicative prices are made unknown, never verified",
+    "Unverified facts and notes remain unverified",
+    "Source IDs and dated offers are not silently reassigned"
+  ],
+  "previous_manifest": "../history/pre_local_readiness/data/benchmark/manifest.json",
+  "transformation_review": {
+    "scope": "offline structural review, not source fact verification",
+    "date": "2026-10-22",
+    "details": [
+      "All five current sources parse under strict schemas; values are already integer kopecks.",
+      "stays is now an enveloped catalog; old comma replacement and rating omission no longer apply.",
+      "places now contains six named records on 17-18 October; food has five records and transfers fourteen.",
+      "No fabricated timestamps, availability or verified_fields are added.",
+      "Only indicative transport prices become unknown; incomplete train_return_10 remains quarantined.",
+      "Original source notes, original_fields and historical caveats are retained verbatim."
+    ]
+  },
+  "reference_plan": "../../evaluation/reference_plans/dev_01.json",
+  "catalog_hash_scope": "Structural integrity only; status remains pending_verification"
+}

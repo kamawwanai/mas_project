@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
-  "snapshot_id": "benchmark_2026_10_17",
-  "is_template": true,
+  "snapshot_id": "synthetic_2026_10_17_v1",
+  "is_template": false,
   "timezone": "Europe/Moscow",
   "items": [
     {
@@ -16,109 +16,6 @@
         "snack"
       ],
       "recommended_duration_minutes": 30,
-      "opening_hours": [
-        {
-          "date": "2026-10-17",
-          "status": "open",
-          "intervals": [
-            {
-              "start_at": "2026-10-17T08:00:00+03:00",
-              "end_at": "2026-10-17T23:30:00+03:00"
-            }
-          ]
-        },
-        {
-          "date": "2026-10-18",
-          "status": "open",
-          "intervals": [
-            {
-              "start_at": "2026-10-18T08:00:00+03:00",
-              "end_at": "2026-10-18T23:30:00+03:00"
-            }
-          ]
-        }
-      ],
-      "reservation_required": false,
-      "price_basis": "Оценка стоимости одного приёма пищи: стандартная шаурма с курицей за 330 рублей по меню официального сайта, без напитка.",
-      "price": {
-        "currency": "RUB",
-        "price_unit": "adult_meal",
-        "price_kind": "estimated",
-        "includes_mandatory_fees": true,
-        "amount_kopecks": 33000
-      },
-      "source_url": "https://tasamayashaurma.ru/shaurma-s-kuritsej",
-      "checked_at": null,
-      "notes": "Выбран филиал на площади Минина и Пожарского, 6, павильон 15. График 08:00–23:30 указан на официальном сайте, отдельные изменения на 17–18 октября не проверены. Продолжительность питания 30 минут — собственная оценка. Стоимость 330 рублей на человека рассчитана по одному выбранному блюду без напитков и дополнительных услуг. Цены на дату поездки могут измениться. Предварительное бронирование для обычного заказа не требуется.",
-      "additional_sources": []
-    },
-    {
-      "id": "food_02",
-      "name": "Pasters",
-      "city": "Нижний Новгород",
-      "address": "ул. Большая Покровская, 21/5",
-      "meal_types": [
-        "breakfast",
-        "lunch",
-        "dinner"
-      ],
-      "recommended_duration_minutes": 60,
-      "opening_hours": [
-        {
-          "date": "2026-10-17",
-          "status": "open",
-          "intervals": [
-            {
-              "start_at": "2026-10-17T10:00:00+03:00",
-              "end_at": "2026-10-18T00:00:00+03:00"
-            }
-          ]
-        },
-        {
-          "date": "2026-10-18",
-          "status": "open",
-          "intervals": [
-            {
-              "start_at": "2026-10-18T10:00:00+03:00",
-              "end_at": "2026-10-18T23:00:00+03:00"
-            }
-          ]
-        }
-      ],
-      "reservation_required": false,
-      "price_basis": "Ориентировочная стоимость одного приёма пищи на человека — 1500 рублей. Основание: средний чек 1200–1500 рублей по данным Яндекс Карт.",
-      "price": {
-        "currency": "RUB",
-        "price_unit": "adult_meal",
-        "price_kind": "estimated",
-        "includes_mandatory_fees": null,
-        "amount_kopecks": 150000
-      },
-      "source_url": "https://berezkagroup.ru/",
-      "checked_at": null,
-      "notes": "Итальянское бистро на Большой Покровской улице. В меню паста, ризотто, десерты и завтраки. Продолжительность посещения 60 минут — собственная оценка. Предварительное бронирование обычного столика не установлено как обязательное, но рекомендуется в часы высокой загрузки. График указан по опубликованному расписанию, отдельное подтверждение на 17–18 октября отсутствует. Средний чек является оценкой, фактические расходы зависят от заказа.",
-      "additional_sources": [
-        {
-          "source_url": "https://yandex.com/maps/org/pasters/67050845431/",
-          "checked_at": null,
-          "supports": [
-            "price"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "food_03",
-      "name": "Додо Пицца",
-      "city": "Нижний Новгород",
-      "address": "Большая Покровская ул., 42",
-      "meal_types": [
-        "breakfast",
-        "lunch",
-        "dinner",
-        "snack"
-      ],
-      "recommended_duration_minutes": 45,
       "opening_hours": [
         {
           "date": "2026-10-17",
@@ -142,27 +39,305 @@
         }
       ],
       "reservation_required": false,
-      "price_basis": "Ориентировочный чек на одного взрослого — 500 рублей по данным Restaurant Guru. Фактическая стоимость зависит от выбранных блюд и напитков.",
+      "price_basis": "synthetic_assumption: one fixed meal basket per adult, all mandatory fees included",
       "price": {
+        "amount_kopecks": 33000,
         "currency": "RUB",
         "price_unit": "adult_meal",
-        "price_kind": "estimated",
-        "includes_mandatory_fees": null,
-        "amount_kopecks": 50000
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
       },
-      "source_url": "https://restaurantguru.ru/Dodo-Pizza-Nizhny-Novgorod-6",
+      "source_url": null,
       "checked_at": null,
-      "notes": "Пиццерия на Большой Покровской, 42. Режим работы ежедневно 08:00–23:00 указан по опубликованному расписанию; отдельное подтверждение на 17–18 октября отсутствует. Предварительное бронирование столика не требуется. Продолжительность питания 45 минут — собственная оценка. Стоимость 500 рублей на человека — ориентировочный чек, а не фиксированная цена заказа.",
-      "additional_sources": [
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:food:food_01",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/food.json",
+          "object_id": "food_01",
+          "row_sha256": "e622ef19f8d8c9af3286067cc894371d510089d25bd682f0ff9e5890cc8a8a1c",
+          "source_url": "https://tasamayashaurma.ru/shaurma-s-kuritsej",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "food": 30
+      },
+      "reviews": []
+    },
+    {
+      "id": "food_02",
+      "name": "Pasters",
+      "city": "Нижний Новгород",
+      "address": "ул. Большая Покровская, 21/5",
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "recommended_duration_minutes": 30,
+      "opening_hours": [
         {
-          "source_url": "https://yandex.com/maps/org/dodo_pizza/19136874807/",
-          "checked_at": null,
-          "supports": [
-            "address",
-            "opening_hours"
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T08:00:00+03:00",
+              "end_at": "2026-10-17T23:00:00+03:00"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T08:00:00+03:00",
+              "end_at": "2026-10-18T23:00:00+03:00"
+            }
           ]
         }
-      ]
+      ],
+      "reservation_required": false,
+      "price_basis": "synthetic_assumption: one fixed meal basket per adult, all mandatory fees included",
+      "price": {
+        "amount_kopecks": 150000,
+        "currency": "RUB",
+        "price_unit": "adult_meal",
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:food:food_02",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/food.json",
+          "object_id": "food_02",
+          "row_sha256": "cff1da3fd854801690555a93ea40e8d9a5d4adec3c1ddeab486a0bdc5548a712",
+          "source_url": "https://berezkagroup.ru/",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "food": 75
+      },
+      "reviews": []
+    },
+    {
+      "id": "food_03",
+      "name": "Додо Пицца",
+      "city": "Нижний Новгород",
+      "address": "Большая Покровская ул., 42",
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "recommended_duration_minutes": 30,
+      "opening_hours": [
+        {
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T08:00:00+03:00",
+              "end_at": "2026-10-17T23:00:00+03:00"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T08:00:00+03:00",
+              "end_at": "2026-10-18T23:00:00+03:00"
+            }
+          ]
+        }
+      ],
+      "reservation_required": false,
+      "price_basis": "synthetic_assumption: one fixed meal basket per adult, all mandatory fees included",
+      "price": {
+        "amount_kopecks": 50000,
+        "currency": "RUB",
+        "price_unit": "adult_meal",
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:food:food_03",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/food.json",
+          "object_id": "food_03",
+          "row_sha256": "5c2fb9bcf4fa5ac69d06ccf6bf389d4b6fd757be4c6707a1a64587cad5b3f103",
+          "source_url": "https://restaurantguru.ru/Dodo-Pizza-Nizhny-Novgorod-6",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "food": 35
+      },
+      "reviews": []
+    },
+    {
+      "id": "food_04",
+      "name": "Грузинские Истории",
+      "city": "Нижний Новгород",
+      "address": "ул. Максима Горького, 262",
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "recommended_duration_minutes": 30,
+      "opening_hours": [
+        {
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T08:00:00+03:00",
+              "end_at": "2026-10-17T23:00:00+03:00"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T08:00:00+03:00",
+              "end_at": "2026-10-18T23:00:00+03:00"
+            }
+          ]
+        }
+      ],
+      "reservation_required": false,
+      "price_basis": "synthetic_assumption: one fixed meal basket per adult, all mandatory fees included",
+      "price": {
+        "amount_kopecks": 200000,
+        "currency": "RUB",
+        "price_unit": "adult_meal",
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:food:food_04",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/food.json",
+          "object_id": "food_04",
+          "row_sha256": "f7e4477226feaa531a77cb1a05105bfd4e9b82b836961e100e70da5d3fe71046",
+          "source_url": "https://gruzinskie-istorii.ru/",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "food": 95
+      },
+      "reviews": []
+    },
+    {
+      "id": "food_05",
+      "name": "Сыроварня",
+      "city": "Нижний Новгород",
+      "address": "Октябрьская площадь, 1",
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "recommended_duration_minutes": 30,
+      "opening_hours": [
+        {
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T08:00:00+03:00",
+              "end_at": "2026-10-17T23:00:00+03:00"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T08:00:00+03:00",
+              "end_at": "2026-10-18T23:00:00+03:00"
+            }
+          ]
+        }
+      ],
+      "reservation_required": false,
+      "price_basis": "synthetic_assumption: one fixed meal basket per adult, all mandatory fees included",
+      "price": {
+        "amount_kopecks": 120000,
+        "currency": "RUB",
+        "price_unit": "adult_meal",
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
+      },
+      "source_url": null,
+      "checked_at": null,
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:food:food_05",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/food.json",
+          "object_id": "food_05",
+          "row_sha256": "3854f4659da92134a5ba8c282589653300bdae5a800b60a7fc55f93a2c6bbee5",
+          "source_url": "https://www.syrovarnya.com/nizhnij-novgorod",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "food": 90
+      },
+      "reviews": []
     }
   ]
 }

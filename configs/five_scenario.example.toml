@@ -1,0 +1,19 @@
+# Five-scenario pilot proposal. API remains gated by configs/llm.toml and --allow-api.
+data_dir = "data/benchmark"
+evaluation_mode = "benchmark_assumptions"
+runs_dir = "runs/five-scenario-pilot"
+llm_config = "configs/llm.toml"
+pricing = "configs/pricing.json"
+seed = 42
+scenario_ids = ["test_01", "test_02", "test_04", "test_09", "test_12"]
+experiment_cost_usd = 4.5
+
+[limits]
+llm_attempts = 48
+input_tokens = 450000
+output_tokens = 60000
+tools = 120
+questions = 3
+seconds = 900
+max_output_tokens = 8000
+cost_usd = 0.3

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
-  "snapshot_id": "benchmark_2026_10_17",
-  "is_template": true,
+  "snapshot_id": "synthetic_2026_10_17_v1",
+  "is_template": false,
   "timezone": "Europe/Moscow",
   "id": "test_01",
   "origin_city": "Москва",
@@ -10,26 +10,24 @@
   "end_date": "2026-10-18",
   "adults": 2,
   "nights": 1,
-  "budget_kopecks": null,
+  "budget_kopecks": 3200000,
   "currency": "RUB",
   "preferences": {
-    "pace": "relaxed",
+    "pace": "unspecified",
     "interests": [
-      "walks",
       "museums",
-      "local_food"
+      "walks",
+      "local_food",
+      "excursions"
     ]
   },
   "constraints": {
     "required_place_ids": [],
     "max_walking_minutes_per_day": null,
     "min_departure_buffer_minutes": 30,
-    "min_rest_minutes_per_night": 420,
-    "min_visit_minutes_per_day": 60,
-    "required_meals": [
-      "lunch"
-    ],
-    "luggage_required": true
+    "activities_on_both_dates": true,
+    "meals_on_both_dates": true,
+    "rest_required": true
   },
-  "notes": "Historical benchmark request; budget pending verified reference cost +20%, rounded up to 100 RUB. Offers and itinerary require human verification. Case: Baseline"
+  "notes": "synthetic_assumption environment. Обычная поездка 17–18 октября для двоих, 32 000 рублей. Выберите жильё, посещения и питание; предпочтения можно уточнить."
 }

@@ -1,0 +1,12 @@
+{
+  "weights": {
+    "comfort": 0.7,
+    "location": 0.3
+  },
+  "answers": {
+    "comfort": "high",
+    "location": "high"
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_test_12",
+  "status": "synthetic_assumption"
+}

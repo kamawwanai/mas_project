@@ -1,0 +1,17 @@
+{
+  "weights": {
+    "culture": 0.5,
+    "comfort": 0.3,
+    "food": 0.2
+  },
+  "answers": {
+    "interests": [
+      "museums",
+      "local_food"
+    ],
+    "comfort": "high",
+    "pace": "balanced"
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_dev_01",
+  "status": "synthetic_assumption"
+}

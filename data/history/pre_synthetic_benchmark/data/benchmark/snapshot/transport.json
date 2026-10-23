@@ -1,0 +1,882 @@
+{
+  "schema_version": "0.2.0",
+  "snapshot_id": "benchmark_2026_10_17",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "items": [
+    {
+      "id": "train_out_01",
+      "name": "711М Ласточка",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-17",
+      "from_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "departure_at": "2026-10-17T06:30:00+03:00",
+      "arrival_at": "2026-10-17T10:20:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1800
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_out_02",
+      "name": "713М Ласточка",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-17",
+      "from_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "departure_at": "2026-10-17T07:15:00+03:00",
+      "arrival_at": "2026-10-17T11:10:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1950
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_out_03",
+      "name": "715М Ласточка",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-17",
+      "from_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "departure_at": "2026-10-17T09:25:00+03:00",
+      "arrival_at": "2026-10-17T13:31:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2100
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_out_04",
+      "name": "702М Буревестник",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-17",
+      "from_station": {
+        "id": "station_moscow_yar",
+        "name": "Ярославский вокзал",
+        "city": "Москва",
+        "address": "Москва, Комсомольская площадь, 5"
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "departure_at": "2026-10-17T10:05:00+03:00",
+      "arrival_at": "2026-10-17T14:40:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1600
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_out_05",
+      "name": "703Х Буревестник",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-17",
+      "from_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "departure_at": "2026-10-17T13:45:00+03:00",
+      "arrival_at": "2026-10-17T17:46:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2250
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_out_06",
+      "name": "717Щ Ласточка",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-17",
+      "from_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "departure_at": "2026-10-17T15:38:00+03:00",
+      "arrival_at": "2026-10-17T19:32:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2050
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_out_07",
+      "name": "720Г Ласточка",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-17",
+      "from_station": {
+        "id": "station_moscow_kursk",
+        "name": "Курский вокзал",
+        "city": "Москва",
+        "address": "Москва, ул. Земляной Вал, 29"
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "departure_at": "2026-10-17T16:20:00+03:00",
+      "arrival_at": "2026-10-17T20:20:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1750
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_out_08",
+      "name": "721Щ Ласточка",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-17",
+      "from_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "departure_at": "2026-10-17T18:29:00+03:00",
+      "arrival_at": "2026-10-17T22:33:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1900
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_return_01",
+      "name": "723А Ласточка",
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-18",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "to_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "departure_at": "2026-10-18T04:51:00+03:00",
+      "arrival_at": "2026-10-18T09:09:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1850
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_return_02",
+      "name": "721Г Ласточка",
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-18",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "to_station": {
+        "id": "station_moscow_kursk",
+        "name": "Курский вокзал",
+        "city": "Москва",
+        "address": "Москва, ул. Земляной Вал, 29"
+      },
+      "departure_at": "2026-10-18T06:25:00+03:00",
+      "arrival_at": "2026-10-18T10:24:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1750
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_return_03",
+      "name": "705Э Буревестник",
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-18",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "to_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "departure_at": "2026-10-18T07:20:00+03:00",
+      "arrival_at": "2026-10-18T11:34:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1650
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_return_04",
+      "name": "717Г Ласточка",
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-18",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "to_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "departure_at": "2026-10-18T10:56:00+03:00",
+      "arrival_at": "2026-10-18T14:54:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1950
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_return_05",
+      "name": "715Г Ласточка",
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-18",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "to_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "departure_at": "2026-10-18T13:36:00+03:00",
+      "arrival_at": "2026-10-18T17:39:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2050
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_return_06",
+      "name": "703Э Буревестник",
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-18",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "to_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "departure_at": "2026-10-18T15:29:00+03:00",
+      "arrival_at": "2026-10-18T19:25:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1550
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_return_07",
+      "name": "713Г Ласточка",
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-18",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "to_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "departure_at": "2026-10-18T17:49:00+03:00",
+      "arrival_at": "2026-10-18T21:59:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1800
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_return_08",
+      "name": "711Г Ласточка",
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-18",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "to_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "departure_at": "2026-10-18T20:11:00+03:00",
+      "arrival_at": "2026-10-18T23:59:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2150
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_out_09",
+      "name": "723Я Ласточка",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-20",
+      "from_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "to_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "departure_at": "2026-10-20T21:15:00+03:00",
+      "arrival_at": "2026-10-21T01:20:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Тестовая запись с датой вне заявленного периода поездки.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1900
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_return_09",
+      "name": "Премиум экспресс",
+      "mode": "train",
+      "direction": "return",
+      "service_date": "2026-10-18",
+      "from_station": {
+        "id": "station_nn_01",
+        "name": "Московский вокзал",
+        "city": "Нижний Новгород",
+        "address": "Нижний Новгород, площадь Революции, 2"
+      },
+      "to_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "departure_at": "2026-10-18T18:00:00+03:00",
+      "arrival_at": "2026-10-18T22:00:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Тестовая запись с намеренно экстремальной стоимостью.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 999999.99
+        },
+        "availability_status": "not_checked"
+      }
+    },
+    {
+      "id": "train_out_10",
+      "name": "Поезд 001",
+      "mode": "train",
+      "direction": "outbound",
+      "service_date": "2026-10-17",
+      "from_station": {
+        "id": "station_moscow_east",
+        "name": "Восточный вокзал",
+        "city": "Москва",
+        "address": "Москва, Щёлковское шоссе, 1"
+      },
+      "to_station": {
+        "id": "station_kazan_01",
+        "name": "Казань-Пассажирская",
+        "city": "Казань",
+        "address": "Казань, Привокзальная площадь, 1"
+      },
+      "departure_at": "2026-10-17T08:00:00+03:00",
+      "arrival_at": "2026-10-17T16:00:00+03:00",
+      "seat_class": "сидячий",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_ticket",
+        "price_kind": "unknown",
+        "includes_mandatory_fees": false,
+        "amount_kopecks": null
+      },
+      "availability_status": "unknown",
+      "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
+      "checked_at": "2026-10-12T13:35:00+03:00",
+      "notes": "Тестовая запись с пунктом назначения, отличающимся от Нижнего Новгорода.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2300
+        },
+        "availability_status": "not_checked"
+      }
+    }
+  ]
+}

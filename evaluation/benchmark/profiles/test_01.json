@@ -1,0 +1,14 @@
+{
+  "weights": {
+    "location": 0.7,
+    "culture": 0.3
+  },
+  "answers": {
+    "location": "high",
+    "interests": [
+      "museums"
+    ]
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_test_01",
+  "status": "synthetic_assumption"
+}

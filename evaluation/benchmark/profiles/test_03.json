@@ -1,0 +1,12 @@
+{
+  "weights": {
+    "pace": 0.7,
+    "comfort": 0.3
+  },
+  "answers": {
+    "pace": "relaxed",
+    "comfort": "high"
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_test_03",
+  "status": "synthetic_assumption"
+}

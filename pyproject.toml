@@ -11,7 +11,7 @@ dependencies = []
 
 [project.optional-dependencies]
 api = ["openai>=2,<3"]
-reports = ["matplotlib>=3.9,<4"]
+reports = [] # CSV/JSON/SVG reports use the standard library.
 timezone = ["tzdata>=2025.1"]
 
 [tool.setuptools.packages.find]

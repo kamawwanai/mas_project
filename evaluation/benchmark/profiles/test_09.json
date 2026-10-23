@@ -1,0 +1,10 @@
+{
+  "weights": {
+    "economy": 1.0
+  },
+  "answers": {
+    "economy": "save"
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_test_09",
+  "status": "synthetic_assumption"
+}

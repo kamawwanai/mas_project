@@ -62,11 +62,12 @@ class ArchitectureTests(unittest.TestCase):
             replies.extend([tool_reply("delegate", {"specialist": specialist, "task": "Inspect domain"}, number),
                             tool_reply("get_item", {"id": "stay_1"}, number+10), Reply(text='{"summary":"Exact domain facts"}')])
         replies.extend([tool_reply("delegate", {"specialist": "transport", "task": "Repair station compatibility"}, 99),
-                        Reply(text='{"summary":"Repaired train proposal"}'), final_reply(plan)])
+                        Reply(text='{"summary":"Repaired train proposal"}'), final_reply(plan),
+                        tool_reply("validate_plan", {"plan_json": json.dumps(plan)}, 100), Reply(text='{"summary":"Checked exact candidate"}')])
         result, _, client, runtime = self.run_planner("mas", replies)
         self.assertEqual("completed", result.status)
         delegated = [e["specialist"] for e in runtime.events if e["kind"] == "delegation"]
-        self.assertEqual(sorted(SPECIALISTS)+["transport"], delegated)
+        self.assertEqual(sorted(SPECIALISTS)+["transport", "verification"], delegated)
         self.assertTrue(any(e["kind"] == "tool_call" and e["actor"] == "transport" for e in runtime.events))
 
     def test_no_private_profile_in_model_context(self):

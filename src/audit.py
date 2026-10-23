@@ -42,6 +42,12 @@ def readiness(root):
     issues = []
     try:
         manifest = read_json(root / "manifest.json")
+        if manifest.get("evaluation_mode") == "benchmark_assumptions":
+            from .synthetic_benchmark import check_benchmark
+            return check_benchmark(root)
+        from .prepare import prepare_snapshot
+        preparation = prepare_snapshot(root / "manifest.json", check=True)
+        issues.extend(preparation["problems"])
         if manifest.get("status") != "verified" or not manifest.get("reviewed_by") or not manifest.get("reviewed_at"):
             issues.append("Snapshot lacks completed human verification")
         docs = load_catalogs(root / "snapshot")
@@ -50,7 +56,7 @@ def readiness(root):
         if manifest.get("catalog_hash") != digest(docs):
             issues.append("Catalog hash differs from reviewed manifest")
         root_case = load_public_scenario(root / "scenarios/dev/dev_01.json")
-        witness_path = root / "../../evaluation/reference_plans/dev_01.json"
+        witness_path = root / manifest.get("reference_plan", "../../evaluation/reference_plans/dev_01.json")
         witness = load_plan(witness_path.resolve())
         report = validate_trip(docs, root_case, witness)
         if report.exit_code:

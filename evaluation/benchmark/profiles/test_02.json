@@ -1,0 +1,12 @@
+{
+  "weights": {
+    "quiet": 0.8,
+    "culture": 0.2
+  },
+  "answers": {
+    "quiet": "high",
+    "economy": "save"
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_test_02",
+  "status": "synthetic_assumption"
+}

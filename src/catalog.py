@@ -104,9 +104,17 @@ def load_catalog(path: str | Path, kind: str, *, data_dir: str | Path | None = N
 
 def load_scenario(path: str | Path, *, data_dir: str | Path | None = None) -> Scenario:
     """Load and strictly validate one scenario file."""
-
+    source = Path(path)
+    raw = _read_json(source, data_dir=Path(data_dir) if data_dir else None)
+    if isinstance(raw, dict) and set(raw) == {"redirect"}:
+        if not isinstance(raw["redirect"], str) or not raw["redirect"]:
+            raise DataLoadError(Problem("INVALID_SCENARIO_ALIAS", "Alias target must be a relative path", file=str(source)))
+        target = (source.parent / raw["redirect"]).resolve()
+        if not target.is_relative_to(source.parent.parent.resolve()):
+            raise DataLoadError(Problem("INVALID_SCENARIO_ALIAS", "Alias escapes data root", file=str(source)))
+        source = target
     return _load_with_parser(
-        Path(path), parse_scenario, data_dir=Path(data_dir) if data_dir is not None else None
+        source, parse_scenario, data_dir=Path(data_dir) if data_dir is not None else None
     )
 
 

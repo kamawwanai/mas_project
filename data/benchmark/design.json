@@ -1,0 +1,47 @@
+{
+  "mode": "benchmark_assumptions",
+  "status": "synthetic_assumption",
+  "notice": "All numbers and inventory are experimental conditions. Source names/addresses are inherited for context, not historical verification. Coordinates are synthetic grid units, not geographic coordinates. No actual reservation is made.",
+  "transport_ids": ["train_out_01", "train_out_02", "train_out_03", "train_out_04", "train_return_04", "train_return_05", "train_return_06", "train_return_07", "train_return_08"],
+  "hotels": [
+    {"id": "stay_01", "amount_kopecks": 684500, "features": {"comfort": 75, "quiet": 45, "location": 85}},
+    {"id": "stay_02", "amount_kopecks": 541500, "features": {"comfort": 65, "quiet": 90, "location": 35}},
+    {"id": "stay_03", "amount_kopecks": 854000, "features": {"comfort": 95, "quiet": 60, "location": 95}},
+    {"id": "stay_04", "amount_kopecks": 340000, "features": {"comfort": 40, "quiet": 95, "location": 20}},
+    {"id": "stay_05", "amount_kopecks": 674500, "features": {"comfort": 85, "quiet": 85, "location": 70}},
+    {"id": "stay_06", "amount_kopecks": 552800, "features": {"comfort": 65, "quiet": 30, "location": 90}}
+  ],
+  "culture_scores": {"place_01": 85, "place_02": 100, "place_03": 95, "place_04": 45, "place_05": 65, "place_06": 90},
+  "food": {
+    "food_01": {"amount_kopecks": 33000, "score": 30},
+    "food_02": {"amount_kopecks": 150000, "score": 75},
+    "food_03": {"amount_kopecks": 50000, "score": 35},
+    "food_04": {"amount_kopecks": 200000, "score": 95},
+    "food_05": {"amount_kopecks": 120000, "score": 90}
+  },
+  "meal_pairs": [["food_01", "food_01"], ["food_02", "food_05"], ["food_04", "food_05"]],
+  "coordinates": {
+    "station_nn_01": [0, 0], "stay_01": [3, 1], "stay_02": [0, 5], "stay_03": [8, 8],
+    "stay_04": [-3, 4], "stay_05": [6, 7], "stay_06": [8, 5],
+    "place_01": [8, 6], "place_02": [8, 5], "place_03": [9, 9], "place_04": [10, 9], "place_05": [6, 8], "place_06": [1, 7],
+    "food_01": [9, 8], "food_02": [8, 5], "food_03": [7, 3], "food_04": [7, 7], "food_05": [10, 7]
+  },
+  "scenarios": [
+    {"id": "dev_01", "split": "dev", "title": "Original two-day baseline", "budget_kopecks": 3000000, "expected": "feasible", "public_request": "Поездка двух взрослых Москва — Нижний Новгород — Москва 17–18 октября, одна ночь, бюджет 30 000 рублей. Музеи, прогулки и питание. Все synthetic_assumption — условия экспериментальной среды."},
+    {"id": "dev_02", "split": "dev", "title": "Walking versus transport cost", "budget_kopecks": 2800000, "expected": "feasible", "constraints": {"max_walking_minutes_per_day": 60}, "public_request": "17–18 октября, двое взрослых, 28 000 рублей. Не более 60 минут ходьбы в день; транспорт входит в бюджет."},
+    {"id": "dev_03", "split": "dev", "title": "Mandatory timed reservation", "budget_kopecks": 3000000, "expected": "feasible", "constraints": {"required_place_ids": ["place_06"]}, "required_witness_place": "place_06", "public_request": "17–18 октября, двое взрослых, 30 000 рублей. Обязательно посещение place_06 с допустимым синтетическим сеансом и идентификатором записи."},
+    {"id": "dev_04", "split": "dev", "title": "Budget change requires cheaper choices", "budget_kopecks": 3100000, "expected": "feasible", "initial_hotel": "stay_03", "changes": [{"type": "budget", "budget_kopecks": 2300000}], "public_request": "17–18 октября, двое взрослых, бюджет 31 000 рублей. Подготовьте полный маршрут с жильём, посещениями и питанием."},
+    {"id": "test_01", "split": "test", "title": "Ordinary trip with location preference", "budget_kopecks": 3200000, "expected": "feasible", "public_request": "Обычная поездка 17–18 октября для двоих, 32 000 рублей. Выберите жильё, посещения и питание; предпочтения можно уточнить."},
+    {"id": "test_02", "split": "test", "title": "Tight budget versus comfort", "budget_kopecks": 1900000, "expected": "feasible", "public_request": "Поездка на двоих 17–18 октября с общим бюджетом 19 000 рублей. Сравните стоимость жилья, питания и перемещений."},
+    {"id": "test_03", "split": "test", "title": "Strict walking limit", "budget_kopecks": 3000000, "expected": "feasible", "constraints": {"max_walking_minutes_per_day": 40}, "public_request": "17–18 октября, двое взрослых, 30 000 рублей. Максимум 40 минут ходьбы за каждый день, включая подходы к транспорту."},
+    {"id": "test_04", "split": "test", "title": "Required photography museum", "budget_kopecks": 3000000, "expected": "feasible", "constraints": {"required_place_ids": ["place_01"]}, "public_request": "17–18 октября, двое взрослых, 30 000 рублей. Обязательно посетите музей фотографии place_01."},
+    {"id": "test_05", "split": "test", "title": "Quiet hotel, location and luggage", "budget_kopecks": 3500000, "expected": "feasible", "constraints": {"max_walking_minutes_per_day": 30, "luggage_required": true}, "public_request": "17–18 октября, двое взрослых, 35 000 рублей. Ходьба не более 30 минут в день. На посещениях и во время питания вне проживания багаж должен быть сдан на хранение."},
+    {"id": "test_06", "split": "test", "title": "Dense cultural program", "budget_kopecks": 3600000, "expected": "feasible", "dense": true, "constraints": {"min_visit_minutes_per_day": 180}, "pace": "busy", "public_request": "17–18 октября, двое взрослых, 36 000 рублей. Насыщенный темп: не менее 180 минут посещений в каждый день, с питанием и ночным отдыхом."},
+    {"id": "test_07", "split": "test", "title": "Dining preference and late return", "budget_kopecks": 3300000, "expected": "feasible", "late_return": true, "constraints": {"required_meals": ["lunch", "dinner"]}, "public_request": "17–18 октября, двое взрослых, 33 000 рублей. Нужны обед и ужин в оба дня, учитывайте поздний обратный поезд и предпочтения кухни."},
+    {"id": "test_08", "split": "test", "title": "Relaxed pace and quiet sleep", "budget_kopecks": 3400000, "expected": "feasible", "pace": "relaxed", "constraints": {"max_walking_minutes_per_day": 90, "min_rest_minutes_per_night": 480, "min_visit_minutes_per_day": 60}, "public_request": "17–18 октября, двое взрослых, 34 000 рублей. Спокойный темп: минимум 8 часов ночного отдыха, 60 минут посещений в день, не более 90 минут ходьбы."},
+    {"id": "test_09", "split": "test", "title": "Proven budget conflict", "budget_kopecks": 900000, "expected": "infeasible", "certificate": "budget_lower_bound", "public_request": "17–18 октября, двое взрослых, одна ночь. Общий бюджет 9 000 рублей. Используйте только фиксированный синтетический каталог; невозможность нужно доказать."},
+    {"id": "test_10", "split": "test", "title": "Required visit conflicts with trip dates", "budget_kopecks": 3000000, "expected": "infeasible", "constraints": {"required_place_ids": ["place_02"], "min_departure_buffer_minutes": 45}, "certificate": "required_place_closed", "public_request": "Поездка строго 17–18 октября, двое взрослых, 30 000 рублей. Обязательно внутреннее посещение place_02, внешний осмотр его не заменяет. Запас до обратного поезда 45 минут."},
+    {"id": "test_11", "split": "test", "title": "Replan after budget reduction", "budget_kopecks": 3400000, "expected": "feasible", "initial_hotel": "stay_03", "constraints": {"required_place_ids": ["place_03"]}, "changes": [{"type": "budget", "budget_kopecks": 1800000}], "public_request": "17–18 октября, двое взрослых, бюджет 34 000 рублей. Обязательно place_03. Подготовьте полный маршрут."},
+    {"id": "test_12", "split": "test", "title": "Selected hotel becomes unavailable", "budget_kopecks": 3800000, "expected": "feasible", "initial_hotel": "stay_01", "changes": [{"type": "unavailable", "reference_id": "stay_01"}], "public_request": "17–18 октября, двое взрослых, бюджет 38 000 рублей. Выберите жильё, питание, посещения и подходящие перемещения."}
+  ]
+}

@@ -41,6 +41,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--json", action="store_true", help="вывести только машиночитаемый JSON")
     parser.add_argument("--scope", choices=["day1", "full"], default="day1")
+    parser.add_argument("--mode", choices=["strict", "benchmark_assumptions"], default="strict")
     parser.add_argument("--split", choices=["dev", "test"], default="dev")
     parser.add_argument("--plan", type=Path, help="explicit plan file for full validation")
     return parser
@@ -107,9 +108,16 @@ def main(argv: list[str] | None = None) -> int:
         try:
             catalogs = load_catalogs(args.data_dir / "snapshot")
             request = load_public_scenario(args.data_dir / "scenarios" / args.split / f"{args.scenario}.json")
-            plan = load_plan(args.plan or PROJECT_ROOT / "evaluation/reference_plans" / f"{args.scenario}.json")
-            report = validate_trip(catalogs, request, plan)
-        except (DataLoadError, ValueError) as exc:
+            default_plan = args.data_dir / "reference_plans" / f"{args.scenario}.json"
+            if not default_plan.exists():
+                manifest_file = args.data_dir / "manifest.json"
+                synthetic = manifest_file.exists() and json.loads(manifest_file.read_text(encoding="utf-8")).get("evaluation_mode") == "benchmark_assumptions"
+                default_plan = PROJECT_ROOT / ("evaluation/benchmark/reference_plans" if synthetic else "evaluation/reference_plans") / f"{args.scenario}.json"
+            plan = load_plan(args.plan or default_plan)
+            from src.assumptions import load_context
+            context = load_context(args.data_dir, catalogs, args.mode)
+            report = validate_trip(catalogs, request, plan, context=context)
+        except (DataLoadError, ValueError, OSError, KeyError) as exc:
             print(json.dumps({"exit_code": 2, "error": str(exc)}, ensure_ascii=False))
             return 2
     else:

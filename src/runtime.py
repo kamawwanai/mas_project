@@ -46,18 +46,27 @@ class Runtime:
         self.path = Path(path) if path else None
         self.limits = limits or Limits()
         self.pricing = pricing or {}
+        if self.pricing:
+            rates = [self.pricing.get(k) for k in ("input_per_million", "cached_input_per_million", "output_per_million")]
+            if any(type(v) not in {int, float} or not math.isfinite(v) or v < 0 for v in rates):
+                raise ValueError("Pricing must contain finite nonnegative rates")
         self.started = time.monotonic()
         self.events = []
         self.lock = threading.RLock()
         self.counts = dict(llm_calls=0, llm_attempts=0, input_tokens=0, cached_input_tokens=0,
-                           output_tokens=0, tools=0, questions=0, errors=0, cost_usd=0.0, usage_complete=True)
+                           output_tokens=0, tools=0, questions=0, errors=0, cost_usd=0.0, usage_complete=True,
+                           token_usage_complete=True)
 
     def check(self):
+        if not self.counts["token_usage_complete"]:
+            raise LimitExceeded("unknown_billable_usage")
         if time.monotonic() - self.started >= self.limits.seconds:
             raise LimitExceeded("wall_time")
         for key in ("llm_attempts", "input_tokens", "output_tokens", "tools", "questions"):
             if self.counts[key] > getattr(self.limits, key):
                 raise LimitExceeded(key)
+        if self.limits.cost_usd is not None and not self.counts["usage_complete"]:
+            raise LimitExceeded("unknown_billable_usage")
         if self.limits.cost_usd is not None and self.counts["cost_usd"] >= self.limits.cost_usd:
             raise LimitExceeded("cost_usd")
 
@@ -77,7 +86,8 @@ class Runtime:
             if self.limits.cost_usd is not None:
                 if not self.pricing:
                     raise ValueError("Pricing required for monetary limit")
-                reserve = (input_tokens * self.pricing["input_per_million"] + output * self.pricing["output_per_million"]) / 1e6
+                input_rate = max(self.pricing["input_per_million"], self.pricing["cached_input_per_million"])
+                reserve = (input_tokens * input_rate + output * self.pricing["output_per_million"]) / 1e6
                 if self.counts["cost_usd"] + reserve > self.limits.cost_usd:
                     raise LimitExceeded("cost_reservation")
             self.consume("llm_attempts")
@@ -85,10 +95,14 @@ class Runtime:
 
     def record_usage(self, usage):
         if not isinstance(usage, dict) or any(type(usage.get(k)) is not int or usage[k] < 0 for k in ("input_tokens", "output_tokens")):
-            self.counts["usage_complete"] = False
+            self.mark_unknown_usage()
             return
         incoming, outgoing = usage.get("input_tokens", 0), usage.get("output_tokens", 0)
-        cached = usage.get("input_tokens_details", {}).get("cached_tokens", 0)
+        details = usage.get("input_tokens_details") or {}
+        cached = details.get("cached_tokens", 0) if isinstance(details, dict) else None
+        if type(cached) is not int or not 0 <= cached <= incoming:
+            self.mark_unknown_usage()
+            return
         self.counts["input_tokens"] += incoming
         self.counts["output_tokens"] += outgoing
         self.counts["cached_input_tokens"] += cached
@@ -96,6 +110,11 @@ class Runtime:
             self.counts["cost_usd"] += ((incoming-cached)*self.pricing["input_per_million"] + cached*self.pricing["cached_input_per_million"] + outgoing*self.pricing["output_per_million"]) / 1e6
         else:
             self.counts["usage_complete"] = False
+        self.check()
+
+    def mark_unknown_usage(self):
+        self.counts["usage_complete"] = False
+        self.counts["token_usage_complete"] = False
         self.check()
 
     def event(self, actor, kind, **payload):

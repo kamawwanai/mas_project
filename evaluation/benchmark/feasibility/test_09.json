@@ -1,0 +1,7 @@
+{
+  "type": "budget_lower_bound",
+  "mode": "benchmark_assumptions",
+  "snapshot_id": "synthetic_2026_10_17_v1",
+  "public_hash": "8a3c3a63bd9babac6a9bd38aa8ed49fe95e3909b58c78256d02a9cc9e457f9e9",
+  "scope": "Closed synthetic catalog only; not a claim about real travel feasibility."
+}

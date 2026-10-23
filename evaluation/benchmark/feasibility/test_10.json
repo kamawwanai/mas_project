@@ -1,0 +1,7 @@
+{
+  "type": "required_place_closed",
+  "mode": "benchmark_assumptions",
+  "snapshot_id": "synthetic_2026_10_17_v1",
+  "public_hash": "d8b2b9b564809cebdb119f1d2f17b3f11969b10dad44e96e404a8da49989b88b",
+  "scope": "Closed synthetic catalog only; not a claim about real travel feasibility."
+}

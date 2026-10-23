@@ -1,7 +1,19 @@
 # Real calls stay disabled until the user supplies a key and authorizes execution.
-api_enabled = false
-model = ""
-timeout_seconds = 60
+api_enabled = true
+provider = "openrouter"
+transport = "chat_completions"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+model = "openai/gpt-4.1-mini"
+timeout_seconds = 120
+max_attempts = 3
+retry_backoff_seconds = 1
 
 [generation]
-# Set only parameters supported by the chosen exact model, identically for A/B/C.
+temperature = 0.0
+
+[provider_routing]
+# Pin one endpoint for a fair comparison; fail instead of silently changing provider.
+order = ["openai"]
+allow_fallbacks = false
+require_parameters = true

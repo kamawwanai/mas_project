@@ -1,0 +1,376 @@
+{
+  "schema_version": "0.2.0",
+  "snapshot_id": "synthetic_2026_10_17_v1",
+  "is_template": false,
+  "timezone": "Europe/Moscow",
+  "id": "reference_dev_03_stay_03_food_01_food_01_public_transport_train_return_07",
+  "scenario_id": "dev_03",
+  "selected_stay": {
+    "reference_id": "stay_03",
+    "rooms": 1,
+    "nights": 1
+  },
+  "items": [
+    {
+      "id": "event_01",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "station_moscow_east",
+      "label": "synthetic_assumption: buffer station_moscow_east",
+      "start_at": "2026-10-17T06:00:00+03:00",
+      "end_at": "2026-10-17T06:30:00+03:00"
+    },
+    {
+      "id": "event_02",
+      "day": 1,
+      "type": "transport",
+      "reference_id": "train_out_01",
+      "label": "synthetic_assumption: transport train_out_01",
+      "start_at": "2026-10-17T06:30:00+03:00",
+      "end_at": "2026-10-17T10:20:00+03:00",
+      "quantity": 2
+    },
+    {
+      "id": "event_03",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "station_nn_01",
+      "label": "synthetic_assumption: buffer station_nn_01",
+      "start_at": "2026-10-17T10:20:00+03:00",
+      "end_at": "2026-10-17T10:35:00+03:00"
+    },
+    {
+      "id": "event_04",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "syn_17_station_nn_01__stay_03__public_transport",
+      "label": "synthetic_assumption: transfer syn_17_station_nn_01__stay_03__public_transport",
+      "start_at": "2026-10-17T10:35:00+03:00",
+      "end_at": "2026-10-17T11:00:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_05",
+      "day": 1,
+      "type": "luggage_drop",
+      "reference_id": "stay_03",
+      "label": "synthetic_assumption: luggage_drop stay_03",
+      "start_at": "2026-10-17T11:00:00+03:00",
+      "end_at": "2026-10-17T11:10:00+03:00"
+    },
+    {
+      "id": "event_06",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "syn_17_stay_03__food_01__public_transport",
+      "label": "synthetic_assumption: transfer syn_17_stay_03__food_01__public_transport",
+      "start_at": "2026-10-17T11:10:00+03:00",
+      "end_at": "2026-10-17T11:20:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_07",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "food_01",
+      "label": "synthetic_assumption: buffer food_01",
+      "start_at": "2026-10-17T11:20:00+03:00",
+      "end_at": "2026-10-17T12:00:00+03:00"
+    },
+    {
+      "id": "event_08",
+      "day": 1,
+      "type": "meal",
+      "reference_id": "food_01",
+      "label": "synthetic_assumption: meal food_01",
+      "start_at": "2026-10-17T12:00:00+03:00",
+      "end_at": "2026-10-17T12:45:00+03:00",
+      "quantity": 2,
+      "meal_type": "lunch"
+    },
+    {
+      "id": "event_09",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "syn_17_food_01__stay_03__public_transport",
+      "label": "synthetic_assumption: transfer syn_17_food_01__stay_03__public_transport",
+      "start_at": "2026-10-17T12:45:00+03:00",
+      "end_at": "2026-10-17T12:55:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_10",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "stay_03",
+      "label": "synthetic_assumption: buffer stay_03",
+      "start_at": "2026-10-17T12:55:00+03:00",
+      "end_at": "2026-10-17T14:00:00+03:00"
+    },
+    {
+      "id": "event_11",
+      "day": 1,
+      "type": "check_in",
+      "reference_id": "stay_03",
+      "label": "synthetic_assumption: check_in stay_03",
+      "start_at": "2026-10-17T14:00:00+03:00",
+      "end_at": "2026-10-17T14:15:00+03:00"
+    },
+    {
+      "id": "event_12",
+      "day": 1,
+      "type": "luggage_pickup",
+      "reference_id": "stay_03",
+      "label": "synthetic_assumption: luggage_pickup stay_03",
+      "start_at": "2026-10-17T14:15:00+03:00",
+      "end_at": "2026-10-17T14:25:00+03:00"
+    },
+    {
+      "id": "event_13",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "syn_17_stay_03__place_06__public_transport",
+      "label": "synthetic_assumption: transfer syn_17_stay_03__place_06__public_transport",
+      "start_at": "2026-10-17T14:25:00+03:00",
+      "end_at": "2026-10-17T14:42:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_14",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "place_06",
+      "label": "synthetic_assumption: buffer place_06",
+      "start_at": "2026-10-17T14:42:00+03:00",
+      "end_at": "2026-10-17T15:00:00+03:00"
+    },
+    {
+      "id": "event_15",
+      "day": 1,
+      "type": "visit",
+      "reference_id": "place_06",
+      "label": "synthetic_assumption: visit place_06",
+      "start_at": "2026-10-17T15:00:00+03:00",
+      "end_at": "2026-10-17T16:00:00+03:00",
+      "quantity": 2,
+      "booking_id": "slot_place_06_2026-10-17"
+    },
+    {
+      "id": "event_16",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "syn_17_place_06__food_01__public_transport",
+      "label": "synthetic_assumption: transfer syn_17_place_06__food_01__public_transport",
+      "start_at": "2026-10-17T16:00:00+03:00",
+      "end_at": "2026-10-17T16:18:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_17",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "food_01",
+      "label": "synthetic_assumption: buffer food_01",
+      "start_at": "2026-10-17T16:18:00+03:00",
+      "end_at": "2026-10-17T18:00:00+03:00"
+    },
+    {
+      "id": "event_18",
+      "day": 1,
+      "type": "meal",
+      "reference_id": "food_01",
+      "label": "synthetic_assumption: meal food_01",
+      "start_at": "2026-10-17T18:00:00+03:00",
+      "end_at": "2026-10-17T19:00:00+03:00",
+      "quantity": 2,
+      "meal_type": "dinner"
+    },
+    {
+      "id": "event_19",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "syn_17_food_01__stay_03__public_transport",
+      "label": "synthetic_assumption: transfer syn_17_food_01__stay_03__public_transport",
+      "start_at": "2026-10-17T19:00:00+03:00",
+      "end_at": "2026-10-17T19:10:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_20",
+      "day": 1,
+      "type": "rest",
+      "reference_id": "stay_03",
+      "label": "synthetic_assumption: rest stay_03",
+      "start_at": "2026-10-17T19:10:00+03:00",
+      "end_at": "2026-10-18T07:30:00+03:00"
+    },
+    {
+      "id": "event_21",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "syn_18_stay_03__food_03__public_transport",
+      "label": "synthetic_assumption: transfer syn_18_stay_03__food_03__public_transport",
+      "start_at": "2026-10-18T07:30:00+03:00",
+      "end_at": "2026-10-18T07:45:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_22",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "food_03",
+      "label": "synthetic_assumption: buffer food_03",
+      "start_at": "2026-10-18T07:45:00+03:00",
+      "end_at": "2026-10-18T08:00:00+03:00"
+    },
+    {
+      "id": "event_23",
+      "day": 2,
+      "type": "meal",
+      "reference_id": "food_03",
+      "label": "synthetic_assumption: meal food_03",
+      "start_at": "2026-10-18T08:00:00+03:00",
+      "end_at": "2026-10-18T08:30:00+03:00",
+      "quantity": 2,
+      "meal_type": "breakfast"
+    },
+    {
+      "id": "event_24",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "syn_18_food_03__stay_03__public_transport",
+      "label": "synthetic_assumption: transfer syn_18_food_03__stay_03__public_transport",
+      "start_at": "2026-10-18T08:30:00+03:00",
+      "end_at": "2026-10-18T08:45:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_25",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "stay_03",
+      "label": "synthetic_assumption: buffer stay_03",
+      "start_at": "2026-10-18T08:45:00+03:00",
+      "end_at": "2026-10-18T10:00:00+03:00"
+    },
+    {
+      "id": "event_26",
+      "day": 2,
+      "type": "check_out",
+      "reference_id": "stay_03",
+      "label": "synthetic_assumption: check_out stay_03",
+      "start_at": "2026-10-18T10:00:00+03:00",
+      "end_at": "2026-10-18T10:15:00+03:00"
+    },
+    {
+      "id": "event_27",
+      "day": 2,
+      "type": "luggage_drop",
+      "reference_id": "stay_03",
+      "label": "synthetic_assumption: luggage_drop stay_03",
+      "start_at": "2026-10-18T10:15:00+03:00",
+      "end_at": "2026-10-18T10:25:00+03:00"
+    },
+    {
+      "id": "event_28",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "syn_18_stay_03__place_03__public_transport",
+      "label": "synthetic_assumption: transfer syn_18_stay_03__place_03__public_transport",
+      "start_at": "2026-10-18T10:25:00+03:00",
+      "end_at": "2026-10-18T10:36:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_29",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "place_03",
+      "label": "synthetic_assumption: buffer place_03",
+      "start_at": "2026-10-18T10:36:00+03:00",
+      "end_at": "2026-10-18T11:00:00+03:00"
+    },
+    {
+      "id": "event_30",
+      "day": 2,
+      "type": "visit",
+      "reference_id": "place_03",
+      "label": "synthetic_assumption: visit place_03",
+      "start_at": "2026-10-18T11:00:00+03:00",
+      "end_at": "2026-10-18T12:30:00+03:00",
+      "quantity": 2
+    },
+    {
+      "id": "event_31",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "syn_18_place_03__food_01__public_transport",
+      "label": "synthetic_assumption: transfer syn_18_place_03__food_01__public_transport",
+      "start_at": "2026-10-18T12:30:00+03:00",
+      "end_at": "2026-10-18T12:40:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_32",
+      "day": 2,
+      "type": "meal",
+      "reference_id": "food_01",
+      "label": "synthetic_assumption: meal food_01",
+      "start_at": "2026-10-18T12:40:00+03:00",
+      "end_at": "2026-10-18T13:25:00+03:00",
+      "quantity": 2,
+      "meal_type": "lunch"
+    },
+    {
+      "id": "event_33",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "syn_18_food_01__stay_03__public_transport",
+      "label": "synthetic_assumption: transfer syn_18_food_01__stay_03__public_transport",
+      "start_at": "2026-10-18T13:25:00+03:00",
+      "end_at": "2026-10-18T13:35:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_34",
+      "day": 2,
+      "type": "luggage_pickup",
+      "reference_id": "stay_03",
+      "label": "synthetic_assumption: luggage_pickup stay_03",
+      "start_at": "2026-10-18T13:35:00+03:00",
+      "end_at": "2026-10-18T13:45:00+03:00"
+    },
+    {
+      "id": "event_35",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "syn_18_stay_03__station_nn_01__public_transport",
+      "label": "synthetic_assumption: transfer syn_18_stay_03__station_nn_01__public_transport",
+      "start_at": "2026-10-18T13:45:00+03:00",
+      "end_at": "2026-10-18T14:10:00+03:00",
+      "quantity": 1
+    },
+    {
+      "id": "event_36",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "station_nn_01",
+      "label": "synthetic_assumption: buffer station_nn_01",
+      "start_at": "2026-10-18T14:10:00+03:00",
+      "end_at": "2026-10-18T17:49:00+03:00"
+    },
+    {
+      "id": "event_37",
+      "day": 2,
+      "type": "transport",
+      "reference_id": "train_return_07",
+      "label": "synthetic_assumption: transport train_return_07",
+      "start_at": "2026-10-18T17:49:00+03:00",
+      "end_at": "2026-10-18T21:59:00+03:00",
+      "quantity": 2
+    }
+  ],
+  "total_cost_kopecks": 2068000,
+  "validation_status": "benchmark_assumptions",
+  "unresolved_items": []
+}

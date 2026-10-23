@@ -1,4 +1,5 @@
 data_dir = "data/benchmark"
+evaluation_mode = "benchmark_assumptions"
 runs_dir = "runs/main"
 llm_config = "configs/llm.toml"
 pricing = "configs/pricing.json"

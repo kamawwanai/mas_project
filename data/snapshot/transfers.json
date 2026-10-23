@@ -15,15 +15,27 @@
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "listed",
         "includes_mandatory_fees": true,
-        "amount": 80
+        "amount_kopecks": 8000,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=43.963115%2C56.318568&mode=routes&rl=43.946105%2C56.321906~0.001674%2C0.000445~-0.000801%2C0.000696~-0.001106%2C-0.000235~0.000815%2C0.000396~0.000146%2C0.000534~0.001824%2C0.000882~0.001878%2C0.000558~0.000990%2C-0.000671~0.000771%2C-0.000647~0.000058%2C-0.001334~-0.000902%2C-0.000267~-0.000204%2C-0.000275~0.000262%2C-0.000251~0.000349%2C-0.000040~0.000990%2C0.000332~0.001601%2C0.000396~0.002125%2C-0.000218~0.000495%2C-0.000194~0.013352%2C-0.004972~0.001465%2C-0.000019~0.000932%2C0.000364~0.000728%2C0.000518~0.001237%2C0.000356~0.001252%2C0.000113~0.002004%2C-0.000442~0.002164%2C-0.000992~-0.000233%2C-0.000760~-0.000611%2C-0.000113~-0.000553%2C-0.000138~-0.000728%2C-0.000121~-0.000733%2C-0.000475~0.000029%2C-0.000170~-0.000044%2C-0.000477~-0.000602%2C-0.001998~0.000437%2C-0.000129~0.000015%2C-0.000162~0.000451%2C-0.000073~-0.000131%2C-0.000259~0.000961%2C-0.000105&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10%3A30%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtd=0&rtext=56.321895%2C43.946123~56.311741%2C43.977887&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D1023567998~ymapsbm1%3A%2F%2Forg%3Foid%3D144194978002&z=15.56",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes":  "Общественный транспорт. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Общественный транспорт. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 80
+        }
+      }
     },
     {
       "id": "transfer_02",
@@ -36,15 +48,27 @@
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "listed",
         "includes_mandatory_fees": true,
-        "amount": 80
+        "amount_kopecks": 8000,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=44.009266%2C56.327264&mode=routes&rl=43.977666%2C56.311991~-0.000112%2C-0.000343~0.001065%2C-0.000127~0.000868%2C-0.000222~0.001566%2C0.000317~0.000463%2C-0.000080~0.000091%2C0.000130~0.003200%2C0.000628~0.000384%2C-0.000089~0.000352%2C0.000071~0.001289%2C-0.000441~0.000202%2C0.000130~0.001145%2C-0.000444~0.000566%2C0.000431~0.000202%2C-0.000071~0.000485%2C0.000234~-0.000197%2C0.000104~0.000783%2C0.000619~0.001112%2C0.000173~0.000632%2C0.000457~0.006808%2C0.001404~0.000932%2C0.000207~0.002919%2C0.000539~0.002184%2C0.000407~0.000437%2C0.000102~0.004260%2C0.000816~0.001948%2C0.000356~-0.001477%2C0.002301~0.000899%2C0.000217~0.002094%2C0.001101~-0.005837%2C0.005086~0.001126%2C0.000588~-0.000032%2C0.000118~-0.000819%2C0.000876~0.000550%2C0.000556~0.000105%2C-0.000036~-0.000234%2C-0.000358~-0.000107%2C-0.000053&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10%3A30%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtd=0&rtext=56.311741%2C43.977887~56.327750%2C44.007646&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D144194978002~ymapsbm1%3A%2F%2Forg%3Foid%3D151310449250&z=16",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Общественный транспорт. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Общественный транспорт. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 80
+        }
+      }
     },
     {
       "id": "transfer_03",
@@ -52,20 +76,32 @@
       "to_id": "place_01",
       "applicable_date": "2026-10-17",
       "mode": "public_transport",
-      "duration_minutes": null,
+      "duration_minutes": 43,
       "distance_meters": 3000,
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "listed",
         "includes_mandatory_fees": true,
-        "amount": 80
+        "amount_kopecks": 8000,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=44.001396%2C56.326499&mode=routes&rl=43.977710%2C56.311672~0.001509%2C-0.000330~0.005470%2C0.001102~0.000345%2C0.000038~0.000085%2C0.000377~0.000492%2C-0.000113~0.000254%2C0.000433~0.001407%2C0.002968~0.004572%2C0.008777~0.000339%2C0.000085~0.001780%2C-0.000462~0.002068%2C-0.000857~0.002187%2C-0.001441~0.001051%2C-0.000264~0.000932%2C-0.000066~0.000661%2C0.000085~-0.000627%2C0.000028~0.000644%2C0.000556~0.001441%2C0.001400~0.000814%2C-0.000028&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10%3A30%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtext=56.311741%2C43.977887~56.323927%2C44.003161&rtn=3&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D144194978002~ymapsbm1%3A%2F%2Forg%3Foid%3D1103891424&z=16.34",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Общественный транспорт. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Общественный транспорт. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 80
+        }
+      }
     },
     {
       "id": "transfer_04",
@@ -78,15 +114,27 @@
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "free",
         "includes_mandatory_fees": true,
-        "amount": 0
+        "amount_kopecks": 0,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=44.001387%2C56.322766&mode=routes&rl=44.003148%2C56.323915~-0.000184%2C0.000092~-0.000562%2C-0.000004~-0.002613%2C-0.002453&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10%3A30%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtd=0&rtext=56.323927%2C44.003161~56.321576%2C43.999613&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D1103891424~ymapsbm1%3A%2F%2Forg%3Foid%3D67050845431&z=17.98",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Пешком. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Пешком. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "free",
+          "includes_mandatory_fees": true,
+          "amount": 0
+        }
+      }
     },
     {
       "id": "transfer_05",
@@ -96,18 +144,30 @@
       "mode": "public_transport",
       "duration_minutes": 17,
       "distance_meters": 2080,
-      "duration_kind": "unknown",
+      "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "listed",
         "includes_mandatory_fees": true,
-        "amount": 80
+        "amount_kopecks": 8000,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=43.988276%2C56.312078&mode=routes&rl=43.999537%2C56.321513~-0.005670%2C-0.005357~-0.000454%2C-0.000176~-0.000408%2C-0.000252~-0.000318%2C-0.000252~-0.000771%2C0.000139~-0.001043%2C-0.000983~-0.001542%2C-0.001311~-0.010388%2C-0.002030~-0.002313%2C0.000403~0.000272%2C0.000529~0.000499%2C-0.000126&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10%3A30%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtd=0&rtext=56.321576%2C43.999613~56.311741%2C43.977887&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D67050845431~ymapsbm1%3A%2F%2Forg%3Foid%3D144194978002&z=15.92",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Комбинированный маршрут: пешком до остановки 1030 метров + 65 метров от остановки до гостиницы. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Комбинированный маршрут: пешком до остановки 1030 метров + 65 метров от остановки до гостиницы. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 80
+        }
+      }
     },
     {
       "id": "transfer_06",
@@ -120,15 +180,27 @@
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "free",
         "includes_mandatory_fees": true,
-        "amount": 0
+        "amount_kopecks": 0,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=43.986461%2C56.314404&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10%3A30%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtd=0&rtext=56.311741%2C43.977887~56.317422%2C43.995611&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D144194978002~ymapsbm1%3A%2F%2Forg%3Foid%3D19136874807&z=16.51",
-      "checked_at":  "2026-10-13T19:00:00+03:00",
-      "notes": "Полностью пеший маршрут. Время приблизительное.",
-      "additional_sources": []
+      "checked_at": "2026-10-13T19:00:00+03:00",
+      "notes": "Полностью пеший маршрут. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "free",
+          "includes_mandatory_fees": true,
+          "amount": 0
+        }
+      }
     },
     {
       "id": "transfer_07",
@@ -138,18 +210,30 @@
       "mode": "public_transport",
       "duration_minutes": 17,
       "distance_meters": 1600,
-      "duration_kind": "unknown",
+      "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "listed",
         "includes_mandatory_fees": true,
-        "amount": 80
+        "amount_kopecks": 8000,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=43.982419%2C56.311709&mode=routes&rl=43.995476%2C56.317431~-0.001503%2C-0.001213~-0.000554%2C-0.000026~-0.000696%2C-0.000782~-0.000838%2C0.000158~-0.001139%2C-0.000958~-0.001281%2C-0.001152~-0.000000%2C-0.000088~-0.000348%2C-0.000105~-0.010313%2C-0.002025~-0.002135%2C0.000448~0.000190%2C0.000510~0.000886%2C-0.000114&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T10%3A30%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtext=56.317422%2C43.995611~56.311741%2C43.977887&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D19136874807~ymapsbm1%3A%2F%2Forg%3Foid%3D144194978002&z=16.44",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Комбинированный маршрут: пешком до остановки 500 метров + 65 метров от остановки до гостиницы. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Комбинированный маршрут: пешком до остановки 500 метров + 65 метров от остановки до гостиницы. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 80
+        }
+      }
     },
     {
       "id": "transfer_08",
@@ -162,15 +246,27 @@
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "estimated",
         "includes_mandatory_fees": true,
-        "amount": 263
+        "amount_kopecks": 26300,
+        "group_size_adults": 2
       },
       "source_url": "https://taxi.yandex.ru/order?gfrom=56.311741,43.977887&gto=56.320313,43.998859&tariff=comfortplus&lang=ru&utm_source=yamaps&utm_medium=2334692&ref=2334692",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Поездка на такси. Стоимость за тариф Эконом. Стоимость приблизительная. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Поездка на такси. Стоимость за тариф Эконом. Стоимость приблизительная. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "estimated",
+          "includes_mandatory_fees": true,
+          "amount": 263
+        }
+      }
     },
     {
       "id": "transfer_09",
@@ -183,15 +279,27 @@
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "listed",
         "includes_mandatory_fees": true,
-        "amount": 80
+        "amount_kopecks": 8000,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=44.009225%2C56.321503&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-17T12%3A00%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtext=56.320312%2C43.998858~56.322345%2C44.033272&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D1252312610~ymapsbm1%3A%2F%2Forg%3Foid%3D216509099310&z=15.54",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Поездка на трамвае + пешком до остановки 257 метров + до ресторана 153 метра пешком. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Поездка на трамвае + пешком до остановки 257 метров + до ресторана 153 метра пешком. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 80
+        }
+      }
     },
     {
       "id": "transfer_10",
@@ -204,15 +312,27 @@
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "listed",
         "includes_mandatory_fees": true,
-        "amount": 80
+        "amount_kopecks": 8000,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=44.021404%2C56.325841&mode=routes&rl=44.032975%2C56.322146~0.000488%2C0.000210~-0.000036%2C0.000268~0.000382%2C0.000217~0.002601%2C-0.000480~-0.000018%2C-0.000086~-0.001583%2C0.000273~0.000382%2C0.000601~-0.002192%2C0.000682~-0.017528%2C0.004648~-0.006707%2C0.000595~-0.000664%2C0.000226~-0.000427%2C-0.000424~-0.000637%2C0.000273~-0.000364%2C0.000217~-0.000300%2C0.000192&routes%5BtimeDependent%5D%5Btime%5D=2026-10-18T12%3A00%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtd=0&rtext=56.322345%2C44.033272~56.329521%2C44.006397&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D216509099310~ymapsbm1%3A%2F%2Forg%3Foid%3D1084670002&z=15.76",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Комбинированный маршрут: пешком до остановки 282 метров + 640 метров от остановки до food_03. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Комбинированный маршрут: пешком до остановки 282 метров + 640 метров от остановки до food_03. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 80
+        }
+      }
     },
     {
       "id": "transfer_11",
@@ -225,15 +345,27 @@
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "listed",
         "includes_mandatory_fees": true,
-        "amount": 80
+        "amount_kopecks": 8000,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=44.012303%2C56.324813&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-18T12%3A31%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtd=1&rtext=56.329521%2C44.006394~56.322951%2C44.009000&rtn=1&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D1084670002~ymapsbm1%3A%2F%2Forg%3Foid%3D16148242428&z=16.46",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Комбинированный маршрут: пешком до остановки 440 метров + 89 метров от остановки до food_05. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Комбинированный маршрут: пешком до остановки 440 метров + 89 метров от остановки до food_05. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 80
+        }
+      }
     },
     {
       "id": "transfer_12",
@@ -246,15 +378,103 @@
       "duration_kind": "estimated",
       "price": {
         "currency": "RUB",
-        "price_unit": "person_trip",
+        "price_unit": "group_trip",
         "price_kind": "listed",
         "includes_mandatory_fees": null,
-        "amount": 160
+        "amount_kopecks": 16000,
+        "group_size_adults": 2
       },
       "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=43.963530%2C56.320764&mode=routes&rl=44.010374%2C56.323104~0.003352%2C-0.002956~-0.003671%2C-0.001035~0.000904%2C-0.001597~-0.022505%2C-0.004494~-0.006384%2C0.000118~-0.024544%2C0.008673~-0.003618%2C0.000532~-0.005728%2C-0.001064&routes%5BtimeDependent%5D%5Btime%5D=2026-10-18T12%3A31%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtd=5&rtext=56.322951%2C44.009000~56.321895%2C43.946123&rtn=5&rtt=mt&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D16148242428~ymapsbm1%3A%2F%2Forg%3Foid%3D1023567998&z=14.69",
       "checked_at": "2026-10-13T19:00:00+03:00",
-      "notes": "Комбинированный маршрут: пешком до остановки 89 метров + автобус до метро + 100 м до метро + 226 метров от метро до вокзала. Время приблизительное.",
-      "additional_sources": []
+      "notes": "Комбинированный маршрут: пешком до остановки 89 метров + автобус до метро + 100 м до метро + 226 метров от метро до вокзала. Время приблизительное. Стоимость price.amount указана за всю группу из двух взрослых (одна поездка); повторно на 2 не умножать.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "listed",
+          "includes_mandatory_fees": null,
+          "amount": 160
+        }
+      }
+    },
+    {
+      "id": "transfer_13",
+      "from_id": "stay_01",
+      "to_id": "food_03",
+      "applicable_date": "2026-10-18",
+      "mode": "walk",
+      "duration_minutes": 19,
+      "distance_meters": 1480,
+      "duration_kind": "estimated",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "group_trip",
+        "price_kind": "free",
+        "includes_mandatory_fees": true,
+        "amount_kopecks": 0,
+        "group_size_adults": 2
+      },
+      "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?mode=routes&rtext=56.311741%2C43.977887~56.317422%2C43.995611&rtt=mt&routes%5BtimeDependent%5D%5Btime%5D=2026-10-18T07%3A35%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure",
+      "checked_at": "2026-10-21T20:58:59+03:00",
+      "notes": "Независимая проверка в интерфейсе Яндекс Карт: улица Максима Горького, 23А -> Большая Покровская улица, 42. Запрос отправления 18 октября 2026 года в 07:35 принят интерфейсом; среди вариантов показан полностью пеший маршрут продолжительностью 19 минут. В отдельном пешеходном режиме показаны 19 минут и 1,48 км, крутой подъём и две лестницы. distance_meters получено переводом отображаемых 1,48 км в метры; это округлённая длина. Выбран пеший маршрут без платного транспорта: стоимость проезда 0 рублей за всю группу из двух взрослых, повторно на 2 не умножать. Проверка выполнена после даты поездки, 21 октября 2026 года; фактическая проходимость, погода и отсутствие ограничений 18 октября исторически не подтверждены. В пешеходном режиме отдельного выбора даты нет; время является ориентировочной оценкой картографического маршрута, а не подтверждением исторической доступности. Источник и наблюдения сохранены в evidence/transfer_13_yandex_20261021.json внутри snapshot_dev_001.",
+      "additional_sources": [
+        {
+          "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=43.986718%2C56.314404&mode=routes&rtext=56.311741%2C43.977887~56.317422%2C43.995611&rtt=pd&ruri=~&z=15",
+          "checked_at": "2026-10-21T20:58:59+03:00",
+          "supports": [
+            "mode",
+            "duration_minutes",
+            "distance_meters"
+          ]
+        }
+      ],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "free",
+          "includes_mandatory_fees": true,
+          "amount": 0
+        }
+      }
+    },
+    {
+      "id": "transfer_14",
+      "from_id": "stay_01",
+      "to_id": "place_03",
+      "applicable_date": "2026-10-18",
+      "mode": "public_transport",
+      "duration_minutes": 25,
+      "distance_meters": null,
+      "duration_kind": "estimated",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "group_trip",
+        "price_kind": "estimated",
+        "includes_mandatory_fees": null,
+        "amount_kopecks": 8000,
+        "group_size_adults": 2
+      },
+      "source_url": "https://yandex.ru/maps/47/nizhny-novgorod/?ll=43.995305%2C56.320434&mode=routes&routes%5BtimeDependent%5D%5Btime%5D=2026-10-18T10%3A20%3A00&routes%5BtimeDependent%5D%5Btype%5D=departure&rtd=0&rtext=56.311741%2C43.977887~56.329521%2C44.006397&rtt=mt&ruri=~&z=14.65",
+      "checked_at": "2026-10-22T00:15:28+03:00",
+      "notes": "Независимая проверка в интерфейсе Яндекс Карт: улица Максима Горького, 23А -> Кремль, 3. Для запроса отправления 18 октября 2026 года в 10:20 показан маршрут 25 минут с прибытием в 10:45: пешком 620 м до остановки «Улица Горького», автобус 92 в направлении «Приволжская транспортная прокуратура» до остановки «Площадь Минина и Пожарского», затем пешком 350 м до музея. В деталях показаны 7 минут первого пешего участка, ожидание 3 минуты, автобус 10:30–10:41 и заключительный пеший участок 4 минуты; значения округлены интерфейсом. Показанный тариф — 40 рублей при оплате банковской картой за одну обычную поездку; price.amount = 2 x 40 = 80 рублей за двух взрослых без льгот. Это сумма всей группы за одну поездку, повторно на 2 не умножать. Полная длина маршрута не показана: distance_meters оставлено null; 620 и 350 м относятся только к пешим участкам и не являются полной длиной пути. Состав и величина возможных дополнительных сборов отдельно источником не раскрыты. Проверка выполнена 22 октября, после даты поездки: принятие интерфейсом даты 18 октября не подтверждает исторические расписание, тариф, доступность проходов и фактическое выполнение рейса. Длительность и стоимость сохранены как ориентировочные. Наблюдения сохранены в evidence/transfer_14_yandex_20261022.json внутри snapshot_dev_001.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transfers_amount.json",
+        "source_sha256": "a59c23ad38bfedd502af11277eaa6fab6961cd69bdb0f8829f100d0fc7facad3",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "group_trip",
+          "price_kind": "estimated",
+          "includes_mandatory_fees": null,
+          "amount": 80
+        }
+      }
     }
   ]
 }

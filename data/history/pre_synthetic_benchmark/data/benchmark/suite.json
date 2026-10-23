@@ -1,0 +1,402 @@
+{
+  "status": "pending_verification",
+  "cases": [
+    {
+      "id": "dev_01",
+      "split": "dev",
+      "title": "Baseline",
+      "tags": [
+        "baseline"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "9c8154fb9361e62e47b694e860d82add1cc0a7428f3844fb7172e0e2b548b8da",
+      "profile_hash": "f8bf4b69e7a183264881bcbafcc25426a8ccb3e27441f0c54d823682802834ff",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness"
+      ]
+    },
+    {
+      "id": "dev_02",
+      "split": "dev",
+      "title": "Budget and walking boundary",
+      "tags": [
+        "budget",
+        "walking"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "c1822500c956d55322362c745713314ef493f9e2deb9f681777f69468714cbff",
+      "profile_hash": "4c57661a84cf0ca31a7f0d131132761afdce0d33dfaee678c2b4119290040477",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness"
+      ]
+    },
+    {
+      "id": "dev_03",
+      "split": "dev",
+      "title": "Required timed visit / schedule conflict",
+      "tags": [
+        "schedule_conflict",
+        "booking"
+      ],
+      "expected": "infeasible",
+      "status": "pending_verification",
+      "public_hash": "acd033550af1fd9522bb115ad4e54da27e12bc2860f3d0c72d541a43e0a94047",
+      "profile_hash": "6b9384d49be0c7bfbac1207c473788a24b8e16e688eee132aae504698dd5c057",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Checked impossibility certificate; infeasible label is only a target until verified",
+        "Dated opening/booking evidence for place_02; current hours are unknown, no closure is asserted"
+      ]
+    },
+    {
+      "id": "dev_04",
+      "split": "dev",
+      "title": "Replan after budget reduction",
+      "tags": [
+        "budget_change",
+        "replanning"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "95866f17a217a15d8f54709bbc9d69da9982e70277ebf579a22c5f219eef8fbe",
+      "profile_hash": "f8f6c893f567799a6b6f0f760e523a674c09ccc90b0a57915fe6513991286b84",
+      "changes": [
+        {
+          "type": "budget",
+          "budget_kopecks": 2800000
+        }
+      ],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness",
+        "Valid final witness after concrete public change"
+      ]
+    },
+    {
+      "id": "test_01",
+      "split": "test",
+      "title": "Ordinary trip",
+      "tags": [
+        "baseline"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "d6de22accab9d904677cfa41ff53dadbb575e18bc1268e118964376297b5ffcf",
+      "profile_hash": "4c57661a84cf0ca31a7f0d131132761afdce0d33dfaee678c2b4119290040477",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness"
+      ]
+    },
+    {
+      "id": "test_02",
+      "split": "test",
+      "title": "Tight budget",
+      "tags": [
+        "budget"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "17a623c9861f2cc37c486067b0f64d5de9af6f87a78b6bfa6269f091d11c4d9c",
+      "profile_hash": "4c57661a84cf0ca31a7f0d131132761afdce0d33dfaee678c2b4119290040477",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness"
+      ]
+    },
+    {
+      "id": "test_03",
+      "split": "test",
+      "title": "Limited walking",
+      "tags": [
+        "walking"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "ca7081e2c9eb930e77fc4bc8b44159b07accac611edaf84dd62c897dc746f3d0",
+      "profile_hash": "71f4d47d4758c9f82aee754200b64f5383b8d9ca0d41df6ae15d7b10a028979a",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness"
+      ]
+    },
+    {
+      "id": "test_04",
+      "split": "test",
+      "title": "Required photography museum",
+      "tags": [
+        "required_visit"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "978daf9b607d060a6550b05d3ec1c777f5ea5f014391296c3c34c11f1dcfc670",
+      "profile_hash": "6b9384d49be0c7bfbac1207c473788a24b8e16e688eee132aae504698dd5c057",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness"
+      ]
+    },
+    {
+      "id": "test_05",
+      "split": "test",
+      "title": "Hotel location, cost and incomplete luggage policies",
+      "tags": [
+        "hotel_tradeoff",
+        "incomplete_information"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "f0c588bcbcdb7c77ab8fcc944467927389d96b281f63ec8edd92c1427e09da82",
+      "profile_hash": "6b9384d49be0c7bfbac1207c473788a24b8e16e688eee132aae504698dd5c057",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness",
+        "Saved directed transfers for alternative hotels; existing graph does not establish alternatives"
+      ]
+    },
+    {
+      "id": "test_06",
+      "split": "test",
+      "title": "Dense cultural itinerary",
+      "tags": [
+        "busy_pace",
+        "culture"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "1220a5e5fee6a11fd8ee0bad4c12f194fc3ba0c8447bf3cf18155ac0dc93c4ec",
+      "profile_hash": "02dd0f968ff96e16db5465f14f95c56698702fca217b805c404683b88a376c2c",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness"
+      ]
+    },
+    {
+      "id": "test_07",
+      "split": "test",
+      "title": "Food alternatives",
+      "tags": [
+        "food_preferences"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "4f247ffa3053911501e3f093e743bc2233dda6dfaa91a0617057d0799eac8c38",
+      "profile_hash": "71f4d47d4758c9f82aee754200b64f5383b8d9ca0d41df6ae15d7b10a028979a",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness",
+        "Confirmed dinner alternatives and late return itinerary"
+      ]
+    },
+    {
+      "id": "test_08",
+      "split": "test",
+      "title": "Relaxed pace and rest",
+      "tags": [
+        "relaxed_pace"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "26aefb2d8c5167ad7e3d80924491c921de4a2db25c27b613376a41e6796a6c2d",
+      "profile_hash": "f8f6c893f567799a6b6f0f760e523a674c09ccc90b0a57915fe6513991286b84",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness"
+      ]
+    },
+    {
+      "id": "test_09",
+      "split": "test",
+      "title": "Budget conflict candidate",
+      "tags": [
+        "budget_conflict"
+      ],
+      "expected": "infeasible",
+      "status": "pending_verification",
+      "public_hash": "3c21203d8bddc7bc1e37a5c3642a23f764a80f2ba63515ec1512f98e6a4153e1",
+      "profile_hash": "6b9384d49be0c7bfbac1207c473788a24b8e16e688eee132aae504698dd5c057",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Checked impossibility certificate; infeasible label is only a target until verified"
+      ]
+    },
+    {
+      "id": "test_10",
+      "split": "test",
+      "title": "Required visit closure certificate candidate",
+      "tags": [
+        "schedule_conflict"
+      ],
+      "expected": "infeasible",
+      "status": "pending_verification",
+      "public_hash": "1e6a6622351dc082f0fbfd20d6c5c06320cd925c6974c596a266621123970ccc",
+      "profile_hash": "f8f6c893f567799a6b6f0f760e523a674c09ccc90b0a57915fe6513991286b84",
+      "changes": [],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Checked impossibility certificate; infeasible label is only a target until verified",
+        "Dated opening/booking evidence for place_02; current hours are unknown, no closure is asserted"
+      ]
+    },
+    {
+      "id": "test_11",
+      "split": "test",
+      "title": "Budget reduction and retained commitments",
+      "tags": [
+        "budget_change"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "5c8e6310b09a4dffa9405b4e041e7a568027cc4d313ace6c299df39e53d5f701",
+      "profile_hash": "4c57661a84cf0ca31a7f0d131132761afdce0d33dfaee678c2b4119290040477",
+      "changes": [
+        {
+          "type": "budget",
+          "budget_kopecks": 2700000
+        }
+      ],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness",
+        "Valid final witness after concrete public change"
+      ]
+    },
+    {
+      "id": "test_12",
+      "split": "test",
+      "title": "Chosen hotel unavailable; alternative hotel required",
+      "tags": [
+        "unavailability",
+        "replanning"
+      ],
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": "6f2eff1fc5428f47f72c7d8a88f433facac0b457a6ce7309f83ae6b2c75a6b10",
+      "profile_hash": "f8bf4b69e7a183264881bcbafcc25426a8ccb3e27441f0c54d823682802834ff",
+      "changes": [
+        {
+          "type": "unavailable",
+          "reference_id": "stay_01"
+        }
+      ],
+      "success_criteria": {
+        "feasible": "Full hard constraints and utility >= 0.7 at rank 1 or among up to 5 distinct plans",
+        "infeasible": "No plans and a validated saved certificate",
+        "changes": "Evaluate each version; resources/questions remain cumulative"
+      },
+      "pending": [
+        "Confirmed full prices, availability, source timestamps and verified_fields",
+        "Verified preference features and alternatives",
+        "Full feasible witness",
+        "Saved directed transfers for alternative hotels; existing graph does not establish alternatives",
+        "Valid final witness after concrete public change"
+      ]
+    }
+  ]
+}

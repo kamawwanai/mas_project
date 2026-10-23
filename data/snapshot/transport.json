@@ -1,5 +1,6 @@
 {
-  "snapshot_id": "transport_moscow_nizhny_novgorod_2026-10-17_18_test_v1",
+  "schema_version": "0.1.0",
+  "snapshot_id": "snapshot_dev_001",
   "is_template": true,
   "timezone": "Europe/Moscow",
   "items": [
@@ -25,17 +26,29 @@
       "arrival_at": "2026-10-17T10:20:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1800.0
+        "amount_kopecks": 180000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1800.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_out_02",
@@ -59,17 +72,29 @@
       "arrival_at": "2026-10-17T11:10:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1950.0
+        "amount_kopecks": 195000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1950.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_out_03",
@@ -93,17 +118,29 @@
       "arrival_at": "2026-10-17T13:31:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 2100.0
+        "amount_kopecks": 210000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2100.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_out_04",
@@ -127,17 +164,29 @@
       "arrival_at": "2026-10-17T14:40:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1600.0
+        "amount_kopecks": 160000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1600.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_out_05",
@@ -161,17 +210,29 @@
       "arrival_at": "2026-10-17T17:46:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 2250.0
+        "amount_kopecks": 225000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2250.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_out_06",
@@ -195,17 +256,29 @@
       "arrival_at": "2026-10-17T19:32:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 2050.0
+        "amount_kopecks": 205000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2050.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_out_07",
@@ -229,17 +302,29 @@
       "arrival_at": "2026-10-17T20:20:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1750.0
+        "amount_kopecks": 175000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1750.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_out_08",
@@ -263,17 +348,29 @@
       "arrival_at": "2026-10-17T22:33:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1900.0
+        "amount_kopecks": 190000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1900.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_01",
@@ -297,17 +394,29 @@
       "arrival_at": "2026-10-18T09:09:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1850.0
+        "amount_kopecks": 185000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1850.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_02",
@@ -331,17 +440,29 @@
       "arrival_at": "2026-10-18T10:24:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1750.0
+        "amount_kopecks": 175000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1750.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_03",
@@ -365,17 +486,29 @@
       "arrival_at": "2026-10-18T11:34:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1650.0
+        "amount_kopecks": 165000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1650.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_04",
@@ -399,17 +532,29 @@
       "arrival_at": "2026-10-18T14:54:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1950.0
+        "amount_kopecks": 195000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1950.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_05",
@@ -433,17 +578,29 @@
       "arrival_at": "2026-10-18T17:39:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 2050.0
+        "amount_kopecks": 205000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2050.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_06",
@@ -467,17 +624,29 @@
       "arrival_at": "2026-10-18T19:25:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1550.0
+        "amount_kopecks": 155000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1550.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_07",
@@ -501,17 +670,29 @@
       "arrival_at": "2026-10-18T21:59:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1800.0
+        "amount_kopecks": 180000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1800.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_08",
@@ -535,17 +716,29 @@
       "arrival_at": "2026-10-18T23:59:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 2150.0
+        "amount_kopecks": 215000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Расписание и наличие билетов не подтверждены; стоимость указана как синтетическое тестовое значение.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2150.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_out_09",
@@ -569,17 +762,29 @@
       "arrival_at": "2026-10-21T01:20:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1900.0
+        "amount_kopecks": 190000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Тестовая запись с датой вне заявленного периода поездки.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1900.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_09",
@@ -603,17 +808,29 @@
       "arrival_at": "2026-10-18T22:00:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 999999.99
+        "amount_kopecks": 99999999
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Тестовая запись с намеренно экстремальной стоимостью.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 999999.99
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_out_10",
@@ -637,17 +854,29 @@
       "arrival_at": "2026-10-17T16:00:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 2300.0
+        "amount_kopecks": 230000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/moscow--nizhny-novgorod",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Тестовая запись с пунктом назначения, отличающимся от Нижнего Новгорода.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 2300.0
+        },
+        "availability_status": "not_checked"
+      }
     },
     {
       "id": "train_return_10",
@@ -671,17 +900,29 @@
       "arrival_at": "2026-10-18T23:00:00+03:00",
       "seat_class": "сидячий",
       "price": {
-        "currency": "rubles",
+        "currency": "RUB",
         "price_unit": "adult_ticket",
         "price_kind": "indicative_test_value",
         "includes_mandatory_fees": false,
-        "amount": 1750.0
+        "amount_kopecks": 175000
       },
-      "availability_status": "not_checked",
+      "availability_status": "unknown",
       "source_url": "https://rasp.yandex.ru/train/nizhniy-novgorod--moscow",
       "checked_at": "2026-10-12T13:35:00+03:00",
       "notes": "Тестовая запись: конкретная станция прибытия в Москве не указана.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "transport.json",
+        "source_sha256": "21f47f694e341e06a00d678b31c98933b1b84cd844fdff744db2072972dbc8e6",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_ticket",
+          "price_kind": "indicative_test_value",
+          "includes_mandatory_fees": false,
+          "amount": 1750.0
+        },
+        "availability_status": "not_checked"
+      }
     }
   ]
 }

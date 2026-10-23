@@ -1,0 +1,492 @@
+{
+  "schema_version": "0.2.0",
+  "snapshot_id": "synthetic_2026_10_17_v1",
+  "is_template": false,
+  "timezone": "Europe/Moscow",
+  "id": "synthetic_reference_dev_01_45_events",
+  "scenario_id": "dev_01",
+  "selected_stay": {
+    "reference_id": "stay_01",
+    "rooms": 1,
+    "nights": 1
+  },
+  "items": [
+    {
+      "id": "d1_01",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "station_moscow_east",
+      "label": "Запас на Восточном вокзале",
+      "start_at": "2026-10-17T06:00:00+03:00",
+      "end_at": "2026-10-17T06:30:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_02",
+      "day": 1,
+      "type": "transport",
+      "reference_id": "train_out_01",
+      "label": "Поезд Москва -> Нижний Новгород",
+      "start_at": "2026-10-17T06:30:00+03:00",
+      "end_at": "2026-10-17T10:20:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 2
+    },
+    {
+      "id": "d1_03",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "station_nn_01",
+      "label": "Выход с поезда",
+      "start_at": "2026-10-17T10:20:00+03:00",
+      "end_at": "2026-10-17T10:35:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_04",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_01",
+      "label": "От вокзала к адресу проживания",
+      "start_at": "2026-10-17T10:35:00+03:00",
+      "end_at": "2026-10-17T11:02:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d1_05",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "stay_01",
+      "label": "Ориентация у адреса проживания",
+      "start_at": "2026-10-17T11:02:00+03:00",
+      "end_at": "2026-10-17T11:10:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_06",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_03",
+      "label": "К внешнему адресу музея как промежуточной точке",
+      "start_at": "2026-10-17T11:10:00+03:00",
+      "end_at": "2026-10-17T11:53:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d1_07",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "place_01",
+      "label": "Промежуточная точка без входа в музей",
+      "start_at": "2026-10-17T11:53:00+03:00",
+      "end_at": "2026-10-17T11:55:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_08",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_04",
+      "label": "Пешком к Pasters",
+      "start_at": "2026-10-17T11:55:00+03:00",
+      "end_at": "2026-10-17T12:00:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d1_09",
+      "day": 1,
+      "type": "meal",
+      "reference_id": "food_02",
+      "label": "Обед в Pasters",
+      "start_at": "2026-10-17T12:00:00+03:00",
+      "end_at": "2026-10-17T13:00:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 2,
+      "meal_type": "lunch"
+    },
+    {
+      "id": "d1_10",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "food_02",
+      "label": "Запас после обеда",
+      "start_at": "2026-10-17T13:00:00+03:00",
+      "end_at": "2026-10-17T13:10:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_11",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_05",
+      "label": "Возвращение к месту проживания",
+      "start_at": "2026-10-17T13:10:00+03:00",
+      "end_at": "2026-10-17T13:27:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d1_12",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "stay_01",
+      "label": "Ожидание времени заселения с собственным багажом",
+      "start_at": "2026-10-17T13:27:00+03:00",
+      "end_at": "2026-10-17T14:00:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_13",
+      "day": 1,
+      "type": "check_in",
+      "reference_id": "stay_01",
+      "label": "Плановое заселение",
+      "start_at": "2026-10-17T14:00:00+03:00",
+      "end_at": "2026-10-17T14:15:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_14",
+      "day": 1,
+      "type": "rest",
+      "reference_id": "stay_01",
+      "label": "Отдых после дороги",
+      "start_at": "2026-10-17T14:15:00+03:00",
+      "end_at": "2026-10-17T15:30:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_15",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_03",
+      "label": "К музею фотографии",
+      "start_at": "2026-10-17T15:30:00+03:00",
+      "end_at": "2026-10-17T16:13:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d1_16",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "place_01",
+      "label": "Запас перед входом",
+      "start_at": "2026-10-17T16:13:00+03:00",
+      "end_at": "2026-10-17T16:20:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_17",
+      "day": 1,
+      "type": "visit",
+      "reference_id": "place_01",
+      "label": "Русский музей фотографии, самостоятельное посещение",
+      "start_at": "2026-10-17T16:20:00+03:00",
+      "end_at": "2026-10-17T17:20:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 2
+    },
+    {
+      "id": "d1_18",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_04",
+      "label": "Пешком к Pasters",
+      "start_at": "2026-10-17T17:20:00+03:00",
+      "end_at": "2026-10-17T17:25:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d1_19",
+      "day": 1,
+      "type": "rest",
+      "reference_id": "food_02",
+      "label": "Перерыв перед ужином в той же точке",
+      "start_at": "2026-10-17T17:25:00+03:00",
+      "end_at": "2026-10-17T18:00:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_20",
+      "day": 1,
+      "type": "meal",
+      "reference_id": "food_02",
+      "label": "Ужин в Pasters",
+      "start_at": "2026-10-17T18:00:00+03:00",
+      "end_at": "2026-10-17T19:00:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 2,
+      "meal_type": "dinner"
+    },
+    {
+      "id": "d1_21",
+      "day": 1,
+      "type": "buffer",
+      "reference_id": "food_02",
+      "label": "Запас после ужина",
+      "start_at": "2026-10-17T19:00:00+03:00",
+      "end_at": "2026-10-17T19:10:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_22",
+      "day": 1,
+      "type": "transfer",
+      "reference_id": "transfer_05",
+      "label": "Возвращение к месту проживания",
+      "start_at": "2026-10-17T19:10:00+03:00",
+      "end_at": "2026-10-17T19:27:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d1_23",
+      "day": 1,
+      "type": "rest",
+      "reference_id": "stay_01",
+      "label": "Вечерний отдых",
+      "start_at": "2026-10-17T19:27:00+03:00",
+      "end_at": "2026-10-17T22:30:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d1_24",
+      "day": 1,
+      "type": "rest",
+      "reference_id": "stay_01",
+      "label": "Ночной отдых",
+      "start_at": "2026-10-17T22:30:00+03:00",
+      "end_at": "2026-10-18T07:15:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_01",
+      "day": 2,
+      "type": "rest",
+      "reference_id": "stay_01",
+      "label": "Подготовка к завтраку",
+      "start_at": "2026-10-18T07:15:00+03:00",
+      "end_at": "2026-10-18T07:35:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_02",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_13",
+      "label": "Пешком к завтраку по новой записи",
+      "start_at": "2026-10-18T07:35:00+03:00",
+      "end_at": "2026-10-18T07:54:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d2_03",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "food_03",
+      "label": "Запас до открытия заведения",
+      "start_at": "2026-10-18T07:54:00+03:00",
+      "end_at": "2026-10-18T08:00:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_04",
+      "day": 2,
+      "type": "meal",
+      "reference_id": "food_03",
+      "label": "Завтрак в Додо Пицце",
+      "start_at": "2026-10-18T08:00:00+03:00",
+      "end_at": "2026-10-18T08:45:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 2,
+      "meal_type": "breakfast"
+    },
+    {
+      "id": "d2_05",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "food_03",
+      "label": "Запас после завтрака",
+      "start_at": "2026-10-18T08:45:00+03:00",
+      "end_at": "2026-10-18T08:55:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_06",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_07",
+      "label": "Возвращение за багажом",
+      "start_at": "2026-10-18T08:55:00+03:00",
+      "end_at": "2026-10-18T09:12:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d2_07",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "stay_01",
+      "label": "Подготовка к выселению",
+      "start_at": "2026-10-18T09:12:00+03:00",
+      "end_at": "2026-10-18T09:15:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_rest_before_checkout",
+      "day": 2,
+      "type": "rest",
+      "reference_id": "stay_01",
+      "label": "Отдых в номере до выселения",
+      "start_at": "2026-10-18T09:15:00+03:00",
+      "end_at": "2026-10-18T10:00:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_08",
+      "day": 2,
+      "type": "check_out",
+      "reference_id": "stay_01",
+      "label": "Забрать багаж и выселиться",
+      "start_at": "2026-10-18T10:00:00+03:00",
+      "end_at": "2026-10-18T10:15:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_09",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "stay_01",
+      "label": "Запас перед следующим перемещением",
+      "start_at": "2026-10-18T10:15:00+03:00",
+      "end_at": "2026-10-18T10:20:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_transfer_14",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_14",
+      "label": "К художественному музею: автобус 92 и пешие участки",
+      "start_at": "2026-10-18T10:20:00+03:00",
+      "end_at": "2026-10-18T10:45:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d2_10",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "place_03",
+      "label": "Запас до открытия музея и перед входом",
+      "start_at": "2026-10-18T10:45:00+03:00",
+      "end_at": "2026-10-18T11:00:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_11",
+      "day": 2,
+      "type": "visit",
+      "reference_id": "place_03",
+      "label": "НГХМ: Русское искусство, самостоятельное посещение",
+      "start_at": "2026-10-18T11:00:00+03:00",
+      "end_at": "2026-10-18T12:30:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 2
+    },
+    {
+      "id": "d2_12",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "place_03",
+      "label": "Запас после посещения",
+      "start_at": "2026-10-18T12:30:00+03:00",
+      "end_at": "2026-10-18T12:35:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_13",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_11",
+      "label": "К Сыроварне",
+      "start_at": "2026-10-18T12:35:00+03:00",
+      "end_at": "2026-10-18T12:47:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d2_14",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "food_05",
+      "label": "Запас перед обедом",
+      "start_at": "2026-10-18T12:47:00+03:00",
+      "end_at": "2026-10-18T12:50:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_15",
+      "day": 2,
+      "type": "meal",
+      "reference_id": "food_05",
+      "label": "Обед в Сыроварне",
+      "start_at": "2026-10-18T12:50:00+03:00",
+      "end_at": "2026-10-18T14:20:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 2,
+      "meal_type": "lunch"
+    },
+    {
+      "id": "d2_16",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "food_05",
+      "label": "Запас перед дорогой на вокзал",
+      "start_at": "2026-10-18T14:20:00+03:00",
+      "end_at": "2026-10-18T14:23:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_17",
+      "day": 2,
+      "type": "transfer",
+      "reference_id": "transfer_12",
+      "label": "На Московский вокзал",
+      "start_at": "2026-10-18T14:23:00+03:00",
+      "end_at": "2026-10-18T14:59:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 1
+    },
+    {
+      "id": "d2_18",
+      "day": 2,
+      "type": "buffer",
+      "reference_id": "station_nn_01",
+      "label": "Запас перед обратным поездом: 23 минуты",
+      "start_at": "2026-10-18T14:59:00+03:00",
+      "end_at": "2026-10-18T15:29:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy."
+    },
+    {
+      "id": "d2_19",
+      "day": 2,
+      "type": "transport",
+      "reference_id": "train_return_06",
+      "label": "Поезд Нижний Новгород -> Москва",
+      "start_at": "2026-10-18T15:29:00+03:00",
+      "end_at": "2026-10-18T19:25:00+03:00",
+      "notes": "synthetic_assumption: original planned interval retained in experimental copy.",
+      "quantity": 2
+    }
+  ],
+  "total_cost_kopecks": 2534500,
+  "validation_status": "benchmark_assumptions",
+  "unresolved_items": []
+}

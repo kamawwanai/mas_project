@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import time
 
-from .contracts import jsonable
+from .contracts import jsonable, digest
 from .checks import calculate_cost, validate_trip
 from .schemas import parse_plan
 from .runtime import LimitExceeded
@@ -15,9 +15,11 @@ def function(name, description, properties, required):
 
 
 class ToolRegistry:
-    def __init__(self, catalogs, request, runtime, simulator=None):
+    def __init__(self, catalogs, request, runtime, simulator=None, *, context=None):
+        self.context = context
         self.catalogs, self.request, self.runtime, self.simulator = catalogs, request, runtime, simulator
         self.candidates = []
+        self.verification_receipts = set()
         self.revealed = {}
         self.rows = {kind: [self._row(item) for item in doc.items] for kind, doc in catalogs.items()}
 
@@ -30,20 +32,40 @@ class ToolRegistry:
     @property
     def definitions(self):
         definitions = []
+        search_help = {
+            "transport": ("Allowed filters: direction ('outbound' or 'return'), service_date (YYYY-MM-DD), "
+                          "mode, seat_class, id. Use direction='outbound' for origin to destination and "
+                          "direction='return' for destination to origin; do not write city names in direction."),
+            "stays": ("Allowed filters: city, check_in_date, check_out_date, availability_status, room_type, id. "
+                      "Copy city exactly from request.destination_city (for dev_01: 'Нижний Новгород'). "
+                      "Do not use service_date, available_from or available_to."),
+            "places": ("Allowed filters: city, category, availability_status, booking_required, ticket_required, id. "
+                       "Copy city exactly from request.destination_city. Categories are 'museum', 'site', 'park', "
+                       "or 'church'. Food is in search_food, not category='local_food'."),
+            "food": ("Allowed filters: city, reservation_required, price_basis, id. Copy city exactly from "
+                     "request.destination_city. Do not use category, service_date or available_date."),
+            "transfers": ("Allowed filters: from_id, to_id, mode, applicable_date, availability_status, id. "
+                          "Use exact catalog IDs for endpoints."),
+        }
         for kind in ("transport", "stays", "places", "food", "transfers"):
-            definitions.append(function(f"search_{kind}", "Filter saved facts by exact field values. Unknown values are returned explicitly; never invent missing data.",
-                {"filters_json": {"type": "string", "description": "JSON object of exact filters, e.g. direction, service_date, city, from_id or to_id"},
+            definitions.append(function(f"search_{kind}",
+                "Filter saved facts by exact field values. " + search_help[kind] +
+                " Start with {} or one documented filter when unsure; never invent fields or translate saved values.",
+                {"filters_json": {"type": "string", "description": search_help[kind]},
                  "offset": {"type": "integer", "minimum": 0}, "limit": {"type": "integer", "minimum": 1, "maximum": 20}}, ["filters_json", "offset", "limit"]))
         definitions += [
             function("get_item", "Get one uniquely identified saved object.", {"id": {"type": "string"}}, ["id"]),
             function("get_reviews", "Get only saved review sources and supported attributes.", {"id": {"type": "string"}}, ["id"]),
             function("calculate_cost", "Compute the proposed plan cost; does not build or repair it.", {"plan_json": {"type": "string"}}, ["plan_json"]),
             function("validate_plan", "Check the proposed complete plan against public hard constraints and evidence.", {"plan_json": {"type": "string"}}, ["plan_json"]),
-            function("ask_user", "Ask ONE preference topic; global maximum three questions. Hard constraints cannot be changed.",
-                     {"topic": {"type": "string", "enum": ["interests", "pace", "comfort", "economy"]}, "text": {"type": "string"},
+            function("ask_user", "Ask ONE preference topic; global maximum three distinct topics. Never repeat a topic: unknown is a final answer. Hard constraints cannot be changed.",
+                     {"topic": {"type": "string", "enum": ["interests", "pace", "comfort", "economy", "quiet", "location"]}, "text": {"type": "string"},
                       "options": {"type": "array", "items": {"type": "string"}}}, ["topic", "text", "options"]),
         ]
         return definitions
+
+    def verification_key(self, plan):
+        return (digest(plan), digest(self.request), digest(self.catalogs))
 
     def _validate(self, name, arguments):
         definition = next((d for d in self.definitions if d["name"] == name), None)
@@ -70,7 +92,7 @@ class ToolRegistry:
         start = time.monotonic()
         try:
             self._validate(name, arguments)
-            value = self._execute(name, arguments)
+            value = self._execute(name, arguments, actor)
         except LimitExceeded:
             raise
         except (ValueError, TypeError, KeyError) as exc:
@@ -79,15 +101,16 @@ class ToolRegistry:
         self.runtime.event(actor, "tool_result", parent_id=parent, name=name, result=value, duration=time.monotonic()-start)
         return value
 
-    def _execute(self, name, args):
+    def _execute(self, name, args, actor="planner"):
         if name.startswith("search_"):
             kind = name.removeprefix("search_")
             filters = json.loads(args["filters_json"])
             if not isinstance(filters, dict):
                 raise ValueError("filters_json must be an object")
             fields = set().union(*(set(r) for r in self.rows[kind])) if self.rows[kind] else set()
-            if set(filters) - fields:
-                raise ValueError("Unknown filter fields")
+            unknown = sorted(set(filters) - fields)
+            if unknown:
+                raise ValueError(f"Unknown filter fields {unknown}; allowed fields: {sorted(fields)}")
             matches = sorted((r for r in self.rows[kind] if all(r.get(k) == v for k, v in filters.items())), key=lambda r: r["id"])
             return {"total": len(matches), "items": matches[args["offset"]:args["offset"]+args["limit"]]}
         if name in {"get_item", "get_reviews"}:
@@ -103,7 +126,10 @@ class ToolRegistry:
             return value
         plan = parse_plan(json.loads(args["plan_json"]))
         if name == "calculate_cost":
-            return calculate_cost(self.catalogs, self.request, plan)
-        value = validate_trip(self.catalogs, self.request, plan).to_dict()
-        self.candidates.append({"plan": json.loads(args["plan_json"]), "valid": value["exit_code"] == 0})
+            return calculate_cost(self.catalogs, self.request, plan, context=self.context)
+        value = validate_trip(self.catalogs, self.request, plan, context=self.context).to_dict()
+        raw = json.loads(args["plan_json"])
+        self.candidates.append({"plan": raw, "valid": value["exit_code"] == 0})
+        if actor == "verification" and value["exit_code"] == 0:
+            self.verification_receipts.add(self.verification_key(raw))
         return value

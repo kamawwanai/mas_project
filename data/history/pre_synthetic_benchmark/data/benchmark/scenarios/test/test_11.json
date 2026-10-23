@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.2.0",
+  "snapshot_id": "benchmark_2026_10_17",
+  "is_template": true,
+  "timezone": "Europe/Moscow",
+  "id": "test_11",
+  "origin_city": "Москва",
+  "destination_city": "Нижний Новгород",
+  "start_date": "2026-10-17",
+  "end_date": "2026-10-18",
+  "adults": 2,
+  "nights": 1,
+  "budget_kopecks": 3400000,
+  "currency": "RUB",
+  "preferences": {
+    "pace": "unspecified",
+    "interests": [
+      "museums",
+      "walks",
+      "local_food",
+      "excursions"
+    ]
+  },
+  "constraints": {
+    "required_place_ids": [
+      "place_03"
+    ],
+    "max_walking_minutes_per_day": null,
+    "min_departure_buffer_minutes": 30,
+    "activities_on_both_dates": true,
+    "meals_on_both_dates": true,
+    "rest_required": true
+  },
+  "notes": "Public experimental conditions: Budget reduction and retained commitments. Feasibility is pending source verification; do not relax hard constraints."
+}

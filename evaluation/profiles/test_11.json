@@ -3,8 +3,8 @@
     "culture": 0.05,
     "food": 0.05,
     "comfort": 0.05,
-    "pace": 0.8,
-    "economy": 0.05
+    "pace": 0.05,
+    "economy": 0.8
   },
   "answers": {
     "interests": [
@@ -12,6 +12,6 @@
     ],
     "pace": "relaxed",
     "comfort": "normal",
-    "economy": "balanced"
+    "economy": "save"
   }
 }

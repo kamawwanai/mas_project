@@ -6,208 +6,381 @@
   "items": [
     {
       "id": "place_01",
-      "name": null,
+      "name": "Русский музей фотографии",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "ул. Пискунова, 9А",
+      "category": "museum",
+      "recommended_duration_minutes": 60,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T11:00:00+03:00",
+              "end_at": "2026-10-17T19:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T11:00:00+03:00",
+              "end_at": "2026-10-18T19:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": true,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "listed",
+        "includes_mandatory_fees": true,
+        "amount_kopecks": 30000
       },
-      "availability_status": "unknown",
-      "source_url": null,
+      "availability_status": "available",
+      "source_url": "https://fotomuseum.nnov.ru/posetitelyam.html",
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "Самостоятельное посещение постоянной экспозиции. Продолжительность 60 минут — оценка. Предварительная запись для самостоятельного посещения не указана как обязательная; для организованной экскурсии требуется согласование. Касса закрывается в 18:00. Цена 300 рублей — обычный взрослый входной билет без экскурсии. Режим работы указан по опубликованному графику, без отдельного подтверждения на конкретные даты. Фактическая доступность на 17–18 октября не проверена.",
+      "additional_sources": [
+        {
+          "source_url": "https://fotomuseum.nnov.ru/order-excursion.html",
+          "checked_at": null,
+          "supports": [
+            "price",
+            "ticket_required",
+            "opening_hours"
+          ]
+        },
+        {
+          "source_url": "https://fotomuseum.nnov.ru/contacts.html",
+          "checked_at": null,
+          "supports": [
+            "address"
+          ]
+        }
+      ],
+      "original_fields": {
+        "source_file": "places_amount.json",
+        "source_sha256": "0753e04389d0916aa34bd288529b0c03fed2a1e05e9350ee56ea8a0cdc93dd8a",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_visit",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 300
+        },
+        "availability_status": "available"
+      }
     },
     {
       "id": "place_02",
-      "name": null,
+      "name": "Нижегородское отделение Государственного банка",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "ул. Большая Покровская, 26",
+      "category": "museum",
+      "recommended_duration_minutes": 70,
       "opening_hours": [
         {
-          "date": "2026-10-24",
+          "date": "2026-10-17",
           "status": "unknown",
           "intervals": null
         },
         {
-          "date": "2026-10-25",
+          "date": "2026-10-18",
           "status": "unknown",
           "intervals": null
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": false,
+      "booking_required": true,
       "price": {
-        "amount_kopecks": null,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "free",
+        "includes_mandatory_fees": true,
+        "amount_kopecks": 0
       },
-      "availability_status": "unknown",
-      "source_url": null,
+      "availability_status": "available",
+      "source_url": "https://museum.cbr.ru/excursions/bankovskiy-terem-dom-na-pokrovke/",
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "Бесплатная экскурсия «Банковский терем: дом на Покровке», продолжительность 70 минут. Посещение внутренних помещений только по предварительной записи с подтверждением. На 17 и 18 октября 2026 года экскурсионные сеансы и наличие мест не подтверждены. Для входа требуется оригинал документа, удостоверяющего личность. Внешний осмотр здания возможен отдельно от экскурсии. Контакт: +7 (831) 431-96-76.",
+      "additional_sources": [
+        {
+          "source_url": "https://museum.cbr.ru/visit/",
+          "checked_at": null,
+          "supports": [
+            "booking_required",
+            "ticket_required",
+            "price"
+          ]
+        }
+      ],
+      "original_fields": {
+        "source_file": "places_amount.json",
+        "source_sha256": "0753e04389d0916aa34bd288529b0c03fed2a1e05e9350ee56ea8a0cdc93dd8a",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_visit",
+          "price_kind": "free",
+          "includes_mandatory_fees": true,
+          "amount": 0
+        },
+        "availability_status": "available"
+      }
     },
     {
       "id": "place_03",
-      "name": null,
+      "name": "НГХМ: Русское искусство",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "Нижегородский кремль, корпус 3",
+      "category": "museum",
+      "recommended_duration_minutes": 90,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T11:00:00+03:00",
+              "end_at": "2026-10-17T19:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T11:00:00+03:00",
+              "end_at": "2026-10-18T19:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": true,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "listed",
+        "includes_mandatory_fees": true,
+        "amount_kopecks": 50000
       },
-      "availability_status": "unknown",
-      "source_url": null,
+      "availability_status": "available",
+      "source_url": "https://artmuseumnn.ru/postoyannye-expozitzii/russkoe-isskusstvo/",
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "Постоянная экспозиция русского искусства в Доме губернатора. Длительность 90 минут — приблизительная оценка для самостоятельного посещения. Взрослый билет — 500 рублей, льготный — 250 рублей для предусмотренных категорий. Касса закрывается за 30 минут до закрытия музея. Для обычного самостоятельного посещения предварительная запись не указана как обязательная; для экскурсии действуют отдельные условия. Часы работы приведены по регулярному графику, без отдельного подтверждения на 17–18 октября 2026 года. Наличие билетов на эти даты не проверено.",
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "places_amount.json",
+        "source_sha256": "0753e04389d0916aa34bd288529b0c03fed2a1e05e9350ee56ea8a0cdc93dd8a",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_visit",
+          "price_kind": "listed",
+          "includes_mandatory_fees": true,
+          "amount": 500
+        },
+        "availability_status": "available"
+      }
     },
     {
       "id": "place_04",
-      "name": null,
+      "name": "Чкаловская лестница",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "Нижне-Волжская набережная",
+      "category": "site",
+      "recommended_duration_minutes": 40,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T07:00:00+03:00",
+              "end_at": "2026-10-17T22:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T07:00:00+03:00",
+              "end_at": "2026-10-18T22:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": false,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "free",
+        "includes_mandatory_fees": true,
+        "amount_kopecks": 0
       },
-      "availability_status": "unknown",
-      "source_url": null,
+      "availability_status": "available",
+      "source_url": "https://nn-tourist.ru/konstruktor-marshrutov/chkalovskaya-lestnicza",
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "Чкаловская лестница соединяет Верхне-Волжскую и Нижне-Волжскую набережные. Осмотр бесплатный, билет и бронирование не требуются. Продолжительность 40 минут — собственная оценка для прогулки с фотографированием. Источники расходятся по режиму доступа: туристический портал указывает круглосуточную работу, а сайт Нижегородского кремля — 07:00–22:00 для осенне-зимнего периода. В расписании использовано более строгое окно. Отдельного подтверждения отсутствия ограничений на 17–18 октября нет. При полном спуске или подъёме необходимо учитывать значительное количество ступеней.",
+      "additional_sources": [
+        {
+          "source_url": "https://kremlnn.ru/public-spaces/chkalovskaya-lestnica",
+          "checked_at": null,
+          "supports": [
+            "opening_hours",
+            "address"
+          ]
+        }
+      ],
+      "original_fields": {
+        "source_file": "places_amount.json",
+        "source_sha256": "0753e04389d0916aa34bd288529b0c03fed2a1e05e9350ee56ea8a0cdc93dd8a",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_visit",
+          "price_kind": "free",
+          "includes_mandatory_fees": true,
+          "amount": 0
+        },
+        "availability_status": "available"
+      }
     },
     {
       "id": "place_05",
-      "name": null,
+      "name": "Парк 800-летия Нижнего Новгорода",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "Набережная Федоровского, Петушковская гора",
+      "category": "park",
+      "recommended_duration_minutes": 60,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T00:00:00+03:00",
+              "end_at": "2026-10-18T00:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T00:00:00+03:00",
+              "end_at": "2026-10-19T00:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": false,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "free",
+        "includes_mandatory_fees": true,
+        "amount_kopecks": 0
       },
-      "availability_status": "unknown",
-      "source_url": null,
+      "availability_status": "available",
+      "source_url": "https://rustravelforum.com/where-to-go/nizhegorodskaya-oblast/",
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "Общественный парк на набережной Федоровского. Круглосуточное бесплатное посещение по опубликованной информации. Продолжительность 60 минут соответствует рекомендованному времени на туристическом портале. Парк расположен на склонах, имеются лестницы и перепады высот. Ограничения доступа или проведение мероприятий 17–18 октября 2026 года отдельно не проверены. Предварительная запись не требуется.",
+      "additional_sources": [
+        {
+          "source_url": "https://irgsno.ru/fedorovskogo/realizaciya",
+          "checked_at": null,
+          "supports": [
+            "address"
+          ]
+        }
+      ],
+      "original_fields": {
+        "source_file": "places_amount.json",
+        "source_sha256": "0753e04389d0916aa34bd288529b0c03fed2a1e05e9350ee56ea8a0cdc93dd8a",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_visit",
+          "price_kind": "free",
+          "includes_mandatory_fees": true,
+          "amount": 0
+        },
+        "availability_status": "available"
+      }
     },
     {
       "id": "place_06",
-      "name": null,
+      "name": "Александро-Невский собор",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "ул. Стрелка, 3А",
+      "category": "church",
+      "recommended_duration_minutes": 40,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T08:00:00+03:00",
+              "end_at": "2026-10-17T19:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T08:00:00+03:00",
+              "end_at": "2026-10-18T19:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": false,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "free",
+        "includes_mandatory_fees": true,
+        "amount_kopecks": 0
       },
-      "availability_status": "unknown",
-      "source_url": null,
+      "availability_status": "available",
+      "source_url": "https://nevskiy-nne.ru/kontaktyi.html",
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "Действующий православный кафедральный собор на Стрелке. Обычное самостоятельное посещение бесплатное, предварительная запись не требуется. Продолжительность 40 минут — собственная оценка для осмотра собора и прилегающей территории. Режим 08:00–19:00 указан в туристическом путеводителе 2025 года, без отдельного подтверждения на 17–18 октября 2026 года. Во время богослужений осмотр может быть ограничен. Организованные экскурсии проводятся по предварительной договорённости. Временные ограничения доступа на конкретные даты не проверены.",
+      "additional_sources": [
+        {
+          "source_url": "https://nn-tourist.ru/assets/content/doc/guide/putevoditel-znakomtes-nizhnij-leto-2025.pdf",
+          "checked_at": null,
+          "supports": [
+            "opening_hours"
+          ]
+        }
+      ],
+      "original_fields": {
+        "source_file": "places_amount.json",
+        "source_sha256": "0753e04389d0916aa34bd288529b0c03fed2a1e05e9350ee56ea8a0cdc93dd8a",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_visit",
+          "price_kind": "free",
+          "includes_mandatory_fees": true,
+          "amount": 0
+        },
+        "availability_status": "available"
+      }
     }
   ]
 }
-

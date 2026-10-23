@@ -1,7 +1,7 @@
 """Deterministic private preference service. Returns one answer at a time."""
 from copy import deepcopy
 
-TOPICS = {"interests", "pace", "comfort", "economy"}
+TOPICS = {"interests", "pace", "comfort", "economy", "quiet", "location"}
 
 
 class UserSimulator:

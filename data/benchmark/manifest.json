@@ -1,64 +1,56 @@
 {
-  "snapshot_id": "benchmark_2026_10_17",
+  "snapshot_id": "synthetic_2026_10_17_v1",
   "timezone": "Europe/Moscow",
-  "status": "pending_verification",
-  "reviewed_by": null,
-  "reviewed_at": null,
-  "catalog_hash": null,
+  "status": "synthetic_validated",
+  "evaluation_mode": "benchmark_assumptions",
+  "real_data_verified": false,
   "sources": [
     {
       "kind": "transport",
       "path": "data/snapshot/transport.json",
-      "sha256": "0c3031990d19e89dcb504b92610323f27df59b939e24e21df8904e3b93e55678",
-      "text_replacements": [],
-      "omit_fields": [],
-      "quarantine_ids": [
-        "train_return_10"
-      ],
-      "quarantine_reason": "Missing destination station ID; retained in source, excluded instead of inventing an ID"
+      "sha256": "345db8c4d9b06de8b0906d5ba7b8e861809446af3fd5f9d8702ef2ebc8eeabc8"
     },
     {
       "kind": "stays",
       "path": "data/snapshot/stays.json",
-      "sha256": "805d20e1e27a27a5fe453108faf048d283955ff808031535c8986d5c3683ff1e",
-      "text_replacements": [
-        {
-          "old": "    \"name\": \"Байка Канавинская\"\n    \"city\": \"Нижний Новгород\",\n",
-          "new": "    \"name\": \"Байка Канавинская\",\n    \"city\": \"Нижний Новгород\",\n",
-          "reason": "Missing comma after stay_18 name; syntax only, no source fact changed"
-        }
-      ],
-      "omit_fields": [
-        "rating"
-      ],
-      "omission_reason": "Unverified rating is retained in immutable source but excluded from decision features"
+      "sha256": "a5797d35bb7baa95724add73a4fb8134d0c87789d7eb7f442c9f63a9e05dc24c"
     },
     {
       "kind": "places",
       "path": "data/snapshot/places.json",
-      "sha256": "a398cf2898ff508668d4aed13d2e841284be5c90370cb7ed840cac64651ab7fa",
-      "text_replacements": [],
-      "omit_fields": []
+      "sha256": "2657c93d60464718b41972c54e34747fe7f207627baf4c71cb3d7210a7fdb7be"
     },
     {
       "kind": "food",
       "path": "data/snapshot/food.json",
-      "sha256": "d27aa703d5dd8ddb78a13a611afc16dd11faed7283d59e7aa84493e21d2b1bf0",
-      "text_replacements": [],
-      "omit_fields": []
+      "sha256": "2de86c29c993f18de7aa0f6e8de978eb7d6abd03430680dbaeb10ae5d5c22cef"
     },
     {
       "kind": "transfers",
       "path": "data/snapshot/transfers.json",
-      "sha256": "d233a33e3f04d3f549c84d50e0848390bfff73a4f1379bfcdc3686e64ad415a6",
-      "text_replacements": [],
-      "omit_fields": []
+      "sha256": "a6fe80df92dea6a721bc3730a835c8092a60cc091faa7ae59c2611b021e8955d"
     }
   ],
+  "protected_sources": {
+    "data/snapshot/food.json": "2de86c29c993f18de7aa0f6e8de978eb7d6abd03430680dbaeb10ae5d5c22cef",
+    "data/snapshot/places.json": "2657c93d60464718b41972c54e34747fe7f207627baf4c71cb3d7210a7fdb7be",
+    "data/snapshot/stays.json": "a5797d35bb7baa95724add73a4fb8134d0c87789d7eb7f442c9f63a9e05dc24c",
+    "data/snapshot/transfers.json": "a6fe80df92dea6a721bc3730a835c8092a60cc091faa7ae59c2611b021e8955d",
+    "data/snapshot/transport.json": "345db8c4d9b06de8b0906d5ba7b8e861809446af3fd5f9d8702ef2ebc8eeabc8",
+    "data/reference_plans/dev_01.json": "8fe8f1d12736dd8fe4b99ceb8256eab5a50f86e3203b1f958d067f39d2b3d96a",
+    "data/scenarios/dev/dev_01.json": "361803257621ed6db17f05818adcc70a272e5dfa87ee940c05376d81f5cad35a"
+  },
+  "design_sha256": "294b550dd06ab7c1e25bb315a44521f24e4ddb8cb06d23773eccbb846e9983f5",
+  "reference_plan": "../../evaluation/benchmark/reference_plans/dev_01.json",
   "normalization_policy": [
-    "Explicit ruble amounts converted exactly to integer kopecks",
-    "Synthetic indicative prices are made unknown, never verified",
-    "Unverified facts and notes remain unverified",
-    "Source IDs and dated offers are not silently reassigned"
-  ]
+    "Original files are byte-preserved.",
+    "Curated source subset selected explicitly by design.json; all resulting fields are synthetic_assumption.",
+    "All mandatory fees are included in each integer-kopeck synthetic price; no historical claim.",
+    "Derived routing uses an explicitly synthetic coordinate grid.",
+    "Assumption IDs and values are in assumptions.json; no fabricated source URLs."
+  ],
+  "omitted_source_records": "Unselected hotels and off-date/diagnostic trains remain in original catalogs, never silently repaired or used as lower bounds.",
+  "catalog_hash": "56f024472542223449fa9b4f20a411e97802e365dd52da79cf835c2cdedaf16e",
+  "assumptions_hash": "3e0d44fc8120a15378933d20b777f90d7ab2d488f5b6375634746a5fd4892bf9",
+  "generator_sha256": "9411be7d3375b7e09659341eef826a9bf51fed0893c9396b1b79638784846de1"
 }

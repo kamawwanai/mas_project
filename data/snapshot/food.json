@@ -45,12 +45,23 @@
         "price_unit": "adult_meal",
         "price_kind": "estimated",
         "includes_mandatory_fees": true,
-        "amount": 330
+        "amount_kopecks": 33000
       },
       "source_url": "https://tasamayashaurma.ru/shaurma-s-kuritsej",
       "checked_at": null,
       "notes": "Выбран филиал на площади Минина и Пожарского, 6, павильон 15. График 08:00–23:30 указан на официальном сайте, отдельные изменения на 17–18 октября не проверены. Продолжительность питания 30 минут — собственная оценка. Стоимость 330 рублей на человека рассчитана по одному выбранному блюду без напитков и дополнительных услуг. Цены на дату поездки могут измениться. Предварительное бронирование для обычного заказа не требуется.",
-      "additional_sources": []
+      "additional_sources": [],
+      "original_fields": {
+        "source_file": "food_amount.json",
+        "source_sha256": "cbeb2c1e68e7954b9fc6a90b051d9467ff5a61c4742f028138d28b4435970083",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_meal",
+          "price_kind": "estimated",
+          "includes_mandatory_fees": true,
+          "amount": 330
+        }
+      }
     },
     {
       "id": "food_02",
@@ -92,7 +103,7 @@
         "price_unit": "adult_meal",
         "price_kind": "estimated",
         "includes_mandatory_fees": null,
-        "amount": 1500
+        "amount_kopecks": 150000
       },
       "source_url": "https://berezkagroup.ru/",
       "checked_at": null,
@@ -105,7 +116,18 @@
             "price"
           ]
         }
-      ]
+      ],
+      "original_fields": {
+        "source_file": "food_amount.json",
+        "source_sha256": "cbeb2c1e68e7954b9fc6a90b051d9467ff5a61c4742f028138d28b4435970083",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_meal",
+          "price_kind": "estimated",
+          "includes_mandatory_fees": null,
+          "amount": 1500
+        }
+      }
     },
     {
       "id": "food_03",
@@ -148,7 +170,7 @@
         "price_unit": "adult_meal",
         "price_kind": "estimated",
         "includes_mandatory_fees": null,
-        "amount": 500
+        "amount_kopecks": 50000
       },
       "source_url": "https://restaurantguru.ru/Dodo-Pizza-Nizhny-Novgorod-6",
       "checked_at": null,
@@ -162,7 +184,165 @@
             "opening_hours"
           ]
         }
-      ]
+      ],
+      "original_fields": {
+        "source_file": "food_amount.json",
+        "source_sha256": "cbeb2c1e68e7954b9fc6a90b051d9467ff5a61c4742f028138d28b4435970083",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_meal",
+          "price_kind": "estimated",
+          "includes_mandatory_fees": null,
+          "amount": 500
+        }
+      }
+    },
+    {
+      "id": "food_04",
+      "name": "Грузинские Истории",
+      "city": "Нижний Новгород",
+      "address": "ул. Максима Горького, 262",
+      "meal_types": [
+        "lunch",
+        "dinner"
+      ],
+      "recommended_duration_minutes": 90,
+      "opening_hours": [
+        {
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T12:00:00+03:00",
+              "end_at": "2026-10-18T01:00:00+03:00"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T12:00:00+03:00",
+              "end_at": "2026-10-18T23:00:00+03:00"
+            }
+          ]
+        }
+      ],
+      "reservation_required": false,
+      "price_basis": "Ориентировочная стоимость одного приёма пищи на человека — 2000 рублей. Основание: средний чек 1500–2200 рублей по данным Яндекс Карт.",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_meal",
+        "price_kind": "estimated",
+        "includes_mandatory_fees": null,
+        "amount_kopecks": 200000
+      },
+      "source_url": "https://gruzinskie-istorii.ru/",
+      "checked_at": null,
+      "notes": "Ресторан грузинской кухни. В меню хинкали, хачапури, мясные блюда и десерты. Продолжительность посещения 90 минут — собственная оценка. График работы: суббота 12:00–01:00, воскресенье 12:00–23:00 по опубликованному расписанию. Работа в конкретные даты 17–18 октября отдельно не подтверждена. Обязательное бронирование столика не установлено, но рекомендуется заранее. Стоимость 2000 рублей на человека — ориентировочный чек, фактические расходы зависят от заказа. Для двух взрослых ориентировочный бюджет — 4000 рублей.",
+      "additional_sources": [
+        {
+          "source_url": "https://yandex.ru/maps/org/gruzinskiye_istorii/216509099310/",
+          "checked_at": null,
+          "supports": [
+            "address",
+            "price"
+          ]
+        },
+        {
+          "source_url": "https://restaurantguru.ru/Gruzinskie-Istorii-Nizhny-Novgorod",
+          "checked_at": null,
+          "supports": [
+            "opening_hours"
+          ]
+        }
+      ],
+      "original_fields": {
+        "source_file": "food_amount.json",
+        "source_sha256": "cbeb2c1e68e7954b9fc6a90b051d9467ff5a61c4742f028138d28b4435970083",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_meal",
+          "price_kind": "estimated",
+          "includes_mandatory_fees": null,
+          "amount": 2000
+        }
+      }
+    },
+    {
+      "id": "food_05",
+      "name": "Сыроварня",
+      "city": "Нижний Новгород",
+      "address": "Октябрьская площадь, 1",
+      "meal_types": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "recommended_duration_minutes": 90,
+      "opening_hours": [
+        {
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T07:30:00+03:00",
+              "end_at": "2026-10-18T01:00:00+03:00"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T07:30:00+03:00",
+              "end_at": "2026-10-18T23:59:00+03:00"
+            }
+          ]
+        }
+      ],
+      "reservation_required": false,
+      "price_basis": "Ориентировочная стоимость одного приёма пищи на человека — 1200 рублей. Основание: цены в официальном меню, например спагетти Карбонара за 870 рублей и десерт за 290 рублей. Фактическая стоимость зависит от заказа.",
+      "price": {
+        "currency": "RUB",
+        "price_unit": "adult_meal",
+        "price_kind": "estimated",
+        "includes_mandatory_fees": true,
+        "amount_kopecks": 120000
+      },
+      "source_url": "https://www.syrovarnya.com/nizhnij-novgorod",
+      "checked_at": null,
+      "notes": "Семейный ресторан с блюдами из сыров собственного производства, пастой, пиццей и завтраками. Расположен в концертном зале «Юпитер». Продолжительность посещения 90 минут — собственная оценка. По официальному расписанию в субботу работает с 07:30 до 01:00, в воскресенье с 07:30 до 23:59. Работа в конкретные даты 17–18 октября отдельно не подтверждена. Бронирование столика доступно на официальном сайте, обязательность не установлена. Стоимость 1200 рублей на человека — оценка по меню без напитков. Для двух взрослых ориентировочный бюджет — 2400 рублей.",
+      "additional_sources": [
+        {
+          "source_url": "https://www.syrovarnya.com/catalog/nizhnij-novgorod",
+          "checked_at": null,
+          "supports": [
+            "price"
+          ]
+        },
+        {
+          "source_url": "https://yandex.ru/maps/org/syrovarnya/16148242428/",
+          "checked_at": null,
+          "supports": [
+            "address",
+            "opening_hours"
+          ]
+        }
+      ],
+      "original_fields": {
+        "source_file": "food_amount.json",
+        "source_sha256": "cbeb2c1e68e7954b9fc6a90b051d9467ff5a61c4742f028138d28b4435970083",
+        "price": {
+          "currency": "RUB",
+          "price_unit": "adult_meal",
+          "price_kind": "estimated",
+          "includes_mandatory_fees": true,
+          "amount": 1200
+        }
+      }
     }
   ]
 }

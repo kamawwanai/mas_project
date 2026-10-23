@@ -1,0 +1,14 @@
+{
+  "weights": {
+    "food": 0.85,
+    "culture": 0.15
+  },
+  "answers": {
+    "interests": [
+      "local_food"
+    ],
+    "comfort": "high"
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_test_07",
+  "status": "synthetic_assumption"
+}

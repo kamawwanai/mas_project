@@ -107,12 +107,10 @@ def _build_indexes(dataset: LoadedDataset) -> _Indexes:
         for index, item in enumerate(document.items):
             occurrences[kind][item.id].append((item, f"{dataset.paths[kind]}:$.items[{index}]"))
             if kind == "transport":
-                stations_raw[item.from_station.id].append(
-                    (item.from_station, f"{dataset.paths[kind]}:$.items[{index}].from_station")
-                )
-                stations_raw[item.to_station.id].append(
-                    (item.to_station, f"{dataset.paths[kind]}:$.items[{index}].to_station")
-                )
+                for side in ("from_station", "to_station"):
+                    station = getattr(item, side)
+                    if station.id is not None:
+                        stations_raw[station.id].append((station, f"{dataset.paths[kind]}:$.items[{index}].{side}"))
 
     merged: dict[str, Station] = {}
     for station_id, entries in stations_raw.items():
@@ -380,14 +378,16 @@ def _event_reference_check(dataset: LoadedDataset, indexes: _Indexes) -> CheckRe
             kind = expected_kind[event.type]
             valid = indexes.has_unique(kind, event.reference_id)
             expected_label = kind
-        elif event.type in {"check_in", "check_out", "rest", "included_breakfast", "luggage_drop", "luggage_pickup"}:
+        elif event.type in {"check_in", "check_out", "included_breakfast", "luggage_drop", "luggage_pickup"}:
             valid = event.reference_id == dataset.plan.selected_stay.reference_id and indexes.has_unique(
                 "stays", event.reference_id
             )
             expected_label = "выбранное проживание"
-        elif event.type == "buffer":
-            valid = event.reference_id in indexes.stations
-            expected_label = "станция"
+        elif event.type in {"buffer", "rest"}:
+            valid = event.reference_id in indexes.stations or any(
+                indexes.has_unique(kind, event.reference_id) for kind in ("stays", "places", "food")
+            )
+            expected_label = "известная точка маршрута"
         if valid:
             continue
 

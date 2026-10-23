@@ -1,22 +1,22 @@
-# Промежуточный показ
+# Локальный показ без API
 
-## Сейчас, без API
+1. `python -B scripts/prepare_snapshot.py --check` — проверка воспроизводимости.
+2. `python -B scripts/check_benchmark.py` — gate всех 4 dev и 12 test.
+3. Полный эталон dev_01:
 
-1. `python -B -m unittest discover -s tests -v`
-2. `python scripts/audit_data.py --data-dir data --json` — ожидаются ошибки исходников.
-3. `python scripts/prepare_snapshot.py --check` — нормализация воспроизводима.
-4. `python scripts/check_benchmark.py` — честно показывает незавершённые данные.
-5. `python scripts/run_experiments.py --dry-run` — 72 задания, ни одного LLM-запроса.
+```powershell
+python -B scripts/check_scenario.py --scenario dev_01 --scope full --data-dir data/benchmark --plan evaluation/benchmark/reference_plans/dev_01.json --mode benchmark_assumptions --json
+```
 
-Программные тесты показывают три механизма управления и проверку ошибок на
-явно синтетических фикстурах. Они не демонстрируют исследовательский успех LLM.
+Ожидаются 45 событий, `exit_code=0`, стоимость 2 534 500 копеек и явный режим
+benchmark_assumptions. Синтетическая цена не подтверждает историческую стоимость.
+Повтор той же проверки с `--mode strict` должен вернуть incomplete, код 3.
 
-## После разрешённого реального сравнения
+4. `python -B scripts/run_benchmark_mock.py --output reports/local/demo-benchmark`.
+5. Повтор с `--resume` проверяет возобновление без повторного исполнения.
 
-Показать одинаковый запрос и снимок, затем реальные журналы A/B/C. Выбрать:
-уточнение, изменившее решение; исправление ошибки; конфликт специалистов;
-неуспешный запуск. Объяснять по конкретным tool_call/tool_result/delegation,
-а не по заявлению модели о своём рассуждении.
-
-Таблица и PNG/SVG строятся из сохранённых оценок. Без реальных данных графики
-не создаются. До экспериментов успешные и неуспешные реальные трассы отсутствуют.
+В каталоге report будут CSV/JSON, SVG и выбранные трассы. Все результаты
+oracle-scripted, test / synthetic; не представляют качество реальной LLM.
+Отдельный `run_local_cycle.py` проверяет компактные фикстуры, включая ошибку
+и сохранение прерванной серии. Для нового показа после изменений кода выберите
+новый каталог результатов. API для показа не нужен и остаётся отключённым.

@@ -1,0 +1,64 @@
+{
+  "snapshot_id": "benchmark_2026_10_17",
+  "timezone": "Europe/Moscow",
+  "status": "pending_verification",
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "catalog_hash": null,
+  "sources": [
+    {
+      "kind": "transport",
+      "path": "data/snapshot/transport.json",
+      "sha256": "0c3031990d19e89dcb504b92610323f27df59b939e24e21df8904e3b93e55678",
+      "text_replacements": [],
+      "omit_fields": [],
+      "quarantine_ids": [
+        "train_return_10"
+      ],
+      "quarantine_reason": "Missing destination station ID; retained in source, excluded instead of inventing an ID"
+    },
+    {
+      "kind": "stays",
+      "path": "data/snapshot/stays.json",
+      "sha256": "805d20e1e27a27a5fe453108faf048d283955ff808031535c8986d5c3683ff1e",
+      "text_replacements": [
+        {
+          "old": "    \"name\": \"Байка Канавинская\"\n    \"city\": \"Нижний Новгород\",\n",
+          "new": "    \"name\": \"Байка Канавинская\",\n    \"city\": \"Нижний Новгород\",\n",
+          "reason": "Missing comma after stay_18 name; syntax only, no source fact changed"
+        }
+      ],
+      "omit_fields": [
+        "rating"
+      ],
+      "omission_reason": "Unverified rating is retained in immutable source but excluded from decision features"
+    },
+    {
+      "kind": "places",
+      "path": "data/snapshot/places.json",
+      "sha256": "a398cf2898ff508668d4aed13d2e841284be5c90370cb7ed840cac64651ab7fa",
+      "text_replacements": [],
+      "omit_fields": []
+    },
+    {
+      "kind": "food",
+      "path": "data/snapshot/food.json",
+      "sha256": "d27aa703d5dd8ddb78a13a611afc16dd11faed7283d59e7aa84493e21d2b1bf0",
+      "text_replacements": [],
+      "omit_fields": []
+    },
+    {
+      "kind": "transfers",
+      "path": "data/snapshot/transfers.json",
+      "sha256": "d233a33e3f04d3f549c84d50e0848390bfff73a4f1379bfcdc3686e64ad415a6",
+      "text_replacements": [],
+      "omit_fields": []
+    }
+  ],
+  "normalization_policy": [
+    "Explicit ruble amounts converted exactly to integer kopecks",
+    "Synthetic indicative prices are made unknown, never verified",
+    "Unverified facts and notes remain unverified",
+    "Source IDs and dated offers are not silently reassigned"
+  ]
+}

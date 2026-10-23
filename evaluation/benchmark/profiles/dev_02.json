@@ -1,0 +1,15 @@
+{
+  "weights": {
+    "pace": 0.6,
+    "culture": 0.4
+  },
+  "answers": {
+    "pace": "relaxed",
+    "interests": [
+      "museums"
+    ],
+    "economy": "save"
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_dev_02",
+  "status": "synthetic_assumption"
+}

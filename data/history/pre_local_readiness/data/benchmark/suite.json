@@ -1,0 +1,216 @@
+{
+  "status": "pending_verification",
+  "cases": [
+    {
+      "id": "dev_01",
+      "split": "dev",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Baseline verified trip",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "dev_02",
+      "split": "dev",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Boundary budget, walking and timing",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "dev_03",
+      "split": "dev",
+      "expected": "infeasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Certified hard-constraint conflict",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "dev_04",
+      "split": "dev",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Public condition change after initial result",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate",
+        "Define and verify concrete public change"
+      ]
+    },
+    {
+      "id": "test_01",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Baseline",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_02",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Tight feasible budget",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_03",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Walking limit",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_04",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Opening hours and required visit",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_05",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Stay and luggage",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_06",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Hidden culture preference",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_07",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Hidden food preference",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_08",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Hidden relaxed pace",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_09",
+      "split": "test",
+      "expected": "infeasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Certified insufficient budget",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_10",
+      "split": "test",
+      "expected": "infeasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Certified closed required place",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate"
+      ]
+    },
+    {
+      "id": "test_11",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Budget reduction",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate",
+        "Define and verify concrete public change"
+      ]
+    },
+    {
+      "id": "test_12",
+      "split": "test",
+      "expected": "feasible",
+      "status": "pending_verification",
+      "public_hash": null,
+      "title": "Offer becomes unavailable",
+      "changes": [],
+      "pending": [
+        "Verified snapshot",
+        "Complete feasible witness or checked conflict certificate",
+        "Define and verify concrete public change"
+      ]
+    }
+  ]
+}

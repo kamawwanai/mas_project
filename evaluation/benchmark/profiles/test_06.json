@@ -1,0 +1,14 @@
+{
+  "weights": {
+    "culture": 0.9,
+    "comfort": 0.1
+  },
+  "answers": {
+    "interests": [
+      "culture"
+    ],
+    "pace": "busy"
+  },
+  "private_marker": "PRIVATE_SYNTHETIC_test_06",
+  "status": "synthetic_assumption"
+}

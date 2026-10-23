@@ -7,6 +7,7 @@ from datetime import date, datetime
 import re
 import math
 from typing import Any, Callable, Literal, TypeVar
+from .evidence import local_zone
 
 
 SUPPORTED_SCHEMA_VERSIONS = {"0.1.0", "0.2.0"}
@@ -143,19 +144,20 @@ class Price:
     amount_kopecks: int | None
     currency: str
     price_unit: str
-    price_kind: Literal["unknown", "listed", "estimated", "free"]
+    price_kind: Literal["unknown", "listed", "estimated", "free", "indicative_test_value", "synthetic_assumption"]
     includes_mandatory_fees: bool | None
+    group_size_adults: int | None = None
 
 
-PRICE_UNITS = {"adult_ticket", "room_night", "adult_visit", "adult_meal", "person_trip", "vehicle_trip", "group_storage"}
+PRICE_UNITS = {"adult_ticket", "room_night", "adult_visit", "adult_meal", "person_trip", "vehicle_trip", "group_storage", "group_trip"}
 
 
 def parse_price(value: Any, path: str) -> Price:
     data = _object(value, path)
-    keys = {"amount_kopecks", "currency", "price_unit", "price_kind", "includes_mandatory_fees"}
+    keys = {"amount_kopecks", "currency", "price_unit", "price_kind", "includes_mandatory_fees", "group_size_adults"}
     _only_keys(data, keys, path)
     amount = _integer(_required(data, "amount_kopecks", path), f"{path}.amount_kopecks", nullable=True, minimum=0)
-    kind = _enum(_required(data, "price_kind", path), f"{path}.price_kind", {"unknown", "listed", "estimated", "free"})
+    kind = _enum(_required(data, "price_kind", path), f"{path}.price_kind", {"unknown", "listed", "estimated", "free", "indicative_test_value", "synthetic_assumption"})
     if kind == "free" and amount != 0:
         raise SchemaError(f"{path}.amount_kopecks", "для price_kind='free' сумма должна быть равна 0")
     return Price(
@@ -163,6 +165,7 @@ def parse_price(value: Any, path: str) -> Price:
         currency=_string(_required(data, "currency", path), f"{path}.currency"),
         price_unit=_enum(_required(data, "price_unit", path), f"{path}.price_unit", PRICE_UNITS),
         price_kind=kind,
+        group_size_adults=_integer(data.get("group_size_adults"), f"{path}.group_size_adults", nullable=True, minimum=1),
         includes_mandatory_fees=_boolean(
             _required(data, "includes_mandatory_fees", path),
             f"{path}.includes_mandatory_fees",
@@ -221,6 +224,7 @@ class SourceFields:
     verified_fields: list[str] = field(default_factory=list)
     features: dict[str, int] = field(default_factory=dict)
     reviews: list[Review] = field(default_factory=list)
+    original_fields: dict[str, Any] = field(default_factory=dict)
 
 
 def _parse_source(data: dict[str, Any], path: str) -> SourceFields:
@@ -236,12 +240,13 @@ def _parse_source(data: dict[str, Any], path: str) -> SourceFields:
         verified_fields=_list(data.get("verified_fields", []), f"{path}.verified_fields", lambda v, p: _string(v, p)),
         features=_parse_features(data.get("features", {}), f"{path}.features"),
         reviews=_list(data.get("reviews", []), f"{path}.reviews", parse_review),
+        original_fields=_object(data.get("original_fields", {}), f"{path}.original_fields"),
     )
 
 
 def _parse_features(value: Any, path: str) -> dict[str, int]:
     data = _object(value, path)
-    _only_keys(data, {"culture", "food", "comfort"}, path)
+    _only_keys(data, {"culture", "food", "comfort", "quiet", "location"}, path)
     result = {k: _integer(v, f"{path}.{k}", minimum=0) for k, v in data.items()}
     if any(v > 100 for v in result.values()):
         raise SchemaError(path, "feature values must be between 0 and 100")
@@ -292,7 +297,7 @@ def parse_opening_hours(value: Any, path: str) -> OpeningHours:
 
 @dataclass(frozen=True)
 class Station:
-    id: str
+    id: str | None
     name: str | None
     city: str | None
     address: str | None
@@ -303,14 +308,14 @@ def parse_station(value: Any, path: str) -> Station:
     keys = {"id", "name", "city", "address"}
     _only_keys(data, keys, path)
     return Station(
-        id=_string(_required(data, "id", path), f"{path}.id"),
+        id=_string(_required(data, "id", path), f"{path}.id", nullable=True),
         name=_string(_required(data, "name", path), f"{path}.name", nullable=True),
         city=_string(_required(data, "city", path), f"{path}.city", nullable=True),
         address=_string(_required(data, "address", path), f"{path}.address", nullable=True),
     )
 
 
-SOURCE_KEYS = {"source_url", "checked_at", "notes", "additional_sources", "verified_fields", "features", "reviews"}
+SOURCE_KEYS = {"source_url", "checked_at", "notes", "additional_sources", "verified_fields", "features", "reviews", "original_fields"}
 
 
 @dataclass(frozen=True)
@@ -425,6 +430,29 @@ def parse_stay(value: Any, path: str) -> StayItem:
 
 
 @dataclass(frozen=True)
+class BookingConfirmation:
+    id: str
+    start_at: datetime
+    end_at: datetime
+    adults: int
+    source_url: str | None
+    checked_at: datetime | None
+    assumption_id: str | None = None
+
+
+def parse_booking(value, path):
+    data = _object(value, path)
+    _only_keys(data, {"id", "start_at", "end_at", "adults", "source_url", "checked_at", "assumption_id"}, path)
+    interval = parse_opening_interval({k: _required(data, k, path) for k in ("start_at", "end_at")}, path)
+    return BookingConfirmation(_string(_required(data, "id", path), path+".id"),
+        interval.start_at, interval.end_at,
+        _integer(_required(data, "adults", path), path+".adults", minimum=1),
+        _string(_required(data, "source_url", path), path+".source_url", nullable=True),
+        _timestamp(_required(data, "checked_at", path), path+".checked_at", nullable=True),
+        _string(data.get("assumption_id"), path+".assumption_id", nullable=True))
+
+
+@dataclass(frozen=True)
 class PlaceItem:
     id: str
     name: str | None
@@ -438,6 +466,7 @@ class PlaceItem:
     price: Price
     availability_status: Literal["unknown", "available", "unavailable"]
     source: SourceFields
+    booking_confirmations: list[BookingConfirmation] = field(default_factory=list)
 
 
 def parse_place(value: Any, path: str) -> PlaceItem:
@@ -445,7 +474,7 @@ def parse_place(value: Any, path: str) -> PlaceItem:
     keys = {
         "id", "name", "city", "address", "category", "recommended_duration_minutes", "opening_hours",
         "ticket_required", "booking_required", "price", "availability_status",
-    } | SOURCE_KEYS
+    } | SOURCE_KEYS | {"booking_confirmations"}
     _only_keys(data, keys, path)
     return PlaceItem(
         id=_string(_required(data, "id", path), f"{path}.id"),
@@ -471,6 +500,7 @@ def parse_place(value: Any, path: str) -> PlaceItem:
             {"unknown", "available", "unavailable"},
         ),
         source=_parse_source(data, path),
+        booking_confirmations=_list(data.get("booking_confirmations", []), path+".booking_confirmations", parse_booking),
     )
 
 
@@ -487,6 +517,7 @@ class FoodItem:
     price_basis: str | None
     price: Price
     source: SourceFields
+    booking_confirmations: list[BookingConfirmation] = field(default_factory=list)
 
 
 def parse_food(value: Any, path: str) -> FoodItem:
@@ -494,7 +525,7 @@ def parse_food(value: Any, path: str) -> FoodItem:
     keys = {
         "id", "name", "city", "address", "meal_types", "recommended_duration_minutes", "opening_hours",
         "reservation_required", "price_basis", "price",
-    } | SOURCE_KEYS
+    } | SOURCE_KEYS | {"booking_confirmations"}
     _only_keys(data, keys, path)
     return FoodItem(
         id=_string(_required(data, "id", path), f"{path}.id"),
@@ -522,6 +553,7 @@ def parse_food(value: Any, path: str) -> FoodItem:
         price_basis=_string(_required(data, "price_basis", path), f"{path}.price_basis", nullable=True),
         price=parse_price(_required(data, "price", path), f"{path}.price"),
         source=_parse_source(data, path),
+        booking_confirmations=_list(data.get("booking_confirmations", []), path+".booking_confirmations", parse_booking),
     )
 
 
@@ -539,6 +571,7 @@ class TransferItem:
     source: SourceFields
     walking_minutes: int | None = None
     vehicle_capacity_adults: int | None = None
+    departure_windows: list[OpeningInterval] | None = None
 
 
 def parse_transfer(value: Any, path: str) -> TransferItem:
@@ -546,7 +579,7 @@ def parse_transfer(value: Any, path: str) -> TransferItem:
     keys = {
         "id", "from_id", "to_id", "applicable_date", "mode", "duration_minutes", "distance_meters",
         "duration_kind", "price",
-    } | SOURCE_KEYS | {"walking_minutes", "vehicle_capacity_adults"}
+    } | SOURCE_KEYS | {"walking_minutes", "vehicle_capacity_adults", "departure_windows"}
     _only_keys(data, keys, path)
     return TransferItem(
         id=_string(_required(data, "id", path), f"{path}.id"),
@@ -569,6 +602,7 @@ def parse_transfer(value: Any, path: str) -> TransferItem:
         ),
         price=parse_price(_required(data, "price", path), f"{path}.price"),
         source=_parse_source(data, path),
+        departure_windows=_list(data.get("departure_windows"), path+".departure_windows", parse_opening_interval, nullable=True),
         walking_minutes=_integer(data.get("walking_minutes"), f"{path}.walking_minutes", nullable=True, minimum=0),
         vehicle_capacity_adults=_integer(data.get("vehicle_capacity_adults"), f"{path}.vehicle_capacity_adults", nullable=True, minimum=1),
     )
@@ -600,11 +634,16 @@ def _base(data: dict[str, Any], path: str) -> tuple[str, str, bool, str]:
             f"{path}.schema_version",
             f"неподдерживаемая версия {version!r}; поддерживается: {', '.join(sorted(SUPPORTED_SCHEMA_VERSIONS))}",
         )
+    zone_name = _string(_required(data, "timezone", path), f"{path}.timezone")
+    try:
+        local_zone(zone_name)
+    except ValueError as exc:
+        raise SchemaError(f"{path}.timezone", str(exc)) from exc
     return (
         version,
         _string(_required(data, "snapshot_id", path), f"{path}.snapshot_id"),
         _boolean(_required(data, "is_template", path), f"{path}.is_template"),
-        _string(_required(data, "timezone", path), f"{path}.timezone"),
+        zone_name,
     )
 
 
@@ -639,6 +678,9 @@ class Constraints:
     min_visit_minutes_per_day: int = 0
     required_meals: list[str] = field(default_factory=list)
     luggage_required: bool = False
+    activities_on_both_dates: bool = False
+    meals_on_both_dates: bool = False
+    rest_required: bool = False
 
 
 @dataclass(frozen=True)
@@ -672,13 +714,16 @@ def parse_preferences(value: Any, path: str) -> Preferences:
 
 def parse_constraints(value: Any, path: str) -> Constraints:
     data = _object(value, path)
-    keys = {"required_place_ids", "max_walking_minutes_per_day", "min_departure_buffer_minutes", "min_rest_minutes_per_night", "min_visit_minutes_per_day", "required_meals", "luggage_required"}
+    keys = {"required_place_ids", "max_walking_minutes_per_day", "min_departure_buffer_minutes", "min_rest_minutes_per_night", "min_visit_minutes_per_day", "required_meals", "luggage_required", "activities_on_both_dates", "meals_on_both_dates", "rest_required"}
     _only_keys(data, keys, path)
     return Constraints(
         min_rest_minutes_per_night=_integer(data.get("min_rest_minutes_per_night", 0), f"{path}.min_rest_minutes_per_night", minimum=0),
         min_visit_minutes_per_day=_integer(data.get("min_visit_minutes_per_day", 0), f"{path}.min_visit_minutes_per_day", minimum=0),
         required_meals=_list(data.get("required_meals", []), f"{path}.required_meals", lambda v, p: _enum(v, p, {"breakfast", "lunch", "dinner"})),
         luggage_required=_boolean(data.get("luggage_required", False), f"{path}.luggage_required"),
+        activities_on_both_dates=_boolean(data.get("activities_on_both_dates", False), f"{path}.activities_on_both_dates"),
+        meals_on_both_dates=_boolean(data.get("meals_on_both_dates", False), f"{path}.meals_on_both_dates"),
+        rest_required=_boolean(data.get("rest_required", False), f"{path}.rest_required"),
         required_place_ids=_list(
             _required(data, "required_place_ids", path),
             f"{path}.required_place_ids",
@@ -748,15 +793,19 @@ class PlanEvent:
     end_at: datetime | None
     quantity: int | None = None
     meal_type: str | None = None
+    notes: str | None = None
+    booking_id: str | None = None
 
 
 def parse_event(value: Any, path: str) -> PlanEvent:
     data = _object(value, path)
-    base_keys = {"id", "day", "type", "reference_id", "label", "start_at", "end_at"}
+    base_keys = {"id", "day", "type", "reference_id", "label", "start_at", "end_at", "notes"}
     event_type = _enum(_required(data, "type", path), f"{path}.type", EVENT_TYPES)
     expected = set(base_keys)
     if event_type in QUANTITY_EVENT_TYPES:
         expected.add("quantity")
+    if event_type in {"visit", "meal"}:
+        expected.add("booking_id")
     if event_type == "meal":
         expected.add("meal_type")
     _only_keys(data, expected, path)
@@ -780,6 +829,8 @@ def parse_event(value: Any, path: str) -> PlanEvent:
         end_at=_timestamp(_required(data, "end_at", path), f"{path}.end_at", nullable=True),
         quantity=quantity,
         meal_type=meal_type,
+        notes=_string(data.get("notes"), f"{path}.notes", nullable=True),
+        booking_id=_string(data.get("booking_id"), path+".booking_id", nullable=True),
     )
 
 
@@ -841,7 +892,7 @@ def parse_plan(value: Any, path: str = "$") -> ManualPlan:
         validation_status=_enum(
             _required(data, "validation_status", path),
             f"{path}.validation_status",
-            {"not_checked", "valid", "invalid", "incomplete"},
+            {"not_checked", "valid", "invalid", "incomplete", "benchmark_assumptions"},
         ),
         unresolved_items=_list(
             _required(data, "unresolved_items", path),
@@ -899,6 +950,8 @@ class ValidationReport:
     not_implemented: list[str]
     full_trip_feasibility_evaluated: bool = False
     cost: dict[str, Any] | None = None
+    evaluation_mode: str = "strict"
+    assumptions_hash: str | None = None
 
     @property
     def exit_code(self) -> int:
@@ -919,6 +972,8 @@ class ValidationReport:
         incomplete_data = [item.to_dict() for check in self.checks for item in check.incomplete_data]
         return {
             "scope": self.scope,
+            "evaluation_mode": self.evaluation_mode,
+            "assumptions_hash": self.assumptions_hash,
             "overall_status": self.overall_status,
             "exit_code": self.exit_code,
             "scenario_id": self.scenario_id,

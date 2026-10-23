@@ -1,23 +1,30 @@
 """Public features, substantive diversity, Pareto filtering and ranking."""
 from __future__ import annotations
 from statistics import mean
+import json
+import math
 from .checks import validate_trip
 from .schemas import parse_plan
 
-FEATURES = {"culture", "food", "comfort", "pace", "economy"}
+FEATURES = {"culture", "food", "comfort", "pace", "economy", "quiet", "location"}
 
 
-def features(catalogs, request, raw):
+def features(catalogs, request, raw, *, context=None):
     plan = parse_plan(raw) if isinstance(raw, dict) else raw
-    report = validate_trip(catalogs, request, plan)
+    report = validate_trip(catalogs, request, plan, context=context)
     by_id = {i.id: i for d in catalogs.values() for i in d.items}
     chosen = [by_id[e.reference_id] for e in plan.items if e.type in {"visit", "meal"} and e.reference_id in by_id]
     if plan.selected_stay.reference_id in by_id:
         chosen.append(by_id[plan.selected_stay.reference_id])
     values = {}
     for feature in ("culture", "food", "comfort"):
-        scores = [i.source.features[feature]/100 for i in chosen if feature in i.source.features and "features" in i.source.verified_fields]
+        scores = [i.source.features[feature]/100 for i in chosen if feature in i.source.features and
+                  ("features" in i.source.verified_fields or context is not None and context.supports(i, "features"))]
         values[feature] = mean(scores) if scores else 0.0
+    hotel = by_id.get(plan.selected_stay.reference_id)
+    for feature in ("quiet", "location"):
+        values[feature] = (hotel.source.features.get(feature, 0)/100 if hotel and
+            ("features" in hotel.source.verified_fields or context is not None and context.supports(hotel, "features")) else 0.0)
     walking, travel = 0, 0
     modes = []
     for event in plan.items:
@@ -39,7 +46,8 @@ def features(catalogs, request, raw):
 def identity(plan):
     return (plan["selected_stay"]["reference_id"],
             tuple(e["reference_id"] for e in plan["items"] if e["type"] == "transport"),
-            tuple(sorted(e["reference_id"] for e in plan["items"] if e["type"] == "visit")))
+            tuple(sorted(e["reference_id"] for e in plan["items"] if e["type"] == "visit")),
+            tuple(sorted((e["day"], e.get("meal_type"), e["reference_id"]) for e in plan["items"] if e["type"] == "meal")))
 
 
 def distinct(left, lf, right, rf):
@@ -47,19 +55,20 @@ def distinct(left, lf, right, rf):
 
 
 def utility(values, weights):
-    if not weights or set(weights)-FEATURES or any(type(w) not in (int, float) or w < 0 for w in weights.values()) or abs(sum(weights.values())-1) > 1e-6:
+    if not isinstance(weights, dict) or not weights or set(weights)-FEATURES or any(type(w) not in (int, float) or not math.isfinite(w) or w < 0 for w in weights.values()) or abs(sum(weights.values())-1) > 1e-6:
         raise ValueError("Utility weights must be nonnegative, known and sum to one")
     return sum(values[k]*v for k, v in weights.items())
 
 
 def dominates(a, b):
-    av = [-a["cost"], -a["walking"], -a["travel"], *[a["utility"][k] for k in ("culture", "food", "comfort")]]
-    bv = [-b["cost"], -b["walking"], -b["travel"], *[b["utility"][k] for k in ("culture", "food", "comfort")]]
+    av = [-a["cost"], -a["walking"], -a["travel"], *[a["utility"].get(k, 0) for k in ("culture", "food", "comfort", "quiet", "location")]]
+    bv = [-b["cost"], -b["walking"], -b["travel"], *[b["utility"].get(k, 0) for k in ("culture", "food", "comfort", "quiet", "location")]]
     return all(x >= y for x, y in zip(av, bv)) and any(x > y for x, y in zip(av, bv))
 
 
 def public_weights(request, revealed):
-    weights = dict.fromkeys(sorted(FEATURES), 1.0)
+    weights = dict.fromkeys(sorted(FEATURES), 0.0)
+    weights.update(dict.fromkeys(("culture", "food", "comfort", "pace", "economy"), 1.0))
     interests = revealed.get("interests", request.preferences.interests)
     if not isinstance(interests, list):
         interests = [interests]
@@ -73,23 +82,31 @@ def public_weights(request, revealed):
         weights["economy"] += 1
     if revealed.get("comfort") == "high":
         weights["comfort"] += 1
+    for name in ("quiet", "location"):
+        if revealed.get(name) == "high":
+            weights[name] += 3
     total = sum(weights.values())
     return {k: v/total for k, v in weights.items()}
 
 
-def select(catalogs, request, candidates, revealed=None):
-    unique, rejected = [], []
+def select(catalogs, request, candidates, revealed=None, *, context=None):
+    valid, rejected = [], []
     for raw in candidates:
         try:
-            f = features(catalogs, request, raw)
+            f = features(catalogs, request, raw, context=context)
         except (ValueError, TypeError, KeyError) as exc:
             rejected.append({"reason": "schema", "message": str(exc), "plan": raw})
             continue
         if not f["valid"]:
             rejected.append({"reason": "invalid", "report": f["report"], "plan": raw})
-        elif all(distinct(raw, f, p, pf) for p, pf in unique):
-            unique.append((raw, f))
-    frontier = [(p, f) for p, f in unique if not any(dominates(g, f) for _, g in unique)]
+        else:
+            valid.append((raw, f))
+    # Pareto-filter before deduplication, then choose a deterministic best representative.
+    frontier = [(p, f) for p, f in valid if not any(dominates(g, f) for _, g in valid)]
     weights = public_weights(request, revealed or {})
-    frontier.sort(key=lambda pair: (-utility(pair[1]["utility"], weights), pair[1]["cost"], str(identity(pair[0]))))
-    return [p for p, _ in frontier[:5]], rejected
+    frontier.sort(key=lambda pair: (-utility(pair[1]["utility"], weights), pair[1]["cost"], str(identity(pair[0])), json.dumps(pair[0], sort_keys=True, ensure_ascii=False)))
+    unique = []
+    for p, f in frontier:
+        if all(distinct(p, f, q, g) for q, g in unique):
+            unique.append((p, f))
+    return [p for p, _ in unique[:5]], rejected

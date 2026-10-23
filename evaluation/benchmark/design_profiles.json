@@ -1,0 +1,18 @@
+{
+  "dev_01": {"weights": {"culture": 0.5, "comfort": 0.3, "food": 0.2}, "answers": {"interests": ["museums", "local_food"], "comfort": "high", "pace": "balanced"}},
+  "dev_02": {"weights": {"pace": 0.6, "culture": 0.4}, "answers": {"pace": "relaxed", "interests": ["museums"], "economy": "save"}},
+  "dev_03": {"weights": {"culture": 0.8, "comfort": 0.2}, "answers": {"interests": ["culture"], "comfort": "high"}},
+  "dev_04": {"weights": {"quiet": 0.4, "culture": 0.6}, "answers": {"quiet": "high", "interests": ["museums"]}},
+  "test_01": {"weights": {"location": 0.7, "culture": 0.3}, "answers": {"location": "high", "interests": ["museums"]}},
+  "test_02": {"weights": {"quiet": 0.8, "culture": 0.2}, "answers": {"quiet": "high", "economy": "save"}},
+  "test_03": {"weights": {"pace": 0.7, "comfort": 0.3}, "answers": {"pace": "relaxed", "comfort": "high"}},
+  "test_04": {"weights": {"culture": 0.9, "comfort": 0.1}, "answers": {"interests": ["museums"]}},
+  "test_05": {"weights": {"quiet": 0.7, "comfort": 0.3}, "answers": {"quiet": "high", "comfort": "high", "pace": "relaxed"}},
+  "test_06": {"weights": {"culture": 0.9, "comfort": 0.1}, "answers": {"interests": ["culture"], "pace": "busy"}},
+  "test_07": {"weights": {"food": 0.85, "culture": 0.15}, "answers": {"interests": ["local_food"], "comfort": "high"}},
+  "test_08": {"weights": {"quiet": 0.6, "pace": 0.4}, "answers": {"quiet": "high", "pace": "relaxed"}},
+  "test_09": {"weights": {"economy": 1.0}, "answers": {"economy": "save"}},
+  "test_10": {"weights": {"culture": 1.0}, "answers": {"interests": ["museums"]}},
+  "test_11": {"weights": {"quiet": 0.4, "culture": 0.6}, "answers": {"quiet": "high", "economy": "save", "interests": ["museums"]}},
+  "test_12": {"weights": {"comfort": 0.7, "location": 0.3}, "answers": {"comfort": "high", "location": "high"}}
+}

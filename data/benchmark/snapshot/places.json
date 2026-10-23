@@ -1,212 +1,395 @@
 {
   "schema_version": "0.2.0",
-  "snapshot_id": "benchmark_2026_10_17",
-  "is_template": true,
+  "snapshot_id": "synthetic_2026_10_17_v1",
+  "is_template": false,
   "timezone": "Europe/Moscow",
   "items": [
     {
       "id": "place_01",
-      "name": null,
+      "name": "Русский музей фотографии",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "ул. Пискунова, 9А",
+      "category": "museum",
+      "recommended_duration_minutes": 60,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T11:00:00+03:00",
+              "end_at": "2026-10-17T19:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T11:00:00+03:00",
+              "end_at": "2026-10-18T19:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": true,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
+        "amount_kopecks": 30000,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
       },
-      "availability_status": "unknown",
+      "availability_status": "available",
       "source_url": null,
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:places:place_01",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/places.json",
+          "object_id": "place_01",
+          "row_sha256": "e16453636f58fa82b4b5d91d5cf9cff5d93fd997cc1dc8afe689e7e3681bf2df",
+          "source_url": "https://fotomuseum.nnov.ru/posetitelyam.html",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "culture": 85
+      },
+      "reviews": []
     },
     {
       "id": "place_02",
-      "name": null,
+      "name": "Нижегородское отделение Государственного банка",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "ул. Большая Покровская, 26",
+      "category": "museum",
+      "recommended_duration_minutes": 60,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "closed",
+          "intervals": []
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "closed",
+          "intervals": []
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": false,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
+        "amount_kopecks": 0,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
       },
-      "availability_status": "unknown",
+      "availability_status": "available",
       "source_url": null,
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:places:place_02",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/places.json",
+          "object_id": "place_02",
+          "row_sha256": "37a54d3bef357dae3d96f16c04cbcdef38d13fc7e5cd23c818b0f55c5cfc8e83",
+          "source_url": "https://museum.cbr.ru/excursions/bankovskiy-terem-dom-na-pokrovke/",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "culture": 100
+      },
+      "reviews": []
     },
     {
       "id": "place_03",
-      "name": null,
+      "name": "НГХМ: Русское искусство",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "Нижегородский кремль, корпус 3",
+      "category": "museum",
+      "recommended_duration_minutes": 60,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T11:00:00+03:00",
+              "end_at": "2026-10-17T19:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T11:00:00+03:00",
+              "end_at": "2026-10-18T19:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": true,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
+        "amount_kopecks": 50000,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
       },
-      "availability_status": "unknown",
+      "availability_status": "available",
       "source_url": null,
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:places:place_03",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/places.json",
+          "object_id": "place_03",
+          "row_sha256": "ee3e57f8ac0f2e732f9a1d691c6e4199297b4bd440491e9752e5405f5947f460",
+          "source_url": "https://artmuseumnn.ru/postoyannye-expozitzii/russkoe-isskusstvo/",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "culture": 95
+      },
+      "reviews": []
     },
     {
       "id": "place_04",
-      "name": null,
+      "name": "Чкаловская лестница",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "Нижне-Волжская набережная",
+      "category": "site",
+      "recommended_duration_minutes": 60,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T06:00:00+03:00",
+              "end_at": "2026-10-17T23:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T06:00:00+03:00",
+              "end_at": "2026-10-18T23:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": false,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
+        "amount_kopecks": 0,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
       },
-      "availability_status": "unknown",
+      "availability_status": "available",
       "source_url": null,
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:places:place_04",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/places.json",
+          "object_id": "place_04",
+          "row_sha256": "e56f641c14678f1388a57242ca13b51f3ff1859d13d30d5507427fc8b9e6427b",
+          "source_url": "https://nn-tourist.ru/konstruktor-marshrutov/chkalovskaya-lestnicza",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "culture": 45
+      },
+      "reviews": []
     },
     {
       "id": "place_05",
-      "name": null,
+      "name": "Парк 800-летия Нижнего Новгорода",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "Набережная Федоровского, Петушковская гора",
+      "category": "park",
+      "recommended_duration_minutes": 60,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T06:00:00+03:00",
+              "end_at": "2026-10-17T23:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T06:00:00+03:00",
+              "end_at": "2026-10-18T23:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": false,
+      "booking_required": false,
       "price": {
-        "amount_kopecks": null,
+        "amount_kopecks": 0,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
       },
-      "availability_status": "unknown",
+      "availability_status": "available",
       "source_url": null,
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:places:place_05",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/places.json",
+          "object_id": "place_05",
+          "row_sha256": "95efd0ec59e6c9a3aec20c931903137aca7bf8a0fccddb996ae36c6c3330b7ef",
+          "source_url": "https://rustravelforum.com/where-to-go/nizhegorodskaya-oblast/",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [],
+      "verified_fields": [],
+      "features": {
+        "culture": 65
+      },
+      "reviews": []
     },
     {
       "id": "place_06",
-      "name": null,
+      "name": "Александро-Невский собор",
       "city": "Нижний Новгород",
-      "address": null,
-      "category": null,
-      "recommended_duration_minutes": null,
+      "address": "ул. Стрелка, 3А",
+      "category": "church",
+      "recommended_duration_minutes": 60,
       "opening_hours": [
         {
-          "date": "2026-10-24",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-17",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-17T15:00:00+03:00",
+              "end_at": "2026-10-17T18:00:00+03:00"
+            }
+          ]
         },
         {
-          "date": "2026-10-25",
-          "status": "unknown",
-          "intervals": null
+          "date": "2026-10-18",
+          "status": "open",
+          "intervals": [
+            {
+              "start_at": "2026-10-18T15:00:00+03:00",
+              "end_at": "2026-10-18T18:00:00+03:00"
+            }
+          ]
         }
       ],
-      "ticket_required": null,
-      "booking_required": null,
+      "ticket_required": false,
+      "booking_required": true,
       "price": {
-        "amount_kopecks": null,
+        "amount_kopecks": 0,
         "currency": "RUB",
         "price_unit": "adult_visit",
-        "price_kind": "unknown",
-        "includes_mandatory_fees": null
+        "price_kind": "synthetic_assumption",
+        "includes_mandatory_fees": true
       },
-      "availability_status": "unknown",
+      "availability_status": "available",
       "source_url": null,
       "checked_at": null,
-      "notes": null,
-      "additional_sources": []
+      "notes": "synthetic_assumption: fixed experimental condition; not historical evidence or an actual booking.",
+      "additional_sources": [],
+      "original_fields": {
+        "synthetic_assumption": {
+          "id": "assumption:places:place_06",
+          "status": "synthetic_assumption"
+        },
+        "origin": {
+          "path": "data/snapshot/places.json",
+          "object_id": "place_06",
+          "row_sha256": "e7bdd6e2a55b72112541c64476350984295f95cf442ce6f872479144466dc38b",
+          "source_url": "https://nevskiy-nne.ru/kontaktyi.html",
+          "checked_at": null
+        }
+      },
+      "booking_confirmations": [
+        {
+          "id": "slot_place_06_2026-10-17",
+          "start_at": "2026-10-17T15:00:00+03:00",
+          "end_at": "2026-10-17T18:00:00+03:00",
+          "adults": 2,
+          "source_url": null,
+          "checked_at": null,
+          "assumption_id": "assumption:places:place_06"
+        },
+        {
+          "id": "slot_place_06_2026-10-18",
+          "start_at": "2026-10-18T15:00:00+03:00",
+          "end_at": "2026-10-18T18:00:00+03:00",
+          "adults": 2,
+          "source_url": null,
+          "checked_at": null,
+          "assumption_id": "assumption:places:place_06"
+        }
+      ],
+      "verified_fields": [],
+      "features": {
+        "culture": 90
+      },
+      "reviews": []
     }
   ]
 }
